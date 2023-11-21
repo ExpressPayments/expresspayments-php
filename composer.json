@@ -6,6 +6,7 @@
     "payment processing",
     "api"
   ],
+  "version": "1.0.0",
   "homepage": "https://expressplatby.cz/",
   "license": "MIT",
   "authors": [
