@@ -1,0 +1,46 @@
+{
+  "name": "expressplatby/expressplatby-php",
+  "description": "ExpressPlatby PHP Library",
+  "keywords": [
+    "expressplatby",
+    "payment processing",
+    "api"
+  ],
+  "homepage": "https://expressplatby.cz/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ExpressPlatby and contributors",
+      "homepage": "https://github.com/expressplatby/expressplatby-php/contributors"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7 || ^9.0",
+    "friendsofphp/php-cs-fixer": "3.5.0",
+    "phpstan/phpstan": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "ExpressPlatby\\": "lib/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ExpressPlatby\\": [
+        "tests/",
+        "tests/ExpressPlatby/"
+      ]
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0-dev"
+    }
+  }
+}
