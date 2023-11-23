@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class DisputeService extends \ExpressPlatby\Service\AbstractService
+class DisputeService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of your disputes.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Dispute>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Dispute>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -30,10 +30,10 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Dispute
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Dispute
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function close($id, $params = null, $opts = null)
@@ -46,10 +46,10 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Dispute
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Dispute
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -61,7 +61,7 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      * When you get a dispute, contacting your customer is always the best first step.
      * If that doesn’t work, you can submit evidence to help us resolve the dispute in
      * your favor. You can do this in your <a
-     * href="https://dashboard.expressplatby.cz/disputes">dashboard</a>, but if you prefer,
+     * href="https://dashboard.epayments.network/disputes">dashboard</a>, but if you prefer,
      * you can use the API to submit evidence programmatically.
      *
      * Depending on your dispute type, different evidence fields will give you a better
@@ -70,10 +70,10 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Dispute
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Dispute
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

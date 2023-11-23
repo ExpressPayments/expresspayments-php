@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class RefundService extends \ExpressPlatby\Service\AbstractService
+class RefundService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of all refunds you created. We return the refunds in sorted
@@ -12,10 +12,10 @@ class RefundService extends \ExpressPlatby\Service\AbstractService
      * are always available by default on the Charge object.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Refund>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Refund>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -31,10 +31,10 @@ class RefundService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Refund
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Refund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancel($id, $params = null, $opts = null)
@@ -58,10 +58,10 @@ class RefundService extends \ExpressPlatby\Service\AbstractService
      * more money than is left on a charge.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Refund
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Refund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -74,10 +74,10 @@ class RefundService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Refund
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Refund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -93,10 +93,10 @@ class RefundService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Refund
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Refund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

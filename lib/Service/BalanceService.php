@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class BalanceService extends \ExpressPlatby\Service\AbstractService
+class BalanceService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Retrieves the current account balance, based on the authentication that was used
@@ -13,10 +13,10 @@ class BalanceService extends \ExpressPlatby\Service\AbstractService
      * for negative balances</a>.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Balance
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Balance
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($params = null, $opts = null)

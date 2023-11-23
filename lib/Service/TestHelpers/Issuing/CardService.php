@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Issuing;
+namespace ExpressPayments\Service\TestHelpers\Issuing;
 
-class CardService extends \ExpressPlatby\Service\AbstractService
+class CardService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Updates the shipping status of the specified Issuing <code>Card</code> object to
@@ -12,11 +12,11 @@ class CardService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Card
      */
     public function deliverCard($id, $params = null, $opts = null)
     {
@@ -29,11 +29,11 @@ class CardService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Card
      */
     public function failCard($id, $params = null, $opts = null)
     {
@@ -46,11 +46,11 @@ class CardService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Card
      */
     public function returnCard($id, $params = null, $opts = null)
     {
@@ -63,11 +63,11 @@ class CardService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Card
      */
     public function shipCard($id, $params = null, $opts = null)
     {

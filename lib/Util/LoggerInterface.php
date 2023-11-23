@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Util;
+namespace ExpressPayments\Util;
 
 /**
  * Describes a logger instance.

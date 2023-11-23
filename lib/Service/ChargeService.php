@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class ChargeService extends \ExpressPlatby\Service\AbstractService
+class ChargeService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of charges you’ve previously created. The charges are returned in
      * sorted order, with the most recent charges appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Charge>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Charge>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -35,10 +35,10 @@ class ChargeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Charge
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Charge
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function capture($id, $params = null, $opts = null)
@@ -53,10 +53,10 @@ class ChargeService extends \ExpressPlatby\Service\AbstractService
      * is limited to legacy integrations.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Charge
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Charge
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -66,16 +66,16 @@ class ChargeService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Retrieves the details of a charge that has previously been created. Supply the
-     * unique charge ID that was returned from your previous request, and ExpressPlatby will
+     * unique charge ID that was returned from your previous request, and ExpressPayments will
      * return the corresponding charge information. The same information is returned
      * when creating or refunding the charge.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Charge
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Charge
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -84,7 +84,7 @@ class ChargeService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Search for charges you’ve previously created using ExpressPlatby’s <a
+     * Search for charges you’ve previously created using ExpressPayments’ <a
      * href="/docs/search#search-query-language">Search Query Language</a>. Don’t use
      * search in read-after-write flows where strict consistency is necessary. Under
      * normal operating conditions, data is searchable in less than a minute.
@@ -92,10 +92,10 @@ class ChargeService extends \ExpressPlatby\Service\AbstractService
      * during outages. Search functionality is not available to merchants in India.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\Charge>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\Charge>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function search($params = null, $opts = null)
@@ -109,10 +109,10 @@ class ChargeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Charge
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Charge
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

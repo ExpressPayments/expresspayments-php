@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class TokenService extends \ExpressPlatby\Service\AbstractService
+class TokenService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Creates a single-use token that represents a bank account’s details. You can use
@@ -13,10 +13,10 @@ class TokenService extends \ExpressPlatby\Service\AbstractService
      * account</a>.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Token
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Token
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -29,10 +29,10 @@ class TokenService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Token
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Token
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)

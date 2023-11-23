@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class PriceService extends \ExpressPlatby\Service\AbstractService
+class PriceService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of your active prices. For the list of inactive prices, set
      * <code>active</code> to false.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Price>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Price>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -27,10 +27,10 @@ class PriceService extends \ExpressPlatby\Service\AbstractService
      * one-time.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Price
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Price
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -43,10 +43,10 @@ class PriceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Price
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Price
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -55,7 +55,7 @@ class PriceService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Search for prices you’ve previously created using ExpressPlatby’s <a
+     * Search for prices you’ve previously created using ExpressPayments’ <a
      * href="/docs/search#search-query-language">Search Query Language</a>. Don’t use
      * search in read-after-write flows where strict consistency is necessary. Under
      * normal operating conditions, data is searchable in less than a minute.
@@ -63,10 +63,10 @@ class PriceService extends \ExpressPlatby\Service\AbstractService
      * during outages. Search functionality is not available to merchants in India.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\Price>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\Price>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function search($params = null, $opts = null)
@@ -80,10 +80,10 @@ class PriceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Price
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Price
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

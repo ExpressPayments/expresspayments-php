@@ -1,10 +1,10 @@
 <?php
 
-namespace ExpressPlatby\Exception;
+namespace ExpressPayments\Exception;
 
 /**
  * AuthenticationException is thrown when invalid credentials are used to
- * connect to ExpressPlatby's servers.
+ * connect to ExpressPayments' servers.
  */
 class AuthenticationException extends ApiErrorException
 {

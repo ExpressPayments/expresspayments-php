@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\ApiOperations;
+namespace ExpressPayments\ApiOperations;
 
 /**
  * Trait for retrievable singleton resources. Adds a `retrieve()` static method to the
@@ -14,13 +14,13 @@ trait SingletonRetrieve
      * @param null|array|string $opts the ID of the API resource to retrieve,
      *     or an options array containing an `id` key
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
-     *
      * @return static
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
+     *
      */
     public static function retrieve($opts = null)
     {
-        $opts = \ExpressPlatby\Util\RequestOptions::parse($opts);
+        $opts = \ExpressPayments\Util\RequestOptions::parse($opts);
         $instance = new static(null, $opts);
         $instance->refresh();
 

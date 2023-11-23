@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * @property string $id Unique identifier for the object.
@@ -10,7 +10,7 @@ namespace ExpressPlatby;
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property int $expires Time at which the key will expire. Measured in seconds since the Unix epoch.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|string $secret The key's secret. You can use this value to make authorized requests to the ExpressPlatby API.
+ * @property null|string $secret The key's secret. You can use this value to make authorized requests to the ExpressPayments API.
  */
 class EphemeralKey extends ApiResource
 {
@@ -26,15 +26,15 @@ class EphemeralKey extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\EphemeralKey the created key
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\EphemeralKey the created key
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @throws \ExpressPlatby\Exception\InvalidArgumentException if expressplatby_version is missing
+     * @throws \ExpressPayments\Exception\InvalidArgumentException if ep_version is missing
      */
     public static function create($params = null, $opts = null)
     {
-        if (!$opts || !isset($opts['expressplatby_version'])) {
-            throw new Exception\InvalidArgumentException('expressplatby_version must be specified to create an ephemeral key');
+        if (!$opts || !isset($opts['ep_version'])) {
+            throw new Exception\InvalidArgumentException('ep_version must be specified to create an ephemeral key');
         }
 
         return self::_create($params, $opts);

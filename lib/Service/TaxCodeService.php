@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class TaxCodeService extends \ExpressPlatby\Service\AbstractService
+class TaxCodeService extends \ExpressPayments\Service\AbstractService
 {
     /**
-     * A list of <a href="https://expressplatby.cz/docs/tax/tax-categories">all tax codes
+     * A list of <a href="https://docs.epayments.network/tax/tax-categories">all tax codes
      * available</a> to add to Products in order to allow specific tax calculations.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\TaxCode>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\TaxCode>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -24,14 +24,14 @@ class TaxCodeService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Retrieves the details of an existing tax code. Supply the unique tax code ID and
-     * ExpressPlatby will return the corresponding tax code information.
+     * ExpressPayments will return the corresponding tax code information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\TaxCode
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TaxCode
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)

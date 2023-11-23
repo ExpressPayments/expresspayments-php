@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Terminal;
+namespace ExpressPayments\Service\TestHelpers\Terminal;
 
-class ReaderService extends \ExpressPlatby\Service\AbstractService
+class ReaderService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Presents a payment method on a simulated reader. Can be used to simulate
@@ -12,11 +12,11 @@ class ReaderService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Terminal\Reader
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Terminal\Reader
      */
     public function presentPaymentMethod($id, $params = null, $opts = null)
     {

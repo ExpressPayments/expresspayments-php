@@ -1,13 +1,13 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * Class ExpressPlatbyObject.
+ * Class ExpressPaymentsObject.
  *
  * @property null|string $id
  */
-class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
+class ExpressPaymentsObject implements \ArrayAccess, \Countable, \JsonSerializable
 {
     /** @var Util\RequestOptions */
     protected $_opts;
@@ -146,7 +146,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
             );
         }
 
-        $this->_values[$k] = Util\Util::convertToExpressPlatbyObject($v, $this->_opts);
+        $this->_values[$k] = Util\Util::convertToExpressPaymentsObject($v, $this->_opts);
         $this->dirtyValue($this->_values[$k]);
         $this->_unsavedValues->add($k);
     }
@@ -178,18 +178,18 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
         if (!empty($this->_transientValues) && $this->_transientValues->includes($k)) {
             $class = static::class;
             $attrs = \implode(', ', \array_keys($this->_values));
-            $message = "ExpressPlatby Notice: Undefined property of {$class} instance: {$k}. "
+            $message = "ExpressPayments Notice: Undefined property of {$class} instance: {$k}. "
                     . "HINT: The {$k} attribute was set in the past, however. "
                     . 'It was then wiped when refreshing the object '
-                    . "with the result returned by ExpressPlatby's API, "
+                    . "with the result returned by ExpressPayments' API, "
                     . 'probably as a result of a save(). The attributes currently '
                     . "available on this object are: {$attrs}";
-            ExpressPlatby::getLogger()->error($message);
+            ExpressPayments::getLogger()->error($message);
 
             return $nullval;
         }
         $class = static::class;
-        ExpressPlatby::getLogger()->error("ExpressPlatby Notice: Undefined property of {$class} instance: {$k}");
+        ExpressPayments::getLogger()->error("ExpressPayments Notice: Undefined property of {$class} instance: {$k}");
 
         return $nullval;
     }
@@ -290,7 +290,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
 
         $this->_originalValues = self::deepCopy($values);
 
-        if ($values instanceof ExpressPlatbyObject) {
+        if ($values instanceof ExpressPaymentsObject) {
             $values = $values->toArray();
         }
 
@@ -324,14 +324,14 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
     public function updateAttributes($values, $opts = null, $dirty = true)
     {
         foreach ($values as $k => $v) {
-            // Special-case metadata to always be cast as a ExpressPlatbyObject
+            // Special-case metadata to always be cast as an ExpressPaymentsObject
             // This is necessary in case metadata is empty, as PHP arrays do
             // not differentiate between lists and hashes, and we consider
             // empty arrays to be lists.
             if (('metadata' === $k) && (\is_array($v))) {
-                $this->_values[$k] = ExpressPlatbyObject::constructFrom($v, $opts);
+                $this->_values[$k] = ExpressPaymentsObject::constructFrom($v, $opts);
             } else {
-                $this->_values[$k] = Util\Util::convertToExpressPlatbyObject($v, $opts);
+                $this->_values[$k] = Util\Util::convertToExpressPaymentsObject($v, $opts);
             }
             if ($dirty) {
                 $this->dirtyValue($this->_values[$k]);
@@ -356,12 +356,12 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
             //
             //   1. The `$force` option has been set.
             //   2. We know that it was modified.
-            //   3. Its value is a ExpressPlatbyObject. A ExpressPlatbyObject may contain modified
-            //      values within in that its parent ExpressPlatbyObject doesn't know about.
+            //   3. Its value is an ExpressPaymentsObject. an ExpressPaymentsObject may contain modified
+            //      values within in that its parent ExpressPaymentsObject doesn't know about.
             //
             $original = \array_key_exists($k, $this->_originalValues) ? $this->_originalValues[$k] : null;
             $unsaved = $this->_unsavedValues->includes($k);
-            if ($force || $unsaved || $v instanceof ExpressPlatbyObject) {
+            if ($force || $unsaved || $v instanceof ExpressPaymentsObject) {
                 $updateParams[$k] = $this->serializeParamsValue(
                     $this->_values[$k],
                     $original,
@@ -436,9 +436,9 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
                 }
             } else {
                 // Associative array, i.e. a map
-                return Util\Util::convertToExpressPlatbyObject($value, $this->_opts)->serializeParameters();
+                return Util\Util::convertToExpressPaymentsObject($value, $this->_opts)->serializeParameters();
             }
-        } elseif ($value instanceof ExpressPlatbyObject) {
+        } elseif ($value instanceof ExpressPaymentsObject) {
             $update = $value->serializeParameters($force);
             if ($original && $unsaved && $key && static::getAdditiveParams()->includes($key)) {
                 $update = \array_merge(self::emptyValues($original), $update);
@@ -461,7 +461,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
 
     /**
      * Returns an associative array with the key and values composing the
-     * ExpressPlatby object.
+     * ExpressPayments object.
      *
      * @return array the associative array
      */
@@ -491,9 +491,9 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
     }
 
     /**
-     * Returns a pretty JSON representation of the ExpressPlatby object.
+     * Returns a pretty JSON representation of the ExpressPayments object.
      *
-     * @return string the JSON representation of the ExpressPlatby object
+     * @return string the JSON representation of the ExpressPayments object
      */
     public function toJSON()
     {
@@ -508,9 +508,9 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
     }
 
     /**
-     * Sets all keys within the ExpressPlatbyObject as unsaved so that they will be
+     * Sets all keys within the ExpressPaymentsObject as unsaved so that they will be
      * included with an update when `serializeParameters` is called. This
-     * method is also recursive, so any ExpressPlatbyObjects contained as values or
+     * method is also recursive, so any ExpressPaymentsObjects contained as values or
      * which are values in a tenant array are also marked as dirty.
      */
     public function dirty()
@@ -527,14 +527,14 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
             foreach ($value as $v) {
                 $this->dirtyValue($v);
             }
-        } elseif ($value instanceof ExpressPlatbyObject) {
+        } elseif ($value instanceof ExpressPaymentsObject) {
             $value->dirty();
         }
     }
 
     /**
      * Produces a deep copy of the given object including support for arrays
-     * and ExpressPlatbyObjects.
+     * and ExpressPaymentsObjects.
      *
      * @param mixed $obj
      */
@@ -548,7 +548,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
 
             return $copy;
         }
-        if ($obj instanceof ExpressPlatbyObject) {
+        if ($obj instanceof ExpressPaymentsObject) {
             return $obj::constructFrom(
                 self::deepCopy($obj->_values),
                 clone $obj->_opts
@@ -560,7 +560,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
 
     /**
      * Returns a hash of empty values for all the values that are in the given
-     * ExpressPlatbyObject.
+     * ExpressPaymentsObject.
      *
      * @param mixed $obj
      */
@@ -568,7 +568,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
     {
         if (\is_array($obj)) {
             $values = $obj;
-        } elseif ($obj instanceof ExpressPlatbyObject) {
+        } elseif ($obj instanceof ExpressPaymentsObject) {
             $values = $obj->_values;
         } else {
             throw new Exception\InvalidArgumentException(
@@ -580,7 +580,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
     }
 
     /**
-     * @return null|ApiResponse The last response from the ExpressPlatby API
+     * @return null|ApiResponse The last response from the ExpressPayments API
      */
     public function getLastResponse()
     {
@@ -588,7 +588,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
     }
 
     /**
-     * Sets the last response from the ExpressPlatby API.
+     * Sets the last response from the ExpressPayments API.
      *
      * @param ApiResponse $resp
      */
@@ -598,7 +598,7 @@ class ExpressPlatbyObject implements \ArrayAccess, \Countable, \JsonSerializable
     }
 
     /**
-     * Indicates whether or not the resource has been deleted on the server.
+     * Indicates whether the resource has been deleted on the server.
      * Note that some, but not all, resources can indicate whether they have
      * been deleted.
      *

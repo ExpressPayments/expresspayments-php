@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers;
+namespace ExpressPayments\Service\TestHelpers;
 
 /**
  * Service factory class for API resources in the TestHelpers namespace.
@@ -14,7 +14,7 @@ namespace ExpressPlatby\Service\TestHelpers;
  * @property TestClockService $testClocks
  * @property Treasury\TreasuryServiceFactory $treasury
  */
-class TestHelpersServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class TestHelpersServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

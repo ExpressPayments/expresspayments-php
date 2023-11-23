@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Reporting;
+namespace ExpressPayments\Service\Reporting;
 
 /**
  * Service factory class for API resources in the Reporting namespace.
@@ -10,7 +10,7 @@ namespace ExpressPlatby\Service\Reporting;
  * @property ReportRunService $reportRuns
  * @property ReportTypeService $reportTypes
  */
-class ReportingServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class ReportingServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

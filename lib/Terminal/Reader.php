@@ -2,35 +2,35 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Terminal;
+namespace ExpressPayments\Terminal;
 
 /**
  * A Reader represents a physical device for accepting payment details.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/terminal/payments/connect-reader">Connecting to a reader</a>
+ * Related guide: <a href="https://docs.epayments.network/terminal/payments/connect-reader">Connecting to a reader</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $action The most recent action performed by the reader.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $action The most recent action performed by the reader.
  * @property null|string $device_sw_version The current software version of the reader.
  * @property string $device_type Type of reader, one of <code>bbpos_wisepad3</code>, <code>stripe_m2</code>, <code>bbpos_chipper2x</code>, <code>bbpos_wisepos_e</code>, <code>verifone_P400</code>, or <code>simulated_wisepos_e</code>.
  * @property null|string $ip_address The local IP address of the reader.
  * @property string $label Custom label given to the reader for easier identification.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|string|\ExpressPlatby\Terminal\Location $location The location identifier of the reader.
- * @property \ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|string|\ExpressPayments\Terminal\Location $location The location identifier of the reader.
+ * @property \ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $serial_number Serial number of the reader.
  * @property null|string $status The networking status of the reader.
  */
-class Reader extends \ExpressPlatby\ApiResource
+class Reader extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'terminal.reader';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Create;
-    use \ExpressPlatby\ApiOperations\Delete;
-    use \ExpressPlatby\ApiOperations\Retrieve;
-    use \ExpressPlatby\ApiOperations\Update;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Create;
+    use \ExpressPayments\ApiOperations\Delete;
+    use \ExpressPayments\ApiOperations\Retrieve;
+    use \ExpressPayments\ApiOperations\Update;
 
     const DEVICE_TYPE_BBPOS_CHIPPER2X = 'bbpos_chipper2x';
     const DEVICE_TYPE_BBPOS_WISEPAD3 = 'bbpos_wisepad3';
@@ -43,8 +43,8 @@ class Reader extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Terminal\Reader the canceled reader
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Terminal\Reader the canceled reader
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancelAction($params = null, $opts = null)
@@ -60,8 +60,8 @@ class Reader extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Terminal\Reader the processed reader
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Terminal\Reader the processed reader
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function processPaymentIntent($params = null, $opts = null)
@@ -77,8 +77,8 @@ class Reader extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Terminal\Reader the processed reader
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Terminal\Reader the processed reader
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function processSetupIntent($params = null, $opts = null)
@@ -94,8 +94,8 @@ class Reader extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Terminal\Reader the refunded reader
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Terminal\Reader the refunded reader
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function refundPayment($params = null, $opts = null)
@@ -111,8 +111,8 @@ class Reader extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Terminal\Reader the seted reader
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Terminal\Reader the seted reader
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function setReaderDisplay($params = null, $opts = null)

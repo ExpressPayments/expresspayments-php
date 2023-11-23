@@ -2,58 +2,58 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * PaymentMethod objects represent your customer's payment instruments.
- * You can use them with <a href="https://expressplatby.cz/docs/payments/payment-intents">PaymentIntents</a> to collect payments or save them to
+ * You can use them with <a href="https://docs.epayments.network/payments/payment-intents">PaymentIntents</a> to collect payments or save them to
  * Customer objects to store instrument details for future payments.
  *
- * Related guides: <a href="https://expressplatby.cz/docs/payments/payment-methods">Payment Methods</a> and <a href="https://expressplatby.cz/docs/payments/more-payment-scenarios">More Payment Scenarios</a>.
+ * Related guides: <a href="https://docs.epayments.network/payments/payment-methods">Payment Methods</a> and <a href="https://docs.epayments.network/payments/more-payment-scenarios">More Payment Scenarios</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $acss_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $affirm
- * @property null|\ExpressPlatby\ExpressPlatbyObject $afterpay_clearpay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $alipay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $au_becs_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $bacs_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $bancontact
- * @property \ExpressPlatby\ExpressPlatbyObject $billing_details
- * @property null|\ExpressPlatby\ExpressPlatbyObject $blik
- * @property null|\ExpressPlatby\ExpressPlatbyObject $boleto
- * @property null|\ExpressPlatby\ExpressPlatbyObject $card
- * @property null|\ExpressPlatby\ExpressPlatbyObject $card_present
- * @property null|\ExpressPlatby\ExpressPlatbyObject $cashapp
+ * @property null|\ExpressPayments\ExpressPaymentsObject $acss_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $affirm
+ * @property null|\ExpressPayments\ExpressPaymentsObject $afterpay_clearpay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $alipay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $au_becs_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $bacs_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $bancontact
+ * @property \ExpressPayments\ExpressPaymentsObject $billing_details
+ * @property null|\ExpressPayments\ExpressPaymentsObject $blik
+ * @property null|\ExpressPayments\ExpressPaymentsObject $boleto
+ * @property null|\ExpressPayments\ExpressPaymentsObject $card
+ * @property null|\ExpressPayments\ExpressPaymentsObject $card_present
+ * @property null|\ExpressPayments\ExpressPaymentsObject $cashapp
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property null|string|\ExpressPlatby\Customer $customer The ID of the Customer to which this PaymentMethod is saved. This will not be set when the PaymentMethod has not been saved to a Customer.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $customer_balance
- * @property null|\ExpressPlatby\ExpressPlatbyObject $eps
- * @property null|\ExpressPlatby\ExpressPlatbyObject $fpx
- * @property null|\ExpressPlatby\ExpressPlatbyObject $giropay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $grabpay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $ideal
- * @property null|\ExpressPlatby\ExpressPlatbyObject $interac_present
- * @property null|\ExpressPlatby\ExpressPlatbyObject $klarna
- * @property null|\ExpressPlatby\ExpressPlatbyObject $konbini
- * @property null|\ExpressPlatby\ExpressPlatbyObject $link
+ * @property null|string|\ExpressPayments\Customer $customer The ID of the Customer to which this PaymentMethod is saved. This will not be set when the PaymentMethod has not been saved to a Customer.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $customer_balance
+ * @property null|\ExpressPayments\ExpressPaymentsObject $eps
+ * @property null|\ExpressPayments\ExpressPaymentsObject $fpx
+ * @property null|\ExpressPayments\ExpressPaymentsObject $giropay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $grabpay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $ideal
+ * @property null|\ExpressPayments\ExpressPaymentsObject $interac_present
+ * @property null|\ExpressPayments\ExpressPaymentsObject $klarna
+ * @property null|\ExpressPayments\ExpressPaymentsObject $konbini
+ * @property null|\ExpressPayments\ExpressPaymentsObject $link
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $oxxo
- * @property null|\ExpressPlatby\ExpressPlatbyObject $p24
- * @property null|\ExpressPlatby\ExpressPlatbyObject $paynow
- * @property null|\ExpressPlatby\ExpressPlatbyObject $paypal
- * @property null|\ExpressPlatby\ExpressPlatbyObject $pix
- * @property null|\ExpressPlatby\ExpressPlatbyObject $promptpay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $radar_options Options to configure Radar. See <a href="https://expressplatby.cz/docs/radar/radar-session">Radar Session</a> for more information.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $revolut_pay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $sepa_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $sofort
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $oxxo
+ * @property null|\ExpressPayments\ExpressPaymentsObject $p24
+ * @property null|\ExpressPayments\ExpressPaymentsObject $paynow
+ * @property null|\ExpressPayments\ExpressPaymentsObject $paypal
+ * @property null|\ExpressPayments\ExpressPaymentsObject $pix
+ * @property null|\ExpressPayments\ExpressPaymentsObject $promptpay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $radar_options Options to configure Radar. See <a href="https://docs.epayments.network/radar/radar-session">Radar Session</a> for more information.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $revolut_pay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $sepa_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $sofort
  * @property string $type The type of the PaymentMethod. An additional hash is included on the PaymentMethod with a name matching this value. It contains additional information specific to the PaymentMethod type.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $us_bank_account
- * @property null|\ExpressPlatby\ExpressPlatbyObject $wechat_pay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $zip
+ * @property null|\ExpressPayments\ExpressPaymentsObject $us_bank_account
+ * @property null|\ExpressPayments\ExpressPaymentsObject $wechat_pay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $zip
  */
 class PaymentMethod extends ApiResource
 {
@@ -103,8 +103,8 @@ class PaymentMethod extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\PaymentMethod the attached payment method
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod the attached payment method
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function attach($params = null, $opts = null)
@@ -120,8 +120,8 @@ class PaymentMethod extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\PaymentMethod the detached payment method
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod the detached payment method
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function detach($params = null, $opts = null)

@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class PaymentMethodConfigurationService extends \ExpressPlatby\Service\AbstractService
+class PaymentMethodConfigurationService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * List payment method configurations.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\PaymentMethodConfiguration>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\PaymentMethodConfiguration>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -25,10 +25,10 @@ class PaymentMethodConfigurationService extends \ExpressPlatby\Service\AbstractS
      * Creates a payment method configuration.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethodConfiguration
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethodConfiguration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -41,10 +41,10 @@ class PaymentMethodConfigurationService extends \ExpressPlatby\Service\AbstractS
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethodConfiguration
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethodConfiguration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -57,10 +57,10 @@ class PaymentMethodConfigurationService extends \ExpressPlatby\Service\AbstractS
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethodConfiguration
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethodConfiguration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

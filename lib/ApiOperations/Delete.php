@@ -1,11 +1,11 @@
 <?php
 
-namespace ExpressPlatby\ApiOperations;
+namespace ExpressPayments\ApiOperations;
 
 /**
  * Trait for deletable resources. Adds a `delete()` method to the class.
  *
- * This trait should only be applied to classes that derive from ExpressPlatbyObject.
+ * This trait should only be applied to classes that derive from ExpressPaymentsObject.
  */
 trait Delete
 {
@@ -13,9 +13,9 @@ trait Delete
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
-     *
      * @return static the deleted resource
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
+     *
      */
     public function delete($params = null, $opts = null)
     {

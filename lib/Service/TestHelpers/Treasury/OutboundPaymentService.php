@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Treasury;
+namespace ExpressPayments\Service\TestHelpers\Treasury;
 
-class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
+class OutboundPaymentService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Transitions a test mode created OutboundPayment to the <code>failed</code>
@@ -13,11 +13,11 @@ class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundPayment
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundPayment
      */
     public function fail($id, $params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundPayment
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundPayment
      */
     public function post($id, $params = null, $opts = null)
     {
@@ -49,11 +49,11 @@ class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundPayment
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundPayment
      */
     public function returnOutboundPayment($id, $params = null, $opts = null)
     {

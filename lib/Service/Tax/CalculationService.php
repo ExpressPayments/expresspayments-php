@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Tax;
+namespace ExpressPayments\Service\Tax;
 
-class CalculationService extends \ExpressPlatby\Service\AbstractService
+class CalculationService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Retrieves the line items of a persisted tax calculation as a collection.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Tax\CalculationLineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Tax\CalculationLineItem>
      */
     public function allLineItems($id, $params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class CalculationService extends \ExpressPlatby\Service\AbstractService
      * Calculates tax based on input and returns a Tax <code>Calculation</code> object.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Calculation
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Calculation
      */
     public function create($params = null, $opts = null)
     {

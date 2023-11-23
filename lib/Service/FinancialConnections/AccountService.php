@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\FinancialConnections;
+namespace ExpressPayments\Service\FinancialConnections;
 
-class AccountService extends \ExpressPlatby\Service\AbstractService
+class AccountService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of Financial Connections <code>Account</code> objects.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\FinancialConnections\Account>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\FinancialConnections\Account>
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\FinancialConnections\AccountOwner>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\FinancialConnections\AccountOwner>
      */
     public function allOwners($id, $params = null, $opts = null)
     {
@@ -44,11 +44,11 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FinancialConnections\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\FinancialConnections\Account
      */
     public function disconnect($id, $params = null, $opts = null)
     {
@@ -60,11 +60,11 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FinancialConnections\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\FinancialConnections\Account
      */
     public function refresh($id, $params = null, $opts = null)
     {
@@ -76,11 +76,11 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FinancialConnections\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\FinancialConnections\Account
      */
     public function retrieve($id, $params = null, $opts = null)
     {

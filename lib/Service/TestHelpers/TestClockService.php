@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers;
+namespace ExpressPayments\Service\TestHelpers;
 
-class TestClockService extends \ExpressPlatby\Service\AbstractService
+class TestClockService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Starts advancing a test clock to a specified time in the future. Advancement is
@@ -12,11 +12,11 @@ class TestClockService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TestHelpers\TestClock
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\TestHelpers\TestClock
      */
     public function advance($id, $params = null, $opts = null)
     {
@@ -27,11 +27,11 @@ class TestClockService extends \ExpressPlatby\Service\AbstractService
      * Returns a list of your test clocks.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\TestHelpers\TestClock>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\TestHelpers\TestClock>
      */
     public function all($params = null, $opts = null)
     {
@@ -42,11 +42,11 @@ class TestClockService extends \ExpressPlatby\Service\AbstractService
      * Creates a new test clock that can be attached to new customers and quotes.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TestHelpers\TestClock
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\TestHelpers\TestClock
      */
     public function create($params = null, $opts = null)
     {
@@ -58,11 +58,11 @@ class TestClockService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TestHelpers\TestClock
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\TestHelpers\TestClock
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -74,11 +74,11 @@ class TestClockService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TestHelpers\TestClock
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\TestHelpers\TestClock
      */
     public function retrieve($id, $params = null, $opts = null)
     {

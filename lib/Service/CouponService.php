@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class CouponService extends \ExpressPlatby\Service\AbstractService
+class CouponService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of your coupons.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Coupon>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Coupon>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -23,8 +23,8 @@ class CouponService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * You can create coupons easily via the <a
-     * href="https://dashboard.expressplatby.cz/coupons">coupon management</a> page of the
-     * ExpressPlatby dashboard. Coupon creation is also accessible via the API if you need to
+     * href="https://dashboard.epayments.network/coupons">coupon management</a> page of the
+     * ExpressPayments dashboard. Coupon creation is also accessible via the API if you need to
      * create coupons on the fly.
      *
      * A coupon has either a <code>percent_off</code> or an <code>amount_off</code> and
@@ -38,10 +38,10 @@ class CouponService extends \ExpressPlatby\Service\AbstractService
      * it.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Coupon
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Coupon
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -51,17 +51,17 @@ class CouponService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * You can delete coupons via the <a
-     * href="https://dashboard.expressplatby.cz/coupons">coupon management</a> page of the
-     * ExpressPlatby dashboard. However, deleting a coupon does not affect any customers who
+     * href="https://dashboard.epayments.network/coupons">coupon management</a> page of the
+     * ExpressPayments dashboard. However, deleting a coupon does not affect any customers who
      * have already applied the coupon; it means that new customers can’t redeem the
      * coupon. You can also delete coupons via the API.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Coupon
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Coupon
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function delete($id, $params = null, $opts = null)
@@ -74,10 +74,10 @@ class CouponService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Coupon
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Coupon
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -91,10 +91,10 @@ class CouponService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Coupon
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Coupon
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

@@ -1,12 +1,12 @@
 <?php
 
-namespace ExpressPlatby\ApiOperations;
+namespace ExpressPayments\ApiOperations;
 
 /**
  * Trait for updatable resources. Adds an `update()` static method and a
  * `save()` method to the class.
  *
- * This trait should only be applied to classes that derive from ExpressPlatbyObject.
+ * This trait should only be applied to classes that derive from ExpressPaymentsObject.
  */
 trait Update
 {
@@ -15,9 +15,9 @@ trait Update
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
-     *
      * @return static the updated resource
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
+     *
      */
     public static function update($id, $params = null, $opts = null)
     {
@@ -25,7 +25,7 @@ trait Update
         $url = static::resourceUrl($id);
 
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -34,9 +34,9 @@ trait Update
     /**
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
-     *
      * @return static the saved resource
+     *
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      * @deprecated The `save` method is deprecated and will be removed in a
      *     future major version of the library. Use the static method `update`

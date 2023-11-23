@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class QuoteService extends \ExpressPlatby\Service\AbstractService
+class QuoteService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Accepts the specified quote.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Quote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Quote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function accept($id, $params = null, $opts = null)
@@ -26,10 +26,10 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      * Returns a list of your quotes.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Quote>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Quote>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -39,16 +39,16 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * When retrieving a quote, there is an includable <a
-     * href="https://expressplatby.cz/docs/api/quotes/object#quote_object-computed-upfront-line_items"><strong>computed.upfront.line_items</strong></a>
+     * href="https://docs.epayments.network/api/quotes/object#quote_object-computed-upfront-line_items"><strong>computed.upfront.line_items</strong></a>
      * property containing the first handful of those items. There is also a URL where
      * you can retrieve the full (paginated) list of upfront line items.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\LineItem>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\LineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allComputedUpfrontLineItems($id, $params = null, $opts = null)
@@ -63,10 +63,10 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\LineItem>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\LineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allLineItems($id, $params = null, $opts = null)
@@ -79,10 +79,10 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Quote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Quote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancel($id, $params = null, $opts = null)
@@ -94,13 +94,13 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      * A quote models prices and services for a customer. Default options for
      * <code>header</code>, <code>description</code>, <code>footer</code>, and
      * <code>expires_at</code> can be set in the dashboard via the <a
-     * href="https://dashboard.expressplatby.cz/settings/billing/quote">quote template</a>.
+     * href="https://dashboard.epayments.network/settings/billing/quote">quote template</a>.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Quote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Quote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -113,10 +113,10 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Quote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Quote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function finalizeQuote($id, $params = null, $opts = null)
@@ -130,15 +130,15 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      * @param string $id
      * @param callable $readBodyChunkCallable
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
      * @return mixed
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function pdf($id, $readBodyChunkCallable, $params = null, $opts = null)
     {
-        $opts = \ExpressPlatby\Util\RequestOptions::parse($opts);
+        $opts = \ExpressPayments\Util\RequestOptions::parse($opts);
         if (!isset($opts->apiBase)) {
             $opts->apiBase = $this->getClient()->getFilesBase();
         }
@@ -151,10 +151,10 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Quote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Quote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -167,10 +167,10 @@ class QuoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Quote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Quote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

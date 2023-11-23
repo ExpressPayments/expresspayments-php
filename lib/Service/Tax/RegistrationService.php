@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Tax;
+namespace ExpressPayments\Service\Tax;
 
-class RegistrationService extends \ExpressPlatby\Service\AbstractService
+class RegistrationService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of Tax <code>Registration</code> objects.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Tax\Registration>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Tax\Registration>
      */
     public function all($params = null, $opts = null)
     {
@@ -25,11 +25,11 @@ class RegistrationService extends \ExpressPlatby\Service\AbstractService
      * Creates a new Tax <code>Registration</code> object.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Registration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Registration
      */
     public function create($params = null, $opts = null)
     {
@@ -44,11 +44,11 @@ class RegistrationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Registration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Registration
      */
     public function update($id, $params = null, $opts = null)
     {

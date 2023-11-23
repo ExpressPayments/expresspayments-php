@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Class OAuthErrorObject.
@@ -8,7 +8,7 @@ namespace ExpressPlatby;
  * @property string $error
  * @property string $error_description
  */
-class OAuthErrorObject extends ExpressPlatbyObject
+class OAuthErrorObject extends ExpressPaymentsObject
 {
     /**
      * Refreshes this object using the provided values.

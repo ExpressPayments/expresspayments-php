@@ -1,11 +1,11 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * Class ApiRequestor.
+ * Class ApiRequester.
  */
-class ApiRequestor
+class ApiRequester
 {
     /**
      * @var null|string
@@ -31,10 +31,10 @@ class ApiRequestor
      */
     private static $requestTelemetry;
 
-    private static $OPTIONS_KEYS = ['api_key', 'idempotency_key', 'expressplatby_account', 'expressplatby_version', 'api_base'];
+    private static $OPTIONS_KEYS = ['api_key', 'idempotency_key', 'ep_account', 'ep_version', 'api_base'];
 
     /**
-     * ApiRequestor constructor.
+     * ApiRequester constructor.
      *
      * @param null|string $apiKey
      * @param null|string $apiBase
@@ -43,13 +43,13 @@ class ApiRequestor
     {
         $this->_apiKey = $apiKey;
         if (!$apiBase) {
-            $apiBase = ExpressPlatby::$apiBase;
+            $apiBase = ExpressPayments::$apiBase;
         }
         $this->_apiBase = $apiBase;
     }
 
     /**
-     * Creates a telemetry json blob for use in 'X-ExpressPlatby-Client-Telemetry' headers.
+     * Creates a telemetry json blob for use in 'X-EP-Client-Telemetry' headers.
      *
      * @static
      *
@@ -70,7 +70,7 @@ class ApiRequestor
         if (false !== $result) {
             return $result;
         }
-        ExpressPlatby::getLogger()->error('Serializing telemetry payload failed!');
+        ExpressPayments::getLogger()->error('Serializing telemetry payload failed!');
 
         return '{}';
     }
@@ -322,18 +322,18 @@ class ApiRequestor
      */
     private static function _defaultHeaders($apiKey, $clientInfo = null)
     {
-        $uaString = 'ExpressPlatby/v1 PhpBindings/' . ExpressPlatby::VERSION;
+        $uaString = 'ExpressPayments/v1 PhpBindings/' . ExpressPayments::VERSION;
 
         $langVersion = \PHP_VERSION;
         $uname_disabled = self::_isDisabled(\ini_get('disable_functions'), 'php_uname');
         $uname = $uname_disabled ? '(disabled)' : \php_uname();
 
-        $appInfo = ExpressPlatby::getAppInfo();
+        $appInfo = ExpressPayments::getAppInfo();
         $ua = [
-            'bindings_version' => ExpressPlatby::VERSION,
+            'bindings_version' => ExpressPayments::VERSION,
             'lang' => 'php',
             'lang_version' => $langVersion,
-            'publisher' => 'expressplatby',
+            'publisher' => 'EP',
             'uname' => $uname,
         ];
         if ($clientInfo) {
@@ -345,10 +345,10 @@ class ApiRequestor
         }
 
         return [
-            'X-ExpressPlatby-Client-User-Agent' => \json_encode($ua),
+            'X-EP-Client-User-Agent' => \json_encode($ua),
             'User-Agent' => $uaString,
             'Authorization' => 'Bearer ' . $apiKey,
-            'ExpressPlatby-Version' => ExpressPlatby::getApiVersion(),
+            'EP-Version' => ExpressPayments::getApiVersion(),
         ];
     }
 
@@ -356,20 +356,20 @@ class ApiRequestor
     {
         $myApiKey = $this->_apiKey;
         if (!$myApiKey) {
-            $myApiKey = ExpressPlatby::$apiKey;
+            $myApiKey = ExpressPayments::$apiKey;
         }
 
         if (!$myApiKey) {
             $msg = 'No API key provided.  (HINT: set your API key using '
-              . '"ExpressPlatby::setApiKey(<API-KEY>)".  You can generate API keys from '
-              . 'the ExpressPlatby web interface.  See https://expressplatby.cz/api for '
-              . 'details, or email support@expressplatby.cz if you have any questions.';
+              . '"ExpressPayments::setApiKey(<API-KEY>)".  You can generate API keys from '
+              . 'the ExpressPayments web interface.  See https://docs.epayments.network/api for '
+              . 'details, or email support@epayments.network if you have any questions.';
 
             throw new Exception\AuthenticationException($msg);
         }
 
         // Clients can supply arbitrary additional keys to be included in the
-        // X-ExpressPlatby-Client-User-Agent header via the optional getUserAgentInfo()
+        // X-EP-Client-User-Agent header via the optional getUserAgentInfo()
         // method
         $clientUAInfo = null;
         if (\method_exists($this->httpClient(), 'getUserAgentInfo')) {
@@ -395,12 +395,12 @@ class ApiRequestor
         $params = self::_encodeObjects($params);
         $defaultHeaders = $this->_defaultHeaders($myApiKey, $clientUAInfo);
 
-        if (ExpressPlatby::$accountId) {
-            $defaultHeaders['ExpressPlatby-Account'] = ExpressPlatby::$accountId;
+        if (ExpressPayments::$accountId) {
+            $defaultHeaders['EP-Account'] = ExpressPayments::$accountId;
         }
 
-        if (ExpressPlatby::$enableTelemetry && null !== self::$requestTelemetry) {
-            $defaultHeaders['X-ExpressPlatby-Client-Telemetry'] = self::_telemetryJson(self::$requestTelemetry);
+        if (ExpressPayments::$enableTelemetry && null !== self::$requestTelemetry) {
+            $defaultHeaders['X-EP-Client-Telemetry'] = self::_telemetryJson(self::$requestTelemetry);
         }
 
         $hasFile = false;

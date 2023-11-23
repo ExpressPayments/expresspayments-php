@@ -1,11 +1,11 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * Interface for a ExpressPlatby client.
+ * Interface for an ExpressPayments client.
  */
-interface BaseExpressPlatbyClientInterface
+interface BaseExpressPaymentsClientInterface
 {
     /**
      * Gets the API key used by the client to send requests.
@@ -22,23 +22,23 @@ interface BaseExpressPlatbyClientInterface
     public function getClientId();
 
     /**
-     * Gets the base URL for ExpressPlatby's API.
+     * Gets the base URL for ExpressPayments' API.
      *
-     * @return string the base URL for ExpressPlatby's API
+     * @return string the base URL for ExpressPayments' API
      */
     public function getApiBase();
 
     /**
-     * Gets the base URL for ExpressPlatby's OAuth API.
+     * Gets the base URL for ExpressPayments' OAuth API.
      *
-     * @return string the base URL for ExpressPlatby's OAuth API
+     * @return string the base URL for ExpressPayments' OAuth API
      */
     public function getConnectBase();
 
     /**
-     * Gets the base URL for ExpressPlatby's Files API.
+     * Gets the base URL for ExpressPayments' Files API.
      *
-     * @return string the base URL for ExpressPlatby's Files API
+     * @return string the base URL for ExpressPayments' Files API
      */
     public function getFilesBase();
 }

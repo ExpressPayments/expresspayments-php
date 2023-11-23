@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Radar;
+namespace ExpressPayments\Service\Radar;
 
-class ValueListItemService extends \ExpressPlatby\Service\AbstractService
+class ValueListItemService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of <code>ValueListItem</code> objects. The objects are sorted in
@@ -12,11 +12,11 @@ class ValueListItemService extends \ExpressPlatby\Service\AbstractService
      * appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Radar\ValueListItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Radar\ValueListItem>
      */
     public function all($params = null, $opts = null)
     {
@@ -28,11 +28,11 @@ class ValueListItemService extends \ExpressPlatby\Service\AbstractService
      * parent value list.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Radar\ValueListItem
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Radar\ValueListItem
      */
     public function create($params = null, $opts = null)
     {
@@ -45,11 +45,11 @@ class ValueListItemService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Radar\ValueListItem
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Radar\ValueListItem
      */
     public function delete($id, $params = null, $opts = null)
     {
@@ -61,11 +61,11 @@ class ValueListItemService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Radar\ValueListItem
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Radar\ValueListItem
      */
     public function retrieve($id, $params = null, $opts = null)
     {

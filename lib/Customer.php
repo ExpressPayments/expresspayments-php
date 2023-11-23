@@ -2,41 +2,41 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * This object represents a customer of your business. Use it to create recurring charges and track payments that belong to the same customer.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/payments/save-during-payment">Save a card during payment</a>
+ * Related guide: <a href="https://docs.epayments.network/payments/save-during-payment">Save a card during payment</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $address The customer's address.
- * @property null|int $balance The current balance, if any, that's stored on the customer. If negative, the customer has credit to apply to their next invoice. If positive, the customer has an amount owed that's added to their next invoice. The balance only considers amounts that ExpressPlatby hasn't successfully applied to any invoice. It doesn't reflect unpaid invoices. This balance is only taken into account after invoices finalize.
- * @property null|\ExpressPlatby\CashBalance $cash_balance The current funds being held by ExpressPlatby on behalf of the customer. You can apply these funds towards payment intents when the source is &quot;cash_balance&quot;. The <code>settings[reconciliation_mode]</code> field describes if these funds apply to these payment intents manually or automatically.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $address The customer's address.
+ * @property null|int $balance The current balance, if any, that's stored on the customer. If negative, the customer has credit to apply to their next invoice. If positive, the customer has an amount owed that's added to their next invoice. The balance only considers amounts that ExpressPayments hasn't successfully applied to any invoice. It doesn't reflect unpaid invoices. This balance is only taken into account after invoices finalize.
+ * @property null|\ExpressPayments\CashBalance $cash_balance The current funds being held by ExpressPayments on behalf of the customer. You can apply these funds towards payment intents when the source is &quot;cash_balance&quot;. The <code>settings[reconciliation_mode]</code> field describes if these funds apply to these payment intents manually or automatically.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property null|string $currency Three-letter <a href="https://expressplatby.cz/docs/currencies">ISO code for the currency</a> the customer can be charged in for recurring billing purposes.
- * @property null|string|\ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source $default_source <p>ID of the default payment source for the customer.</p><p>If you use payment methods created through the PaymentMethods API, see the <a href="https://expressplatby.cz/docs/api/customers/object#customer_object-invoice_settings-default_payment_method">invoice_settings.default_payment_method</a> field instead.</p>
- * @property null|bool $delinquent <p>Tracks the most recent state change on any invoice belonging to the customer. Paying an invoice or marking it uncollectible via the API will set this field to false. An automatic payment failure or passing the <code>invoice.due_date</code> will set this field to <code>true</code>.</p><p>If an invoice becomes uncollectible by <a href="https://expressplatby.cz/docs/billing/automatic-collection">dunning</a>, <code>delinquent</code> doesn't reset to <code>false</code>.</p><p>If you care whether the customer has paid their most recent subscription invoice, use <code>subscription.status</code> instead. Paying or marking uncollectible any customer invoice regardless of whether it is the latest invoice for a subscription will always set this field to <code>false</code>.</p>
+ * @property null|string $currency Three-letter <a href="https://docs.epayments.network/currencies">ISO code for the currency</a> the customer can be charged in for recurring billing purposes.
+ * @property null|string|\ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source $default_source <p>ID of the default payment source for the customer.</p><p>If you use payment methods created through the PaymentMethods API, see the <a href="https://docs.epayments.network/api/customers/object#customer_object-invoice_settings-default_payment_method">invoice_settings.default_payment_method</a> field instead.</p>
+ * @property null|bool $delinquent <p>Tracks the most recent state change on any invoice belonging to the customer. Paying an invoice or marking it uncollectible via the API will set this field to false. An automatic payment failure or passing the <code>invoice.due_date</code> will set this field to <code>true</code>.</p><p>If an invoice becomes uncollectible by <a href="https://docs.epayments.network/billing/automatic-collection">dunning</a>, <code>delinquent</code> doesn't reset to <code>false</code>.</p><p>If you care whether the customer has paid their most recent subscription invoice, use <code>subscription.status</code> instead. Paying or marking uncollectible any customer invoice regardless of whether it is the latest invoice for a subscription will always set this field to <code>false</code>.</p>
  * @property null|string $description An arbitrary string attached to the object. Often useful for displaying to users.
- * @property null|\ExpressPlatby\Discount $discount Describes the current discount active on the customer, if there is one.
+ * @property null|\ExpressPayments\Discount $discount Describes the current discount active on the customer, if there is one.
  * @property null|string $email The customer's email address.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $invoice_credit_balance The current multi-currency balances, if any, that's stored on the customer. If positive in a currency, the customer has a credit to apply to their next invoice denominated in that currency. If negative, the customer has an amount owed that's added to their next invoice denominated in that currency. These balances don't apply to unpaid invoices. They solely track amounts that ExpressPlatby hasn't successfully applied to any invoice. ExpressPlatby only applies a balance in a specific currency to an invoice after that invoice (which is in the same currency) finalizes.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $invoice_credit_balance The current multi-currency balances, if any, that's stored on the customer. If positive in a currency, the customer has a credit to apply to their next invoice denominated in that currency. If negative, the customer has an amount owed that's added to their next invoice denominated in that currency. These balances don't apply to unpaid invoices. They solely track amounts that ExpressPayments hasn't successfully applied to any invoice. ExpressPayments only applies a balance in a specific currency to an invoice after that invoice (which is in the same currency) finalizes.
  * @property null|string $invoice_prefix The prefix for the customer used to generate unique invoice numbers.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $invoice_settings
+ * @property null|\ExpressPayments\ExpressPaymentsObject $invoice_settings
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|string $name The customer's full name or business name.
  * @property null|int $next_invoice_sequence The suffix of the customer's next invoice number (for example, 0001).
  * @property null|string $phone The customer's phone number.
  * @property null|string[] $preferred_locales The customer's preferred locales (languages), ordered by preference.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $shipping Mailing and shipping address for the customer. Appears on invoices emailed to this customer.
- * @property null|\ExpressPlatby\Collection<\ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source> $sources The customer's payment sources, if any.
- * @property null|\ExpressPlatby\Collection<\ExpressPlatby\Subscription> $subscriptions The customer's current subscriptions, if any.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $tax
+ * @property null|\ExpressPayments\ExpressPaymentsObject $shipping Mailing and shipping address for the customer. Appears on invoices emailed to this customer.
+ * @property null|\ExpressPayments\Collection<\ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source> $sources The customer's payment sources, if any.
+ * @property null|\ExpressPayments\Collection<\ExpressPayments\Subscription> $subscriptions The customer's current subscriptions, if any.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $tax
  * @property null|string $tax_exempt Describes the customer's tax exemption status, which is <code>none</code>, <code>exempt</code>, or <code>reverse</code>. When set to <code>reverse</code>, invoice and receipt PDFs include the following text: <strong>&quot;Reverse charge&quot;</strong>.
- * @property null|\ExpressPlatby\Collection<\ExpressPlatby\TaxId> $tax_ids The customer's tax IDs.
- * @property null|string|\ExpressPlatby\TestHelpers\TestClock $test_clock ID of the test clock that this customer belongs to.
+ * @property null|\ExpressPayments\Collection<\ExpressPayments\TaxId> $tax_ids The customer's tax IDs.
+ * @property null|string|\ExpressPayments\TestHelpers\TestClock $test_clock ID of the test clock that this customer belongs to.
  */
 class Customer extends ApiResource
 {
@@ -70,7 +70,7 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Customer the updated customer
+     * @return \ExpressPayments\Customer the updated customer
      */
     public function deleteDiscount($params = null, $opts = null)
     {
@@ -86,15 +86,15 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\PaymentMethod> list of payment methods
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\PaymentMethod> list of payment methods
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allPaymentMethods($id, $params = null, $opts = null)
     {
         $url = static::resourceUrl($id) . '/payment_methods';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -105,15 +105,15 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\PaymentMethod the retrieved payment method
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod the retrieved payment method
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrievePaymentMethod($payment_method, $params = null, $opts = null)
     {
         $url = $this->instanceUrl() . '/payment_methods/' . $payment_method;
         list($response, $opts) = $this->_request('get', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -123,8 +123,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\Customer> the customer search results
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\Customer> the customer search results
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function search($params = null, $opts = null)
@@ -142,8 +142,8 @@ class Customer extends ApiResource
      * @param null|array|string $opts
      * @param mixed $cashBalanceId
      *
-     * @return \ExpressPlatby\CashBalance
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CashBalance
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieveCashBalance($id, $cashBalanceId, $params = null, $opts = null)
@@ -157,8 +157,8 @@ class Customer extends ApiResource
      * @param null|array|string $opts
      * @param mixed $cashBalanceId
      *
-     * @return \ExpressPlatby\CashBalance
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CashBalance
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function updateCashBalance($id, $cashBalanceId, $params = null, $opts = null)
@@ -172,8 +172,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\CustomerBalanceTransaction> the list of customer balance transactions
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\CustomerBalanceTransaction> the list of customer balance transactions
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allBalanceTransactions($id, $params = null, $opts = null)
@@ -186,8 +186,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\CustomerBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function createBalanceTransaction($id, $params = null, $opts = null)
@@ -201,8 +201,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\CustomerBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieveBalanceTransaction($id, $balanceTransactionId, $params = null, $opts = null)
@@ -216,8 +216,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\CustomerBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function updateBalanceTransaction($id, $balanceTransactionId, $params = null, $opts = null)
@@ -231,8 +231,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\CustomerCashBalanceTransaction> the list of customer cash balance transactions
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\CustomerCashBalanceTransaction> the list of customer cash balance transactions
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allCashBalanceTransactions($id, $params = null, $opts = null)
@@ -246,8 +246,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\CustomerCashBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerCashBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieveCashBalanceTransaction($id, $cashBalanceTransactionId, $params = null, $opts = null)
@@ -261,8 +261,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source> the list of payment sources (BankAccount, Card or Source)
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source> the list of payment sources (BankAccount, Card or Source)
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allSources($id, $params = null, $opts = null)
@@ -275,8 +275,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function createSource($id, $params = null, $opts = null)
@@ -290,8 +290,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function deleteSource($id, $sourceId, $params = null, $opts = null)
@@ -305,8 +305,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieveSource($id, $sourceId, $params = null, $opts = null)
@@ -320,8 +320,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function updateSource($id, $sourceId, $params = null, $opts = null)
@@ -335,8 +335,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\TaxId> the list of tax ids
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\TaxId> the list of tax ids
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allTaxIds($id, $params = null, $opts = null)
@@ -349,8 +349,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\TaxId
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TaxId
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function createTaxId($id, $params = null, $opts = null)
@@ -364,8 +364,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\TaxId
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TaxId
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function deleteTaxId($id, $taxIdId, $params = null, $opts = null)
@@ -379,8 +379,8 @@ class Customer extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\TaxId
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TaxId
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieveTaxId($id, $taxIdId, $params = null, $opts = null)

@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
+class PaymentIntentService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of PaymentIntents.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\PaymentIntent>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\PaymentIntent>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -27,10 +27,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function applyCustomerBalance($id, $params = null, $opts = null)
@@ -55,10 +55,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancel($id, $params = null, $opts = null)
@@ -78,10 +78,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function capture($id, $params = null, $opts = null)
@@ -102,7 +102,7 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      * <code>capture_method</code> is set to <code>manual</code>). If the
      * <code>confirmation_method</code> is <code>automatic</code>, payment may be
      * attempted using our <a
-     * href="/docs/expressplatby-js/reference#expressplatby-handle-card-payment">client SDKs</a> and
+     * href="/docs/expresspayments-js/reference#expresspayments-handle-card-payment">client SDKs</a> and
      * the PaymentIntent’s <a
      * href="#payment_intent_object-client_secret">client_secret</a>. After
      * <code>next_action</code>s are handled by the client, no additional confirmation
@@ -117,10 +117,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function confirm($id, $params = null, $opts = null)
@@ -142,10 +142,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      * API</a> when you supply <code>confirm=true</code>.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -184,10 +184,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function incrementAuthorization($id, $params = null, $opts = null)
@@ -207,10 +207,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -219,7 +219,7 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Search for PaymentIntents you’ve previously created using ExpressPlatby’s <a
+     * Search for PaymentIntents you’ve previously created using ExpressPayments’ <a
      * href="/docs/search#search-query-language">Search Query Language</a>. Don’t use
      * search in read-after-write flows where strict consistency is necessary. Under
      * normal operating conditions, data is searchable in less than a minute.
@@ -227,10 +227,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      * during outages. Search functionality is not available to merchants in India.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\PaymentIntent>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\PaymentIntent>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function search($params = null, $opts = null)
@@ -249,10 +249,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
@@ -265,10 +265,10 @@ class PaymentIntentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentIntent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentIntent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function verifyMicrodeposits($id, $params = null, $opts = null)

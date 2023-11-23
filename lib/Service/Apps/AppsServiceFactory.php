@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Apps;
+namespace ExpressPayments\Service\Apps;
 
 /**
  * Service factory class for API resources in the Apps namespace.
  *
  * @property SecretService $secrets
  */
-class AppsServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class AppsServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

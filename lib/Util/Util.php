@@ -1,8 +1,8 @@
 <?php
 
-namespace ExpressPlatby\Util;
+namespace ExpressPayments\Util;
 
-use ExpressPlatby\ExpressPlatbyObject;
+use ExpressPayments\ExpressPaymentsObject;
 
 abstract class Util
 {
@@ -34,20 +34,20 @@ abstract class Util
     }
 
     /**
-     * Converts a response from the ExpressPlatby API to the corresponding PHP object.
+     * Converts a response from the ExpressPayments API to the corresponding PHP object.
      *
-     * @param array $resp the response from the ExpressPlatby API
+     * @param array $resp the response from the ExpressPayments API
      * @param array $opts
      *
-     * @return array|ExpressPlatbyObject
+     * @return array|ExpressPaymentsObject
      */
-    public static function convertToExpressPlatbyObject($resp, $opts)
+    public static function convertToExpressPaymentsObject($resp, $opts)
     {
-        $types = \ExpressPlatby\Util\ObjectTypes::mapping;
+        $types = \ExpressPayments\Util\ObjectTypes::mapping;
         if (self::isList($resp)) {
             $mapped = [];
             foreach ($resp as $i) {
-                $mapped[] = self::convertToExpressPlatbyObject($i, $opts);
+                $mapped[] = self::convertToExpressPaymentsObject($i, $opts);
             }
 
             return $mapped;
@@ -56,7 +56,7 @@ abstract class Util
             if (isset($resp['object']) && \is_string($resp['object']) && isset($types[$resp['object']])) {
                 $class = $types[$resp['object']];
             } else {
-                $class = \ExpressPlatby\ExpressPlatbyObject::class;
+                $class = \ExpressPayments\ExpressPaymentsObject::class;
             }
 
             return $class::constructFrom($resp, $opts);
@@ -80,7 +80,7 @@ abstract class Util
                 \trigger_error('It looks like the mbstring extension is not enabled. ' .
                     'UTF-8 strings will not properly be encoded. Ask your system ' .
                     'administrator to enable the mbstring extension, or write to ' .
-                    'support@expressplatby.cz if you have any questions.', \E_USER_WARNING);
+                    'support@epayments.network if you have any questions.', \E_USER_WARNING);
             }
         }
 
@@ -132,7 +132,7 @@ abstract class Util
      */
     public static function objectsToIds($h)
     {
-        if ($h instanceof \ExpressPlatby\ApiResource) {
+        if ($h instanceof \ExpressPayments\ApiResource) {
             return $h->id;
         }
         if (static::isList($h)) {
@@ -243,7 +243,7 @@ abstract class Util
     public static function normalizeId($id)
     {
         if (\is_array($id)) {
-            // see https://github.com/expressplatby/expressplatby-php/pull/1602
+            // see https://github.com/expresspayments/expresspayments-php/pull/1602
             if (!isset($id['id'])) {
                 return [null, $id];
             }

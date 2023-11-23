@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Identity;
+namespace ExpressPayments\Service\Identity;
 
-class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
+class VerificationSessionService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of VerificationSessions.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Identity\VerificationSession>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Identity\VerificationSession>
      */
     public function all($params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Identity\VerificationSession
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Identity\VerificationSession
      */
     public function cancel($id, $params = null, $opts = null)
     {
@@ -56,11 +56,11 @@ class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
      * users’ identity documents</a>
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Identity\VerificationSession
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Identity\VerificationSession
      */
     public function create($params = null, $opts = null)
     {
@@ -68,7 +68,7 @@ class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Redact a VerificationSession to remove all collected information from ExpressPlatby.
+     * Redact a VerificationSession to remove all collected information from ExpressPayments.
      * This will redact the VerificationSession and all objects related to it,
      * including VerificationReports, Events, request logs, etc.
      *
@@ -84,7 +84,7 @@ class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
      * <code>redacted</code> and an <code>identity.verification_session.redacted</code>
      * event will be emitted.
      *
-     * Redaction is irreversible. Redacted objects are still accessible in the ExpressPlatby
+     * Redaction is irreversible. Redacted objects are still accessible in the ExpressPayments
      * API, but all the fields that contain personal data will be replaced by the
      * string <code>[redacted]</code> or a similar placeholder. The
      * <code>metadata</code> field will also be erased. Redacted objects cannot be
@@ -94,11 +94,11 @@ class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Identity\VerificationSession
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Identity\VerificationSession
      */
     public function redact($id, $params = null, $opts = null)
     {
@@ -114,11 +114,11 @@ class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Identity\VerificationSession
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Identity\VerificationSession
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -133,11 +133,11 @@ class VerificationSessionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Identity\VerificationSession
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Identity\VerificationSession
      */
     public function update($id, $params = null, $opts = null)
     {

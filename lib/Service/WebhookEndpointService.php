@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class WebhookEndpointService extends \ExpressPlatby\Service\AbstractService
+class WebhookEndpointService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of your webhook endpoints.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\WebhookEndpoint>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\WebhookEndpoint>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -29,14 +29,14 @@ class WebhookEndpointService extends \ExpressPlatby\Service\AbstractService
      * accounts is created; otherwise an account webhook endpoint that notifies the
      * specified <code>url</code> only about events from your account is created. You
      * can also create webhook endpoints in the <a
-     * href="https://dashboard.expressplatby.cz/account/webhooks">webhooks settings</a>
+     * href="https://dashboard.epayments.network/account/webhooks">webhooks settings</a>
      * section of the Dashboard.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\WebhookEndpoint
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\WebhookEndpoint
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -46,15 +46,15 @@ class WebhookEndpointService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * You can also delete webhook endpoints via the <a
-     * href="https://dashboard.expressplatby.cz/account/webhooks">webhook endpoint
-     * management</a> page of the ExpressPlatby dashboard.
+     * href="https://dashboard.epayments.network/account/webhooks">webhook endpoint
+     * management</a> page of the ExpressPayments dashboard.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\WebhookEndpoint
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\WebhookEndpoint
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function delete($id, $params = null, $opts = null)
@@ -67,10 +67,10 @@ class WebhookEndpointService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\WebhookEndpoint
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\WebhookEndpoint
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -84,10 +84,10 @@ class WebhookEndpointService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\WebhookEndpoint
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\WebhookEndpoint
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

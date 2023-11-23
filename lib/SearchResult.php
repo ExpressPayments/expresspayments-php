@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Search results for an API resource.
@@ -15,17 +15,17 @@ namespace ExpressPlatby;
  * The {@see $total_count} property is only available when
  * the `expand` parameter contains `total_count`.
  *
- * @template TExpressPlatbyObject of ExpressPlatbyObject
- * @template-implements \IteratorAggregate<TExpressPlatbyObject>
+ * @template TExpressPaymentsObject of ExpressPaymentsObject
+ * @template-implements \IteratorAggregate<TExpressPaymentsObject>
  *
  * @property string $object
  * @property string $url
  * @property string $next_page
  * @property int $total_count
  * @property bool $has_more
- * @property TExpressPlatbyObject[] $data
+ * @property TExpressPaymentsObject[] $data
  */
-class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorAggregate
+class SearchResult extends ExpressPaymentsObject implements \Countable, \IteratorAggregate
 {
     const OBJECT_NAME = 'search_result';
 
@@ -39,7 +39,7 @@ class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorA
      */
     public static function baseUrl()
     {
-        return ExpressPlatby::$apiBase;
+        return ExpressPayments::$apiBase;
     }
 
     /**
@@ -83,9 +83,9 @@ class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorA
      * @param null|array $params
      * @param null|array|string $opts
      *
+     * @return SearchResult<TExpressPaymentsObject>
      * @throws Exception\ApiErrorException
      *
-     * @return SearchResult<TExpressPlatbyObject>
      */
     public function all($params = null, $opts = null)
     {
@@ -93,10 +93,10 @@ class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorA
         list($url, $params) = $this->extractPathAndUpdateParams($params);
 
         list($response, $opts) = $this->_request('get', $url, $params, $opts);
-        $obj = Util\Util::convertToExpressPlatbyObject($response, $opts);
-        if (!($obj instanceof \ExpressPlatby\SearchResult)) {
-            throw new \ExpressPlatby\Exception\UnexpectedValueException(
-                'Expected type ' . \ExpressPlatby\SearchResult::class . ', got "' . \get_class($obj) . '" instead.'
+        $obj = Util\Util::convertToExpressPaymentsObject($response, $opts);
+        if (!($obj instanceof \ExpressPayments\SearchResult)) {
+            throw new \ExpressPayments\Exception\UnexpectedValueException(
+                'Expected type ' . \ExpressPayments\SearchResult::class . ', got "' . \get_class($obj) . '" instead.'
             );
         }
         $obj->setFilters($params);
@@ -124,7 +124,7 @@ class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorA
     }
 
     /**
-     * @return \Generator|TExpressPlatbyObject[] A generator that can be used to
+     * @return \Generator|TExpressPaymentsObject[] A generator that can be used to
      *    iterate across all objects across all pages. As page boundaries are
      *    encountered, the next page will be fetched automatically for
      *    continued iteration.
@@ -179,7 +179,7 @@ class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorA
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return SearchResult<TExpressPlatbyObject>
+     * @return SearchResult<TExpressPaymentsObject>
      */
     public function nextPage($params = null, $opts = null)
     {
@@ -199,7 +199,7 @@ class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorA
     /**
      * Gets the first item from the current page. Returns `null` if the current page is empty.
      *
-     * @return null|TExpressPlatbyObject
+     * @return null|TExpressPaymentsObject
      */
     public function first()
     {
@@ -209,7 +209,7 @@ class SearchResult extends ExpressPlatbyObject implements \Countable, \IteratorA
     /**
      * Gets the last item from the current page. Returns `null` if the current page is empty.
      *
-     * @return null|TExpressPlatbyObject
+     * @return null|TExpressPaymentsObject
      */
     public function last()
     {

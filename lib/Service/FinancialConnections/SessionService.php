@@ -2,21 +2,21 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\FinancialConnections;
+namespace ExpressPayments\Service\FinancialConnections;
 
-class SessionService extends \ExpressPlatby\Service\AbstractService
+class SessionService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * To launch the Financial Connections authorization flow, create a
      * <code>Session</code>. The session’s <code>client_secret</code> can be used to
-     * launch the flow using ExpressPlatby.js.
+     * launch the flow using ExpressPayments.js.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FinancialConnections\Session
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\FinancialConnections\Session
      */
     public function create($params = null, $opts = null)
     {
@@ -28,11 +28,11 @@ class SessionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FinancialConnections\Session
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\FinancialConnections\Session
      */
     public function retrieve($id, $params = null, $opts = null)
     {

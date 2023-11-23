@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class CustomerService extends \ExpressPlatby\Service\AbstractService
+class CustomerService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of your customers. The customers are returned sorted by creation
      * date, with the most recent customers appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Customer>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Customer>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -28,10 +28,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\CustomerBalanceTransaction>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\CustomerBalanceTransaction>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allBalanceTransactions($parentId, $params = null, $opts = null)
@@ -45,10 +45,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\CustomerCashBalanceTransaction>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\CustomerCashBalanceTransaction>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allCashBalanceTransactions($parentId, $params = null, $opts = null)
@@ -61,10 +61,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\PaymentMethod>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\PaymentMethod>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allPaymentMethods($id, $params = null, $opts = null)
@@ -77,10 +77,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source>
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allSources($parentId, $params = null, $opts = null)
@@ -93,10 +93,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\TaxId>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\TaxId>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allTaxIds($parentId, $params = null, $opts = null)
@@ -108,10 +108,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * Creates a new customer object.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Customer
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Customer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -125,10 +125,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CustomerBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createBalanceTransaction($parentId, $params = null, $opts = null)
@@ -145,10 +145,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\FundingInstructions
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FundingInstructions
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createFundingInstructions($id, $params = null, $opts = null)
@@ -167,10 +167,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createSource($parentId, $params = null, $opts = null)
@@ -183,10 +183,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\TaxId
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TaxId
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createTaxId($parentId, $params = null, $opts = null)
@@ -200,10 +200,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Customer
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Customer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function delete($id, $params = null, $opts = null)
@@ -216,10 +216,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Discount
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Discount
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function deleteDiscount($id, $params = null, $opts = null)
@@ -233,10 +233,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function deleteSource($parentId, $id, $params = null, $opts = null)
@@ -250,10 +250,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\TaxId
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TaxId
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function deleteTaxId($parentId, $id, $params = null, $opts = null)
@@ -266,10 +266,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Customer
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Customer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -284,10 +284,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CustomerBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveBalanceTransaction($parentId, $id, $params = null, $opts = null)
@@ -300,10 +300,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CashBalance
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CashBalance
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveCashBalance($parentId, $params = null, $opts = null)
@@ -318,10 +318,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CustomerCashBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerCashBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveCashBalanceTransaction($parentId, $id, $params = null, $opts = null)
@@ -335,10 +335,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethod
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrievePaymentMethod($parentId, $id, $params = null, $opts = null)
@@ -352,10 +352,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveSource($parentId, $id, $params = null, $opts = null)
@@ -369,10 +369,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\TaxId
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TaxId
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveTaxId($parentId, $id, $params = null, $opts = null)
@@ -381,7 +381,7 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Search for customers you’ve previously created using ExpressPlatby’s <a
+     * Search for customers you’ve previously created using ExpressPayments’ <a
      * href="/docs/search#search-query-language">Search Query Language</a>. Don’t use
      * search in read-after-write flows where strict consistency is necessary. Under
      * normal operating conditions, data is searchable in less than a minute.
@@ -389,10 +389,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * during outages. Search functionality is not available to merchants in India.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\Customer>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\Customer>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function search($params = null, $opts = null)
@@ -417,10 +417,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Customer
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Customer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
@@ -435,10 +435,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CustomerBalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CustomerBalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updateBalanceTransaction($parentId, $id, $params = null, $opts = null)
@@ -451,10 +451,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CashBalance
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CashBalance
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updateCashBalance($parentId, $params = null, $opts = null)
@@ -468,10 +468,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updateSource($parentId, $id, $params = null, $opts = null)
@@ -485,10 +485,10 @@ class CustomerService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function verifySource($parentId, $id, $params = null, $opts = null)

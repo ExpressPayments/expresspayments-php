@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Identity;
+namespace ExpressPayments\Service\Identity;
 
 /**
  * Service factory class for API resources in the Identity namespace.
@@ -10,7 +10,7 @@ namespace ExpressPlatby\Service\Identity;
  * @property VerificationReportService $verificationReports
  * @property VerificationSessionService $verificationSessions
  */
-class IdentityServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class IdentityServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

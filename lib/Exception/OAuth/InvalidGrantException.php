@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception\OAuth;
+namespace ExpressPayments\Exception\OAuth;
 
 /**
  * InvalidGrantException is thrown when a specified code doesn't exist, is

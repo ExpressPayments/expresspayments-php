@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Issuing;
+namespace ExpressPayments\Service\Issuing;
 
-class TransactionService extends \ExpressPlatby\Service\AbstractService
+class TransactionService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of Issuing <code>Transaction</code> objects. The objects are
@@ -12,11 +12,11 @@ class TransactionService extends \ExpressPlatby\Service\AbstractService
      * object appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Issuing\Transaction>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Issuing\Transaction>
      */
     public function all($params = null, $opts = null)
     {
@@ -28,11 +28,11 @@ class TransactionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Transaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Transaction
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -46,11 +46,11 @@ class TransactionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Transaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Transaction
      */
     public function update($id, $params = null, $opts = null)
     {

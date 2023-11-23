@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception;
+namespace ExpressPayments\Exception;
 
 class BadMethodCallException extends \BadMethodCallException implements ExceptionInterface
 {

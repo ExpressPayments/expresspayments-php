@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\FinancialConnections;
+namespace ExpressPayments\Service\FinancialConnections;
 
 /**
  * Service factory class for API resources in the FinancialConnections namespace.
@@ -10,7 +10,7 @@ namespace ExpressPlatby\Service\FinancialConnections;
  * @property AccountService $accounts
  * @property SessionService $sessions
  */
-class FinancialConnectionsServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class FinancialConnectionsServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

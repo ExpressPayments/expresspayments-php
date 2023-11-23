@@ -1,10 +1,10 @@
 <?php
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
 /**
  * Abstract base class for all service factories used to expose service
- * instances through {@link \ExpressPlatby\ExpressPlatbyClient}.
+ * instances through {@link \ExpressPayments\ExpressPaymentsClient}.
  *
  * Service factories serve two purposes:
  *
@@ -14,14 +14,14 @@ namespace ExpressPlatby\Service;
  */
 abstract class AbstractServiceFactory
 {
-    /** @var \ExpressPlatby\ExpressPlatbyClientInterface */
+    /** @var \ExpressPayments\ExpressPaymentsClientInterface */
     private $client;
 
     /** @var array<string, AbstractService|AbstractServiceFactory> */
     private $services;
 
     /**
-     * @param \ExpressPlatby\ExpressPlatbyClientInterface $client
+     * @param \ExpressPayments\ExpressPaymentsClientInterface $client
      */
     public function __construct($client)
     {

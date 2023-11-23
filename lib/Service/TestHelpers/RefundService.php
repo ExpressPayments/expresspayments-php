@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers;
+namespace ExpressPayments\Service\TestHelpers;
 
-class RefundService extends \ExpressPlatby\Service\AbstractService
+class RefundService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Expire a refund with a status of <code>requires_action</code>.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Refund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Refund
      */
     public function expire($id, $params = null, $opts = null)
     {

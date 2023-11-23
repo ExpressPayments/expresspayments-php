@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Issuing;
+namespace ExpressPayments\Service\Issuing;
 
-class AuthorizationService extends \ExpressPlatby\Service\AbstractService
+class AuthorizationService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of Issuing <code>Authorization</code> objects. The objects are
@@ -12,11 +12,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      * object appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Issuing\Authorization>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Issuing\Authorization>
      */
     public function all($params = null, $opts = null)
     {
@@ -33,11 +33,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function approve($id, $params = null, $opts = null)
     {
@@ -54,11 +54,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function decline($id, $params = null, $opts = null)
     {
@@ -70,11 +70,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -88,11 +88,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function update($id, $params = null, $opts = null)
     {

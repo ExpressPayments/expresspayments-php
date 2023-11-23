@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Tax;
+namespace ExpressPayments\Service\Tax;
 
-class TransactionService extends \ExpressPlatby\Service\AbstractService
+class TransactionService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Retrieves the line items of a committed standalone transaction as a collection.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Tax\TransactionLineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Tax\TransactionLineItem>
      */
     public function allLineItems($id, $params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class TransactionService extends \ExpressPlatby\Service\AbstractService
      * Creates a Tax <code>Transaction</code> from a calculation.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Transaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Transaction
      */
     public function createFromCalculation($params = null, $opts = null)
     {
@@ -41,11 +41,11 @@ class TransactionService extends \ExpressPlatby\Service\AbstractService
      * Partially or fully reverses a previously created <code>Transaction</code>.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Transaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Transaction
      */
     public function createReversal($params = null, $opts = null)
     {
@@ -57,11 +57,11 @@ class TransactionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Transaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Transaction
      */
     public function retrieve($id, $params = null, $opts = null)
     {

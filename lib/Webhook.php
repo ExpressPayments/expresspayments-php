@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 abstract class Webhook
 {
@@ -12,17 +12,17 @@ abstract class Webhook
      * an Exception\SignatureVerificationException if the signature
      * verification fails for any reason.
      *
-     * @param string $payload the payload sent by ExpressPlatby
+     * @param string $payload the payload sent by ExpressPayments
      * @param string $sigHeader the contents of the signature header sent by
-     *  ExpressPlatby
+     *  ExpressPayments
      * @param string $secret secret used to generate the signature
      * @param int $tolerance maximum difference allowed between the header's
      *  timestamp and the current time
      *
-     * @throws Exception\UnexpectedValueException if the payload is not valid JSON,
-     * @throws Exception\SignatureVerificationException if the verification fails
-     *
      * @return Event the Event instance
+     *@throws Exception\SignatureVerificationException if the verification fails
+     *
+     * @throws Exception\UnexpectedValueException if the payload is not valid JSON,
      */
     public static function constructEvent($payload, $sigHeader, $secret, $tolerance = self::DEFAULT_TOLERANCE)
     {

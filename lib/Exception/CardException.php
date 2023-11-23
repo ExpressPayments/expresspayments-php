@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception;
+namespace ExpressPayments\Exception;
 
 /**
  * CardException is thrown when a user enters a card that can't be charged for
@@ -9,7 +9,7 @@ namespace ExpressPlatby\Exception;
 class CardException extends ApiErrorException
 {
     protected $declineCode;
-    protected $expressPlatbyParam;
+    protected $expressPaymentsParam;
 
     /**
      * Creates a new CardException exception.
@@ -18,10 +18,10 @@ class CardException extends ApiErrorException
      * @param null|int $httpStatus the HTTP status code
      * @param null|string $httpBody the HTTP body as a string
      * @param null|array $jsonBody the JSON deserialized body
-     * @param null|array|\ExpressPlatby\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
-     * @param null|string $expressPlatbyCode the ExpressPlatby error code
+     * @param null|array|\ExpressPayments\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
+     * @param null|string $expressPaymentsCode the ExpressPayments error code
      * @param null|string $declineCode the decline code
-     * @param null|string $expressPlatbyParam the parameter related to the error
+     * @param null|string $expressPaymentsParam the parameter related to the error
      *
      * @return CardException
      */
@@ -31,13 +31,13 @@ class CardException extends ApiErrorException
         $httpBody = null,
         $jsonBody = null,
         $httpHeaders = null,
-        $expressPlatbyCode = null,
+        $expressPaymentsCode = null,
         $declineCode = null,
-        $expressPlatbyParam = null
+        $expressPaymentsParam = null
     ) {
-        $instance = parent::factory($message, $httpStatus, $httpBody, $jsonBody, $httpHeaders, $expressPlatbyCode);
+        $instance = parent::factory($message, $httpStatus, $httpBody, $jsonBody, $httpHeaders, $expressPaymentsCode);
         $instance->setDeclineCode($declineCode);
-        $instance->setExpressPlatbyParam($expressPlatbyParam);
+        $instance->setExpressPaymentsParam($expressPaymentsParam);
 
         return $instance;
     }
@@ -67,18 +67,18 @@ class CardException extends ApiErrorException
      *
      * @return null|string
      */
-    public function getExpressPlatbyParam()
+    public function getExpressPaymentsParam()
     {
-        return $this->expressPlatbyParam;
+        return $this->expressPaymentsParam;
     }
 
     /**
      * Sets the parameter related to the error.
      *
-     * @param null|string $expressPlatbyParam
+     * @param null|string $expressPaymentsParam
      */
-    public function setExpressPlatbyParam($expressPlatbyParam)
+    public function setExpressPaymentsParam($expressPaymentsParam)
     {
-        $this->expressPlatbyParam = $expressPlatbyParam;
+        $this->expressPaymentsParam = $expressPaymentsParam;
     }
 }

@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Treasury;
+namespace ExpressPayments\Service\TestHelpers\Treasury;
 
-class ReceivedCreditService extends \ExpressPlatby\Service\AbstractService
+class ReceivedCreditService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Use this endpoint to simulate a test mode ReceivedCredit initiated by a third
@@ -12,11 +12,11 @@ class ReceivedCreditService extends \ExpressPlatby\Service\AbstractService
      * third parties.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\ReceivedCredit
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\ReceivedCredit
      */
     public function create($params = null, $opts = null)
     {

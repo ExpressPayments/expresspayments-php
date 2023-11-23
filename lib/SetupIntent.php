@@ -2,55 +2,55 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * A SetupIntent guides you through the process of setting up and saving a customer's payment credentials for future payments.
  * For example, you can use a SetupIntent to set up and save your customer's card without immediately collecting a payment.
- * Later, you can use <a href="https://expressplatby.cz/docs/api#payment_intents">PaymentIntents</a> to drive the payment flow.
+ * Later, you can use <a href="https://docs.epayments.network/api#payment_intents">PaymentIntents</a> to drive the payment flow.
  *
  * Create a SetupIntent when you're ready to collect your customer's payment credentials.
  * Don't maintain long-lived, unconfirmed SetupIntents because they might not be valid.
- * The SetupIntent transitions through multiple <a href="https://expressplatby.cz/docs/payments/intents#intent-statuses">statuses</a> as it guides
+ * The SetupIntent transitions through multiple <a href="https://docs.epayments.network/payments/intents#intent-statuses">statuses</a> as it guides
  * you through the setup process.
  *
  * Successful SetupIntents result in payment credentials that are optimized for future payments.
  * For example, cardholders in <a href="/guides/strong-customer-authentication">certain regions</a> might need to be run through
- * <a href="https://expressplatby.cz/docs/strong-customer-authentication">Strong Customer Authentication</a> during payment method collection
- * to streamline later <a href="https://expressplatby.cz/docs/payments/setup-intents">off-session payments</a>.
- * If you use the SetupIntent with a <a href="https://expressplatby.cz/docs/api#setup_intent_object-customer">Customer</a>,
+ * <a href="https://docs.epayments.network/strong-customer-authentication">Strong Customer Authentication</a> during payment method collection
+ * to streamline later <a href="https://docs.epayments.network/payments/setup-intents">off-session payments</a>.
+ * If you use the SetupIntent with a <a href="https://docs.epayments.network/api#setup_intent_object-customer">Customer</a>,
  * it automatically attaches the resulting payment method to that Customer after successful setup.
- * We recommend using SetupIntents or <a href="https://expressplatby.cz/docs/api#payment_intent_object-setup_future_usage">setup_future_usage</a> on
+ * We recommend using SetupIntents or <a href="https://docs.epayments.network/api#payment_intent_object-setup_future_usage">setup_future_usage</a> on
  * PaymentIntents to save payment methods to prevent saving invalid or unoptimized payment methods.
  *
  * By using SetupIntents, you can reduce friction for your customers, even as regulations change over time.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/payments/setup-intents">Setup Intents API</a>
+ * Related guide: <a href="https://docs.epayments.network/payments/setup-intents">Setup Intents API</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|string|\ExpressPlatby\ExpressPlatbyObject $application ID of the Connect application that created the SetupIntent.
- * @property null|bool $attach_to_self <p>If present, the SetupIntent's payment method will be attached to the in-context ExpressPlatby Account.</p><p>It can only be used for this ExpressPlatby Account’s own money movement flows like InboundTransfer and OutboundTransfers. It cannot be set to true when setting up a PaymentMethod for a Customer, and defaults to false when attaching a PaymentMethod to a Customer.</p>
- * @property null|\ExpressPlatby\ExpressPlatbyObject $automatic_payment_methods Settings for dynamic payment methods compatible with this Setup Intent
+ * @property null|string|\ExpressPayments\ExpressPaymentsObject $application ID of the Connect application that created the SetupIntent.
+ * @property null|bool $attach_to_self <p>If present, the SetupIntent's payment method will be attached to the in-context ExpressPayments Account.</p><p>It can only be used for this ExpressPayments Account’s own money movement flows like InboundTransfer and OutboundTransfers. It cannot be set to true when setting up a PaymentMethod for a Customer, and defaults to false when attaching a PaymentMethod to a Customer.</p>
+ * @property null|\ExpressPayments\ExpressPaymentsObject $automatic_payment_methods Settings for dynamic payment methods compatible with this Setup Intent
  * @property null|string $cancellation_reason Reason for cancellation of this SetupIntent, one of <code>abandoned</code>, <code>requested_by_customer</code>, or <code>duplicate</code>.
  * @property null|string $client_secret <p>The client secret of this SetupIntent. Used for client-side retrieval using a publishable key.</p><p>The client secret can be used to complete payment setup from your frontend. It should not be stored, logged, or exposed to anyone other than the customer. Make sure that you have TLS enabled on any page that includes the client secret.</p>
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property null|string|\ExpressPlatby\Customer $customer <p>ID of the Customer this SetupIntent belongs to, if one exists.</p><p>If present, the SetupIntent's payment method will be attached to the Customer on successful setup. Payment methods attached to other Customers cannot be used with this SetupIntent.</p>
+ * @property null|string|\ExpressPayments\Customer $customer <p>ID of the Customer this SetupIntent belongs to, if one exists.</p><p>If present, the SetupIntent's payment method will be attached to the Customer on successful setup. Payment methods attached to other Customers cannot be used with this SetupIntent.</p>
  * @property null|string $description An arbitrary string attached to the object. Often useful for displaying to users.
  * @property null|string[] $flow_directions <p>Indicates the directions of money movement for which this payment method is intended to be used.</p><p>Include <code>inbound</code> if you intend to use the payment method as the origin to pull funds from. Include <code>outbound</code> if you intend to use the payment method as the destination to send funds to. You can include both if you intend to use the payment method for both purposes.</p>
- * @property null|\ExpressPlatby\ExpressPlatbyObject $last_setup_error The error encountered in the previous SetupIntent confirmation.
- * @property null|string|\ExpressPlatby\SetupAttempt $latest_attempt The most recent SetupAttempt for this SetupIntent.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $last_setup_error The error encountered in the previous SetupIntent confirmation.
+ * @property null|string|\ExpressPayments\SetupAttempt $latest_attempt The most recent SetupAttempt for this SetupIntent.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|string|\ExpressPlatby\Mandate $mandate ID of the multi use Mandate generated by the SetupIntent.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $next_action If present, this property tells you what actions you need to take in order for your customer to continue payment setup.
- * @property null|string|\ExpressPlatby\Account $on_behalf_of The account (if any) for which the setup is intended.
- * @property null|string|\ExpressPlatby\PaymentMethod $payment_method ID of the payment method used with this SetupIntent.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $payment_method_configuration_details Information about the payment method configuration used for this Setup Intent.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $payment_method_options Payment method-specific configuration for this SetupIntent.
+ * @property null|string|\ExpressPayments\Mandate $mandate ID of the multi use Mandate generated by the SetupIntent.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $next_action If present, this property tells you what actions you need to take in order for your customer to continue payment setup.
+ * @property null|string|\ExpressPayments\Account $on_behalf_of The account (if any) for which the setup is intended.
+ * @property null|string|\ExpressPayments\PaymentMethod $payment_method ID of the payment method used with this SetupIntent.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $payment_method_configuration_details Information about the payment method configuration used for this Setup Intent.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $payment_method_options Payment method-specific configuration for this SetupIntent.
  * @property string[] $payment_method_types The list of payment method types (e.g. card) that this SetupIntent is allowed to set up.
- * @property null|string|\ExpressPlatby\Mandate $single_use_mandate ID of the single_use Mandate generated by the SetupIntent.
- * @property string $status <a href="https://expressplatby.cz/docs/payments/intents#intent-statuses">Status</a> of this SetupIntent, one of <code>requires_payment_method</code>, <code>requires_confirmation</code>, <code>requires_action</code>, <code>processing</code>, <code>canceled</code>, or <code>succeeded</code>.
+ * @property null|string|\ExpressPayments\Mandate $single_use_mandate ID of the single_use Mandate generated by the SetupIntent.
+ * @property string $status <a href="https://docs.epayments.network/payments/intents#intent-statuses">Status</a> of this SetupIntent, one of <code>requires_payment_method</code>, <code>requires_confirmation</code>, <code>requires_action</code>, <code>processing</code>, <code>canceled</code>, or <code>succeeded</code>.
  * @property string $usage <p>Indicates how the payment method is intended to be used in the future.</p><p>Use <code>on_session</code> if you intend to only reuse the payment method when the customer is in your checkout flow. Use <code>off_session</code> if your customer may or may not be in your checkout flow. If not provided, this value defaults to <code>off_session</code>.</p>
  */
 class SetupIntent extends ApiResource
@@ -77,8 +77,8 @@ class SetupIntent extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\SetupIntent the canceled setup intent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SetupIntent the canceled setup intent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancel($params = null, $opts = null)
@@ -94,8 +94,8 @@ class SetupIntent extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\SetupIntent the confirmed setup intent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SetupIntent the confirmed setup intent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function confirm($params = null, $opts = null)
@@ -111,8 +111,8 @@ class SetupIntent extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\SetupIntent the verified setup intent
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SetupIntent the verified setup intent
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function verifyMicrodeposits($params = null, $opts = null)

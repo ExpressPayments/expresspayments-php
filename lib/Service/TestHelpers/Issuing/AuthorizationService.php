@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Issuing;
+namespace ExpressPayments\Service\TestHelpers\Issuing;
 
-class AuthorizationService extends \ExpressPlatby\Service\AbstractService
+class AuthorizationService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Capture a test-mode authorization.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function capture($id, $params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      * Create a test-mode authorization.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function create($params = null, $opts = null)
     {
@@ -42,11 +42,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function expire($id, $params = null, $opts = null)
     {
@@ -58,11 +58,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function increment($id, $params = null, $opts = null)
     {
@@ -74,11 +74,11 @@ class AuthorizationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Authorization
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Authorization
      */
     public function reverse($id, $params = null, $opts = null)
     {

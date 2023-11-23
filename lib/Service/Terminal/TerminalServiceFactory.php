@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Terminal;
+namespace ExpressPayments\Service\Terminal;
 
 /**
  * Service factory class for API resources in the Terminal namespace.
@@ -12,7 +12,7 @@ namespace ExpressPlatby\Service\Terminal;
  * @property LocationService $locations
  * @property ReaderService $readers
  */
-class TerminalServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class TerminalServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

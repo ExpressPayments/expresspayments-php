@@ -2,10 +2,10 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * <a href="https://expressplatby.cz/docs/connect">ExpressPlatby Connect</a> platforms can reverse transfers made to a
+ * <a href="https://docs.epayments.network/connect">ExpressPayments Connect</a> platforms can reverse transfers made to a
  * connected account, either entirely or partially, and can also specify whether
  * to refund any related application fees. Transfer reversals add to the
  * platform's balance and subtract from the destination account's balance.
@@ -13,22 +13,22 @@ namespace ExpressPlatby;
  * Reversing a transfer that was made for a <a href="/docs/connect/destination-charges">destination
  * charge</a> is allowed only up to the amount of
  * the charge. It is possible to reverse a
- * <a href="https://expressplatby.cz/docs/connect/separate-charges-and-transfers#transfer-options">transfer_group</a>
+ * <a href="https://docs.epayments.network/connect/separate-charges-and-transfers#transfer-options">transfer_group</a>
  * transfer only if the destination account has enough balance to cover the
  * reversal.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/connect/separate-charges-and-transfers#reversing-transfers">Reversing transfers</a>
+ * Related guide: <a href="https://docs.epayments.network/connect/separate-charges-and-transfers#reversing-transfers">Reversing transfers</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property int $amount Amount, in cents (or local equivalent).
- * @property null|string|\ExpressPlatby\BalanceTransaction $balance_transaction Balance transaction that describes the impact on your account balance.
+ * @property null|string|\ExpressPayments\BalanceTransaction $balance_transaction Balance transaction that describes the impact on your account balance.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://expressplatby.cz/docs/currencies">supported currency</a>.
- * @property null|string|\ExpressPlatby\Refund $destination_payment_refund Linked payment refund for the transfer reversal.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|string|\ExpressPlatby\Refund $source_refund ID of the refund responsible for the transfer reversal.
- * @property string|\ExpressPlatby\Transfer $transfer ID of the transfer that was reversed.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://docs.epayments.network/currencies">supported currency</a>.
+ * @property null|string|\ExpressPayments\Refund $destination_payment_refund Linked payment refund for the transfer reversal.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|string|\ExpressPayments\Refund $source_refund ID of the refund responsible for the transfer reversal.
+ * @property string|\ExpressPayments\Transfer $transfer ID of the transfer that was reversed.
  */
 class TransferReversal extends ApiResource
 {
@@ -39,7 +39,7 @@ class TransferReversal extends ApiResource
     }
 
     /**
-     * @return string the API URL for this ExpressPlatby transfer reversal
+     * @return string the API URL for this ExpressPayments transfer reversal
      */
     public function instanceUrl()
     {
@@ -66,7 +66,7 @@ class TransferReversal extends ApiResource
      * @param null|array|string $opts
      *
      * @return TransferReversal the saved reversal
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function save($opts = null)

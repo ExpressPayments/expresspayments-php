@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Terminal;
+namespace ExpressPayments\Service\TestHelpers\Terminal;
 
 /**
  * Service factory class for API resources in the Terminal namespace.
  *
  * @property ReaderService $readers
  */
-class TerminalServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class TerminalServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

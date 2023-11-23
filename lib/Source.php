@@ -2,58 +2,58 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * <code>Source</code> objects allow you to accept a variety of payment methods. They
- * represent a customer's payment instrument, and can be used with the ExpressPlatby API
+ * represent a customer's payment instrument, and can be used with the ExpressPayments API
  * just like a <code>Card</code> object: once chargeable, they can be charged, or can be
  * attached to customers.
  *
- * ExpressPlatby doesn't recommend using the deprecated <a href="https://expressplatby.cz/docs/api/sources">Sources API</a>.
- * We recommend that you adopt the <a href="https://expressplatby.cz/docs/api/payment_methods">PaymentMethods API</a>.
+ * ExpressPayments doesn't recommend using the deprecated <a href="https://docs.epayments.network/api/sources">Sources API</a>.
+ * We recommend that you adopt the <a href="https://docs.epayments.network/api/payment_methods">PaymentMethods API</a>.
  * This newer API provides access to our latest features and payment method types.
  *
- * Related guides: <a href="https://expressplatby.cz/docs/sources">Sources API</a> and <a href="https://expressplatby.cz/docs/sources/customers">Sources &amp; Customers</a>.
+ * Related guides: <a href="https://docs.epayments.network/sources">Sources API</a> and <a href="https://docs.epayments.network/sources/customers">Sources &amp; Customers</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $ach_credit_transfer
- * @property null|\ExpressPlatby\ExpressPlatbyObject $ach_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $acss_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $alipay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $ach_credit_transfer
+ * @property null|\ExpressPayments\ExpressPaymentsObject $ach_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $acss_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $alipay
  * @property null|int $amount A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the total amount associated with the source. This is the amount for which the source will be chargeable once ready. Required for <code>single_use</code> sources.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $au_becs_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $bancontact
- * @property null|\ExpressPlatby\ExpressPlatbyObject $card
- * @property null|\ExpressPlatby\ExpressPlatbyObject $card_present
+ * @property null|\ExpressPayments\ExpressPaymentsObject $au_becs_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $bancontact
+ * @property null|\ExpressPayments\ExpressPaymentsObject $card
+ * @property null|\ExpressPayments\ExpressPaymentsObject $card_present
  * @property string $client_secret The client secret of the source. Used for client-side retrieval using a publishable key.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $code_verification
+ * @property null|\ExpressPayments\ExpressPaymentsObject $code_verification
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property null|string $currency Three-letter <a href="https://expressplatby.cz/docs/currencies">ISO code for the currency</a> associated with the source. This is the currency for which the source will be chargeable once ready. Required for <code>single_use</code> sources.
+ * @property null|string $currency Three-letter <a href="https://docs.epayments.network/currencies">ISO code for the currency</a> associated with the source. This is the currency for which the source will be chargeable once ready. Required for <code>single_use</code> sources.
  * @property null|string $customer The ID of the customer to which this source is attached. This will not be present when the source has not been attached to a customer.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $eps
+ * @property null|\ExpressPayments\ExpressPaymentsObject $eps
  * @property string $flow The authentication <code>flow</code> of the source. <code>flow</code> is one of <code>redirect</code>, <code>receiver</code>, <code>code_verification</code>, <code>none</code>.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $giropay
- * @property null|\ExpressPlatby\ExpressPlatbyObject $ideal
- * @property null|\ExpressPlatby\ExpressPlatbyObject $klarna
+ * @property null|\ExpressPayments\ExpressPaymentsObject $giropay
+ * @property null|\ExpressPayments\ExpressPaymentsObject $ideal
+ * @property null|\ExpressPayments\ExpressPaymentsObject $klarna
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $multibanco
- * @property null|\ExpressPlatby\ExpressPlatbyObject $owner Information about the owner of the payment instrument that may be used or required by particular source types.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $p24
- * @property null|\ExpressPlatby\ExpressPlatbyObject $receiver
- * @property null|\ExpressPlatby\ExpressPlatbyObject $redirect
- * @property null|\ExpressPlatby\ExpressPlatbyObject $sepa_credit_transfer
- * @property null|\ExpressPlatby\ExpressPlatbyObject $sepa_debit
- * @property null|\ExpressPlatby\ExpressPlatbyObject $sofort
- * @property null|\ExpressPlatby\ExpressPlatbyObject $source_order
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $multibanco
+ * @property null|\ExpressPayments\ExpressPaymentsObject $owner Information about the owner of the payment instrument that may be used or required by particular source types.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $p24
+ * @property null|\ExpressPayments\ExpressPaymentsObject $receiver
+ * @property null|\ExpressPayments\ExpressPaymentsObject $redirect
+ * @property null|\ExpressPayments\ExpressPaymentsObject $sepa_credit_transfer
+ * @property null|\ExpressPayments\ExpressPaymentsObject $sepa_debit
+ * @property null|\ExpressPayments\ExpressPaymentsObject $sofort
+ * @property null|\ExpressPayments\ExpressPaymentsObject $source_order
  * @property null|string $statement_descriptor Extra information about a source. This will appear on your customer's statement every time you charge the source.
  * @property string $status The status of the source, one of <code>canceled</code>, <code>chargeable</code>, <code>consumed</code>, <code>failed</code>, or <code>pending</code>. Only <code>chargeable</code> sources can be used to create a charge.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $three_d_secure
- * @property string $type The <code>type</code> of the source. The <code>type</code> is a payment method, one of <code>ach_credit_transfer</code>, <code>ach_debit</code>, <code>alipay</code>, <code>bancontact</code>, <code>card</code>, <code>card_present</code>, <code>eps</code>, <code>giropay</code>, <code>ideal</code>, <code>multibanco</code>, <code>klarna</code>, <code>p24</code>, <code>sepa_debit</code>, <code>sofort</code>, <code>three_d_secure</code>, or <code>wechat</code>. An additional hash is included on the source with a name matching this value. It contains additional information specific to the <a href="https://expressplatby.cz/docs/sources">payment method</a> used.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $three_d_secure
+ * @property string $type The <code>type</code> of the source. The <code>type</code> is a payment method, one of <code>ach_credit_transfer</code>, <code>ach_debit</code>, <code>alipay</code>, <code>bancontact</code>, <code>card</code>, <code>card_present</code>, <code>eps</code>, <code>giropay</code>, <code>ideal</code>, <code>multibanco</code>, <code>klarna</code>, <code>p24</code>, <code>sepa_debit</code>, <code>sofort</code>, <code>three_d_secure</code>, or <code>wechat</code>. An additional hash is included on the source with a name matching this value. It contains additional information specific to the <a href="https://docs.epayments.network/sources">payment method</a> used.
  * @property null|string $usage Either <code>reusable</code> or <code>single_use</code>. Whether this source should be reusable or not. Some source types may or may not be reusable by construction, while others may leave the option at creation. If an incompatible value is passed, an error will be returned.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $wechat
+ * @property null|\ExpressPayments\ExpressPaymentsObject $wechat
  */
 class Source extends ApiResource
 {
@@ -103,10 +103,10 @@ class Source extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Source the detached source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Source the detached source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @throws \ExpressPlatby\Exception\UnexpectedValueException if the source is not attached to a customer
+     * @throws \ExpressPayments\Exception\UnexpectedValueException if the source is not attached to a customer
      */
     public function detach($params = null, $opts = null)
     {
@@ -143,15 +143,15 @@ class Source extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\SourceTransaction> list of source transactions
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\SourceTransaction> list of source transactions
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allSourceTransactions($id, $params = null, $opts = null)
     {
         $url = static::resourceUrl($id) . '/source_transactions';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -161,8 +161,8 @@ class Source extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Source the verified source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Source the verified source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function verify($params = null, $opts = null)

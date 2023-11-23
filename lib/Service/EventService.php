@@ -2,22 +2,22 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class EventService extends \ExpressPlatby\Service\AbstractService
+class EventService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * List events, going back up to 30 days. Each event data is rendered according to
-     * ExpressPlatby API version at its creation time, specified in <a
+     * ExpressPayments API version at its creation time, specified in <a
      * href="/docs/api/events/object">event object</a> <code>api_version</code>
-     * attribute (not according to your current ExpressPlatby API version or
-     * <code>ExpressPlatby-Version</code> header).
+     * attribute (not according to your current ExpressPayments API version or
+     * <code>EP-Version</code> header).
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Event>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Event>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -31,10 +31,10 @@ class EventService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Event
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Event
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)

@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception;
+namespace ExpressPayments\Exception;
 
 /**
  * PermissionException is thrown in cases where access was attempted on a

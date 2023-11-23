@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Treasury;
+namespace ExpressPayments\Service\Treasury;
 
-class CreditReversalService extends \ExpressPlatby\Service\AbstractService
+class CreditReversalService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of CreditReversals.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Treasury\CreditReversal>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Treasury\CreditReversal>
      */
     public function all($params = null, $opts = null)
     {
@@ -25,11 +25,11 @@ class CreditReversalService extends \ExpressPlatby\Service\AbstractService
      * Reverses a ReceivedCredit and creates a CreditReversal object.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\CreditReversal
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\CreditReversal
      */
     public function create($params = null, $opts = null)
     {
@@ -43,11 +43,11 @@ class CreditReversalService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\CreditReversal
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\CreditReversal
      */
     public function retrieve($id, $params = null, $opts = null)
     {

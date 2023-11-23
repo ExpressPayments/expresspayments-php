@@ -2,43 +2,43 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Issuing;
+namespace ExpressPayments\Issuing;
 
 /**
- * You can <a href="https://expressplatby.cz/docs/issuing/cards">create physical or virtual cards</a> that are issued to cardholders.
+ * You can <a href="https://docs.epayments.network/issuing/cards">create physical or virtual cards</a> that are issued to cardholders.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property string $brand The brand of the card.
  * @property null|string $cancellation_reason The reason why the card was canceled.
- * @property \ExpressPlatby\Issuing\Cardholder $cardholder <p>An Issuing <code>Cardholder</code> object represents an individual or business entity who is <a href="https://expressplatby.cz/docs/issuing">issued</a> cards.</p><p>Related guide: <a href="https://expressplatby.cz/docs/issuing/cards#create-cardholder">How to create a cardholder</a></p>
+ * @property \ExpressPayments\Issuing\Cardholder $cardholder <p>An Issuing <code>Cardholder</code> object represents an individual or business entity who is <a href="https://docs.epayments.network/issuing">issued</a> cards.</p><p>Related guide: <a href="https://docs.epayments.network/issuing/cards#create-cardholder">How to create a cardholder</a></p>
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Supported currencies are <code>usd</code> in the US, <code>eur</code> in the EU, and <code>gbp</code> in the UK.
- * @property null|string $cvc The card's CVC. For security reasons, this is only available for virtual cards, and will be omitted unless you explicitly request it with <a href="https://expressplatby.cz/docs/api/expanding_objects">the <code>expand</code> parameter</a>. Additionally, it's only available via the <a href="https://expressplatby.cz/docs/api/issuing/cards/retrieve">&quot;Retrieve a card&quot; endpoint</a>, not via &quot;List all cards&quot; or any other endpoint.
+ * @property null|string $cvc The card's CVC. For security reasons, this is only available for virtual cards, and will be omitted unless you explicitly request it with <a href="https://docs.epayments.network/api/expanding_objects">the <code>expand</code> parameter</a>. Additionally, it's only available via the <a href="https://docs.epayments.network/api/issuing/cards/retrieve">&quot;Retrieve a card&quot; endpoint</a>, not via &quot;List all cards&quot; or any other endpoint.
  * @property int $exp_month The expiration month of the card.
  * @property int $exp_year The expiration year of the card.
  * @property null|string $financial_account The financial account this card is attached to.
  * @property string $last4 The last 4 digits of the card number.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|string $number The full unredacted card number. For security reasons, this is only available for virtual cards, and will be omitted unless you explicitly request it with <a href="https://expressplatby.cz/docs/api/expanding_objects">the <code>expand</code> parameter</a>. Additionally, it's only available via the <a href="https://expressplatby.cz/docs/api/issuing/cards/retrieve">&quot;Retrieve a card&quot; endpoint</a>, not via &quot;List all cards&quot; or any other endpoint.
- * @property null|string|\ExpressPlatby\Issuing\Card $replaced_by The latest card that replaces this card, if any.
- * @property null|string|\ExpressPlatby\Issuing\Card $replacement_for The card this card replaces, if any.
+ * @property \ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|string $number The full unredacted card number. For security reasons, this is only available for virtual cards, and will be omitted unless you explicitly request it with <a href="https://docs.epayments.network/api/expanding_objects">the <code>expand</code> parameter</a>. Additionally, it's only available via the <a href="https://docs.epayments.network/api/issuing/cards/retrieve">&quot;Retrieve a card&quot; endpoint</a>, not via &quot;List all cards&quot; or any other endpoint.
+ * @property null|string|\ExpressPayments\Issuing\Card $replaced_by The latest card that replaces this card, if any.
+ * @property null|string|\ExpressPayments\Issuing\Card $replacement_for The card this card replaces, if any.
  * @property null|string $replacement_reason The reason why the previous card needed to be replaced.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $shipping Where and how the card will be shipped.
- * @property \ExpressPlatby\ExpressPlatbyObject $spending_controls
+ * @property null|\ExpressPayments\ExpressPaymentsObject $shipping Where and how the card will be shipped.
+ * @property \ExpressPayments\ExpressPaymentsObject $spending_controls
  * @property string $status Whether authorizations can be approved on this card. May be blocked from activating cards depending on past-due Cardholder requirements. Defaults to <code>inactive</code>.
  * @property string $type The type of the card.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $wallets Information relating to digital wallets (like Apple Pay and Google Pay).
+ * @property null|\ExpressPayments\ExpressPaymentsObject $wallets Information relating to digital wallets (like Apple Pay and Google Pay).
  */
-class Card extends \ExpressPlatby\ApiResource
+class Card extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'issuing.card';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Create;
-    use \ExpressPlatby\ApiOperations\Retrieve;
-    use \ExpressPlatby\ApiOperations\Update;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Create;
+    use \ExpressPayments\ApiOperations\Retrieve;
+    use \ExpressPayments\ApiOperations\Update;
 
     const CANCELLATION_REASON_DESIGN_REJECTED = 'design_rejected';
     const CANCELLATION_REASON_LOST = 'lost';

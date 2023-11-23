@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * A line item.
@@ -13,12 +13,12 @@ namespace ExpressPlatby;
  * @property int $amount_subtotal Total before any discounts or taxes are applied.
  * @property int $amount_tax Total tax amount applied. If no tax was applied, defaults to 0.
  * @property int $amount_total Total after discounts and taxes.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://expressplatby.cz/docs/currencies">supported currency</a>.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://docs.epayments.network/currencies">supported currency</a>.
  * @property string $description An arbitrary string attached to the object. Often useful for displaying to users. Defaults to product name.
- * @property null|\ExpressPlatby\ExpressPlatbyObject[] $discounts The discounts applied to the line item.
- * @property null|\ExpressPlatby\Price $price The price used to generate the line item.
+ * @property null|\ExpressPayments\ExpressPaymentsObject[] $discounts The discounts applied to the line item.
+ * @property null|\ExpressPayments\Price $price The price used to generate the line item.
  * @property null|int $quantity The quantity of products being purchased.
- * @property null|\ExpressPlatby\ExpressPlatbyObject[] $taxes The taxes applied to the line item.
+ * @property null|\ExpressPayments\ExpressPaymentsObject[] $taxes The taxes applied to the line item.
  */
 class LineItem extends ApiResource
 {

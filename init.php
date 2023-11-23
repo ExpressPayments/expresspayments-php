@@ -2,8 +2,8 @@
 
 require __DIR__ . '/lib/Util/ApiVersion.php';
 
-// ExpressPlatby singleton
-require __DIR__ . '/lib/ExpressPlatby.php';
+// ExpressPayments singleton
+require __DIR__ . '/lib/ExpressPayments.php';
 
 // Utilities
 require __DIR__ . '/lib/Util/CaseInsensitiveArray.php';
@@ -61,8 +61,8 @@ require __DIR__ . '/lib/ApiOperations/Update.php';
 // Plumbing
 require __DIR__ . '/lib/ApiResponse.php';
 require __DIR__ . '/lib/RequestTelemetry.php';
-require __DIR__ . '/lib/ExpressPlatbyObject.php';
-require __DIR__ . '/lib/ApiRequestor.php';
+require __DIR__ . '/lib/ExpressPaymentsObject.php';
+require __DIR__ . '/lib/ApiRequester.php';
 require __DIR__ . '/lib/ApiResource.php';
 require __DIR__ . '/lib/SingletonApiResource.php';
 require __DIR__ . '/lib/Service/AbstractService.php';
@@ -73,12 +73,12 @@ require __DIR__ . '/lib/SearchResult.php';
 require __DIR__ . '/lib/ErrorObject.php';
 require __DIR__ . '/lib/Issuing/CardDetails.php';
 
-// ExpressPlatbyClient
-require __DIR__ . '/lib/BaseExpressPlatbyClientInterface.php';
-require __DIR__ . '/lib/ExpressPlatbyClientInterface.php';
-require __DIR__ . '/lib/ExpressPlatbyStreamingClientInterface.php';
-require __DIR__ . '/lib/BaseExpressPlatbyClient.php';
-require __DIR__ . '/lib/ExpressPlatbyClient.php';
+// ExpressPaymentsClient
+require __DIR__ . '/lib/BaseExpressPaymentsClientInterface.php';
+require __DIR__ . '/lib/ExpressPaymentsClientInterface.php';
+require __DIR__ . '/lib/ExpressPaymentsStreamingClientInterface.php';
+require __DIR__ . '/lib/BaseExpressPaymentsClient.php';
+require __DIR__ . '/lib/ExpressPaymentsClient.php';
 
 // The beginning of the section generated from our OpenAPI spec
 require __DIR__ . '/lib/Account.php';

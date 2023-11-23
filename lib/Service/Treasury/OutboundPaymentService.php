@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Treasury;
+namespace ExpressPayments\Service\Treasury;
 
-class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
+class OutboundPaymentService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of OutboundPayments sent from the specified FinancialAccount.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Treasury\OutboundPayment>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Treasury\OutboundPayment>
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundPayment
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundPayment
      */
     public function cancel($id, $params = null, $opts = null)
     {
@@ -41,11 +41,11 @@ class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
      * Creates an OutboundPayment.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundPayment
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundPayment
      */
     public function create($params = null, $opts = null)
     {
@@ -59,11 +59,11 @@ class OutboundPaymentService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundPayment
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundPayment
      */
     public function retrieve($id, $params = null, $opts = null)
     {

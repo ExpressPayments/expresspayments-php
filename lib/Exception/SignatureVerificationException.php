@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception;
+namespace ExpressPayments\Exception;
 
 /**
  * SignatureVerificationException is thrown when the signature verification for
@@ -16,7 +16,7 @@ class SignatureVerificationException extends \Exception implements ExceptionInte
      *
      * @param string $message the exception message
      * @param null|string $httpBody the HTTP body as a string
-     * @param null|string $sigHeader the `ExpressPlatby-Signature` HTTP header
+     * @param null|string $sigHeader the `EP-Signature` HTTP header
      *
      * @return SignatureVerificationException
      */
@@ -53,7 +53,7 @@ class SignatureVerificationException extends \Exception implements ExceptionInte
     }
 
     /**
-     * Gets the `ExpressPlatby-Signature` HTTP header.
+     * Gets the `EP-Signature` HTTP header.
      *
      * @return null|string
      */
@@ -63,7 +63,7 @@ class SignatureVerificationException extends \Exception implements ExceptionInte
     }
 
     /**
-     * Sets the `ExpressPlatby-Signature` HTTP header.
+     * Sets the `EP-Signature` HTTP header.
      *
      * @param null|string $sigHeader
      */

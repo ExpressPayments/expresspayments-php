@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class SubscriptionService extends \ExpressPlatby\Service\AbstractService
+class SubscriptionService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * By default, returns a list of subscriptions that have not been canceled. In
      * order to list canceled subscriptions, specify <code>status=canceled</code>.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Subscription>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Subscription>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -33,7 +33,7 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      * collected at the end of the period. But if the subscription is set to cancel
      * immediately, pending prorations will be removed.
      *
-     * By default, upon subscription cancellation, ExpressPlatby will stop automatic
+     * By default, upon subscription cancellation, ExpressPayments will stop automatic
      * collection of all finalized invoices for the customer. This is intended to
      * prevent unexpected payment attempts after the customer has canceled a
      * subscription. However, you can resume automatic collection of the invoices
@@ -43,10 +43,10 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Subscription
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Subscription
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancel($id, $params = null, $opts = null)
@@ -70,10 +70,10 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      * billing configurations that change over time.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Subscription
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Subscription
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -86,10 +86,10 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Discount
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Discount
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function deleteDiscount($id, $params = null, $opts = null)
@@ -107,10 +107,10 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Subscription
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Subscription
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function resume($id, $params = null, $opts = null)
@@ -123,10 +123,10 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Subscription
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Subscription
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -135,7 +135,7 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Search for subscriptions you’ve previously created using ExpressPlatby’s <a
+     * Search for subscriptions you’ve previously created using ExpressPayments’ <a
      * href="/docs/search#search-query-language">Search Query Language</a>. Don’t use
      * search in read-after-write flows where strict consistency is necessary. Under
      * normal operating conditions, data is searchable in less than a minute.
@@ -143,10 +143,10 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      * during outages. Search functionality is not available to merchants in India.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\Subscription>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\Subscription>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function search($params = null, $opts = null)
@@ -204,10 +204,10 @@ class SubscriptionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Subscription
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Subscription
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

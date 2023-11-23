@@ -2,34 +2,34 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Treasury;
+namespace ExpressPayments\Treasury;
 
 /**
- * ReceivedCredits represent funds sent to a <a href="https://expressplatby.cz/docs/api#financial_accounts">FinancialAccount</a> (for example, via ACH or wire). These money movements are not initiated from the FinancialAccount.
+ * ReceivedCredits represent funds sent to a <a href="https://docs.epayments.network/api#financial_accounts">FinancialAccount</a> (for example, via ACH or wire). These money movements are not initiated from the FinancialAccount.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property int $amount Amount (in cents) transferred.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://expressplatby.cz/docs/currencies">supported currency</a>.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://docs.epayments.network/currencies">supported currency</a>.
  * @property string $description An arbitrary string attached to the object. Often useful for displaying to users.
  * @property null|string $failure_code Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
  * @property null|string $financial_account The FinancialAccount that received the funds.
- * @property null|string $hosted_regulatory_receipt_url A <a href="https://expressplatby.cz/docs/treasury/moving-money/regulatory-receipts">hosted transaction receipt</a> URL that is provided when money movement is considered regulated under ExpressPlatby's money transmission licenses.
- * @property \ExpressPlatby\ExpressPlatbyObject $initiating_payment_method_details
- * @property \ExpressPlatby\ExpressPlatbyObject $linked_flows
+ * @property null|string $hosted_regulatory_receipt_url A <a href="https://docs.epayments.network/treasury/moving-money/regulatory-receipts">hosted transaction receipt</a> URL that is provided when money movement is considered regulated under ExpressPayments' money transmission licenses.
+ * @property \ExpressPayments\ExpressPaymentsObject $initiating_payment_method_details
+ * @property \ExpressPayments\ExpressPaymentsObject $linked_flows
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
  * @property string $network The rails used to send the funds.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $reversal_details Details describing when a ReceivedCredit may be reversed.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $reversal_details Details describing when a ReceivedCredit may be reversed.
  * @property string $status Status of the ReceivedCredit. ReceivedCredits are created either <code>succeeded</code> (approved) or <code>failed</code> (declined). If a ReceivedCredit is declined, the failure reason can be found in the <code>failure_code</code> field.
- * @property null|string|\ExpressPlatby\Treasury\Transaction $transaction The Transaction associated with this object.
+ * @property null|string|\ExpressPayments\Treasury\Transaction $transaction The Transaction associated with this object.
  */
-class ReceivedCredit extends \ExpressPlatby\ApiResource
+class ReceivedCredit extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'treasury.received_credit';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Retrieve;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Retrieve;
 
     const FAILURE_CODE_ACCOUNT_CLOSED = 'account_closed';
     const FAILURE_CODE_ACCOUNT_FROZEN = 'account_frozen';
@@ -37,7 +37,7 @@ class ReceivedCredit extends \ExpressPlatby\ApiResource
 
     const NETWORK_ACH = 'ach';
     const NETWORK_CARD = 'card';
-    const NETWORK_EXPRESSPLATBY = 'expressplatby';
+    const NETWORK_EP = 'ep';
     const NETWORK_US_DOMESTIC_WIRE = 'us_domestic_wire';
 
     const STATUS_FAILED = 'failed';

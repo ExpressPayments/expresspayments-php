@@ -1,19 +1,19 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Class Collection.
  *
- * @template TExpressPlatbyObject of ExpressPlatbyObject
- * @template-implements \IteratorAggregate<TExpressPlatbyObject>
+ * @template TExpressPaymentsObject of ExpressPaymentsObject
+ * @template-implements \IteratorAggregate<TExpressPaymentsObject>
  *
  * @property string $object
  * @property string $url
  * @property bool $has_more
- * @property TExpressPlatbyObject[] $data
+ * @property TExpressPaymentsObject[] $data
  */
-class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAggregate
+class Collection extends ExpressPaymentsObject implements \Countable, \IteratorAggregate
 {
     const OBJECT_NAME = 'list';
 
@@ -27,7 +27,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
      */
     public static function baseUrl()
     {
-        return ExpressPlatby::$apiBase;
+        return ExpressPayments::$apiBase;
     }
 
     /**
@@ -71,9 +71,9 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
      * @param null|array $params
      * @param null|array|string $opts
      *
+     * @return Collection<TExpressPaymentsObject>
      * @throws Exception\ApiErrorException
      *
-     * @return Collection<TExpressPlatbyObject>
      */
     public function all($params = null, $opts = null)
     {
@@ -81,10 +81,10 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
         list($url, $params) = $this->extractPathAndUpdateParams($params);
 
         list($response, $opts) = $this->_request('get', $url, $params, $opts);
-        $obj = Util\Util::convertToExpressPlatbyObject($response, $opts);
-        if (!($obj instanceof \ExpressPlatby\Collection)) {
-            throw new \ExpressPlatby\Exception\UnexpectedValueException(
-                'Expected type ' . \ExpressPlatby\Collection::class . ', got "' . \get_class($obj) . '" instead.'
+        $obj = Util\Util::convertToExpressPaymentsObject($response, $opts);
+        if (!($obj instanceof \ExpressPayments\Collection)) {
+            throw new \ExpressPayments\Exception\UnexpectedValueException(
+                'Expected type ' . \ExpressPayments\Collection::class . ', got "' . \get_class($obj) . '" instead.'
             );
         }
         $obj->setFilters($params);
@@ -96,9 +96,9 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws Exception\ApiErrorException
+     * @return TExpressPaymentsObject
+     *@throws Exception\ApiErrorException
      *
-     * @return TExpressPlatbyObject
      */
     public function create($params = null, $opts = null)
     {
@@ -107,7 +107,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
 
         list($response, $opts) = $this->_request('post', $url, $params, $opts);
 
-        return Util\Util::convertToExpressPlatbyObject($response, $opts);
+        return Util\Util::convertToExpressPaymentsObject($response, $opts);
     }
 
     /**
@@ -115,9 +115,9 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws Exception\ApiErrorException
+     * @return TExpressPaymentsObject
+     *@throws Exception\ApiErrorException
      *
-     * @return TExpressPlatbyObject
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -133,7 +133,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
             $opts
         );
 
-        return Util\Util::convertToExpressPlatbyObject($response, $opts);
+        return Util\Util::convertToExpressPaymentsObject($response, $opts);
     }
 
     /**
@@ -165,7 +165,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
     }
 
     /**
-     * @return \Generator|TExpressPlatbyObject[] A generator that can be used to
+     * @return \Generator|TExpressPaymentsObject[] A generator that can be used to
      *    iterate across all objects across all pages. As page boundaries are
      *    encountered, the next page will be fetched automatically for
      *    continued iteration.
@@ -228,7 +228,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return Collection<TExpressPlatbyObject>
+     * @return Collection<TExpressPaymentsObject>
      */
     public function nextPage($params = null, $opts = null)
     {
@@ -256,7 +256,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return Collection<TExpressPlatbyObject>
+     * @return Collection<TExpressPaymentsObject>
      */
     public function previousPage($params = null, $opts = null)
     {
@@ -278,7 +278,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
     /**
      * Gets the first item from the current page. Returns `null` if the current page is empty.
      *
-     * @return null|TExpressPlatbyObject
+     * @return null|TExpressPaymentsObject
      */
     public function first()
     {
@@ -288,7 +288,7 @@ class Collection extends ExpressPlatbyObject implements \Countable, \IteratorAgg
     /**
      * Gets the last item from the current page. Returns `null` if the current page is empty.
      *
-     * @return null|TExpressPlatbyObject
+     * @return null|TExpressPaymentsObject
      */
     public function last()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Issuing;
+namespace ExpressPayments\Issuing;
 
 /**
  * Class CardDetails.
@@ -13,7 +13,7 @@ namespace ExpressPlatby\Issuing;
  * @property int $exp_year
  * @property string $number
  */
-class CardDetails extends \ExpressPlatby\ApiResource
+class CardDetails extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'issuing.card_details';
 }

@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Radar;
+namespace ExpressPayments\Radar;
 
 /**
  * Value list items allow you to add specific values to a given Radar value list, which can then be used in rules.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/radar/lists#managing-list-items">Managing list items</a>
+ * Related guide: <a href="https://docs.epayments.network/radar/lists#managing-list-items">Managing list items</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -17,12 +17,12 @@ namespace ExpressPlatby\Radar;
  * @property string $value The value of the item.
  * @property string $value_list The identifier of the value list this item belongs to.
  */
-class ValueListItem extends \ExpressPlatby\ApiResource
+class ValueListItem extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'radar.value_list_item';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Create;
-    use \ExpressPlatby\ApiOperations\Delete;
-    use \ExpressPlatby\ApiOperations\Retrieve;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Create;
+    use \ExpressPayments\ApiOperations\Delete;
+    use \ExpressPayments\ApiOperations\Retrieve;
 }

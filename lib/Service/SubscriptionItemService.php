@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
+class SubscriptionItemService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of your subscription items for a given subscription.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\SubscriptionItem>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\SubscriptionItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -35,10 +35,10 @@ class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\UsageRecordSummary>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\UsageRecordSummary>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allUsageRecordSummaries($parentId, $params = null, $opts = null)
@@ -51,10 +51,10 @@ class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
      * or replaced.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SubscriptionItem
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SubscriptionItem
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -66,17 +66,17 @@ class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
      * Creates a usage record for a specified subscription item and date, and fills it
      * with a quantity.
      *
-     * Usage records provide <code>quantity</code> information that ExpressPlatby uses to
+     * Usage records provide <code>quantity</code> information that ExpressPayments uses to
      * track how much a customer is using your service. With usage information and the
      * pricing model set up by the <a
-     * href="https://expressplatby.cz/docs/billing/subscriptions/metered-billing">metered
-     * billing</a> plan, ExpressPlatby helps you send accurate invoices to your customers.
+     * href="https://docs.epayments.network/billing/subscriptions/metered-billing">metered
+     * billing</a> plan, ExpressPayments helps you send accurate invoices to your customers.
      *
      * The default calculation for usage is to add up all the <code>quantity</code>
      * values of the usage records within a billing period. You can change this default
      * behavior with the billing plan’s <code>aggregate_usage</code> <a
      * href="/docs/api/plans/create#create_plan-aggregate_usage">parameter</a>. When
-     * there is more than one usage record with the same timestamp, ExpressPlatby adds the
+     * there is more than one usage record with the same timestamp, ExpressPayments adds the
      * <code>quantity</code> values together. In most cases, this is the desired
      * resolution, however, you can change this behavior with the <code>action</code>
      * parameter.
@@ -84,15 +84,15 @@ class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
      * The default pricing model for metered billing is <a
      * href="/docs/api/plans/object#plan_object-billing_scheme">per-unit pricing</a>.
      * For finer granularity, you can configure metered billing to have a <a
-     * href="https://expressplatby.cz/docs/billing/subscriptions/tiers">tiered pricing</a>
+     * href="https://docs.epayments.network/billing/subscriptions/tiers">tiered pricing</a>
      * model.
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\UsageRecord
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\UsageRecord
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createUsageRecord($parentId, $params = null, $opts = null)
@@ -106,10 +106,10 @@ class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SubscriptionItem
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SubscriptionItem
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function delete($id, $params = null, $opts = null)
@@ -122,10 +122,10 @@ class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SubscriptionItem
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SubscriptionItem
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -138,10 +138,10 @@ class SubscriptionItemService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SubscriptionItem
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SubscriptionItem
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

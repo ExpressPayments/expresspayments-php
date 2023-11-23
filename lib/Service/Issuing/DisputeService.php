@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Issuing;
+namespace ExpressPayments\Service\Issuing;
 
-class DisputeService extends \ExpressPlatby\Service\AbstractService
+class DisputeService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of Issuing <code>Dispute</code> objects. The objects are sorted
@@ -12,11 +12,11 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      * appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Issuing\Dispute>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Issuing\Dispute>
      */
     public function all($params = null, $opts = null)
     {
@@ -25,17 +25,17 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Creates an Issuing <code>Dispute</code> object. Individual pieces of evidence
-     * within the <code>evidence</code> object are optional at this point. ExpressPlatby only
+     * within the <code>evidence</code> object are optional at this point. ExpressPayments only
      * validates that required evidence is present during submission. Refer to <a
      * href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">Dispute
      * reasons and evidence</a> for more details about evidence requirements.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Dispute
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Dispute
      */
     public function create($params = null, $opts = null)
     {
@@ -47,11 +47,11 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Dispute
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Dispute
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -59,7 +59,7 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Submits an Issuing <code>Dispute</code> to the card network. ExpressPlatby validates
+     * Submits an Issuing <code>Dispute</code> to the card network. ExpressPayments validates
      * that all evidence fields required for the dispute’s reason are present. For more
      * details, see <a
      * href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">Dispute
@@ -67,11 +67,11 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Dispute
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Dispute
      */
     public function submit($id, $params = null, $opts = null)
     {
@@ -86,11 +86,11 @@ class DisputeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Dispute
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Dispute
      */
     public function update($id, $params = null, $opts = null)
     {

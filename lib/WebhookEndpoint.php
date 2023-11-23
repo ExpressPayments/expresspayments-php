@@ -2,16 +2,16 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * You can configure <a href="https://expressplatby.cz/docs/webhooks/">webhook endpoints</a> via the API to be
- * notified about events that happen in your ExpressPlatby account or connected
+ * You can configure <a href="https://docs.epayments.network/webhooks/">webhook endpoints</a> via the API to be
+ * notified about events that happen in your ExpressPayments account or connected
  * accounts.
  *
- * Most users configure webhooks from <a href="https://dashboard.expressplatby.cz/webhooks">the dashboard</a>, which provides a user interface for registering and testing your webhook endpoints.
+ * Most users configure webhooks from <a href="https://dashboard.epayments.network/webhooks">the dashboard</a>, which provides a user interface for registering and testing your webhook endpoints.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/webhooks/configure">Setting up webhooks</a>
+ * Related guide: <a href="https://docs.epayments.network/webhooks/configure">Setting up webhooks</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -21,8 +21,8 @@ namespace ExpressPlatby;
  * @property null|string $description An optional description of what the webhook is used for.
  * @property string[] $enabled_events The list of events to enable for this endpoint. <code>['*']</code> indicates that all events are enabled, except those that require explicit selection.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|string $secret The endpoint's secret, used to generate <a href="https://expressplatby.cz/docs/webhooks/signatures">webhook signatures</a>. Only returned at creation.
+ * @property \ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|string $secret The endpoint's secret, used to generate <a href="https://docs.epayments.network/webhooks/signatures">webhook signatures</a>. Only returned at creation.
  * @property string $status The status of the webhook. It can be <code>enabled</code> or <code>disabled</code>.
  * @property string $url The URL of the webhook endpoint.
  */

@@ -2,24 +2,24 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * A payment method domain represents a web domain that you have registered with ExpressPlatby.
- * ExpressPlatby Elements use registered payment method domains to control where certain payment methods are shown.
+ * A payment method domain represents a web domain that you have registered with ExpressPayments.
+ * ExpressPayments Elements use registered payment method domains to control where certain payment methods are shown.
  *
- * Related guides: <a href="https://expressplatby.cz/docs/payments/payment-methods/pmd-registration">Payment method domains</a>.
+ * Related guides: <a href="https://docs.epayments.network/payments/payment-methods/pmd-registration">Payment method domains</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property \ExpressPlatby\ExpressPlatbyObject $apple_pay Indicates the status of a specific payment method on a payment method domain.
+ * @property \ExpressPayments\ExpressPaymentsObject $apple_pay Indicates the status of a specific payment method on a payment method domain.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property string $domain_name The domain name that this payment method domain object represents.
  * @property bool $enabled Whether this payment method domain is enabled. If the domain is not enabled, payment methods that require a payment method domain will not appear in Elements.
- * @property \ExpressPlatby\ExpressPlatbyObject $google_pay Indicates the status of a specific payment method on a payment method domain.
- * @property \ExpressPlatby\ExpressPlatbyObject $link Indicates the status of a specific payment method on a payment method domain.
+ * @property \ExpressPayments\ExpressPaymentsObject $google_pay Indicates the status of a specific payment method on a payment method domain.
+ * @property \ExpressPayments\ExpressPaymentsObject $link Indicates the status of a specific payment method on a payment method domain.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \ExpressPlatby\ExpressPlatbyObject $paypal Indicates the status of a specific payment method on a payment method domain.
+ * @property \ExpressPayments\ExpressPaymentsObject $paypal Indicates the status of a specific payment method on a payment method domain.
  */
 class PaymentMethodDomain extends ApiResource
 {
@@ -34,8 +34,8 @@ class PaymentMethodDomain extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\PaymentMethodDomain the validated payment method domain
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethodDomain the validated payment method domain
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function validate($params = null, $opts = null)

@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Util;
+namespace ExpressPayments\Util;
 
 class ApiVersion
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception;
+namespace ExpressPayments\Exception;
 
 /**
  * IdempotencyException is thrown in cases where an idempotency key was used

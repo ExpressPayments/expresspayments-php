@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Reporting;
+namespace ExpressPayments\Service\Reporting;
 
-class ReportRunService extends \ExpressPlatby\Service\AbstractService
+class ReportRunService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of Report Runs, with the most recent appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Reporting\ReportRun>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Reporting\ReportRun>
      */
     public function all($params = null, $opts = null)
     {
@@ -23,14 +23,14 @@ class ReportRunService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Creates a new object and begin running the report. (Certain report types require
-     * a <a href="https://expressplatby.cz/docs/keys#test-live-modes">live-mode API key</a>.).
+     * a <a href="https://docs.epayments.network/keys#test-live-modes">live-mode API key</a>.).
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Reporting\ReportRun
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Reporting\ReportRun
      */
     public function create($params = null, $opts = null)
     {
@@ -42,11 +42,11 @@ class ReportRunService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Reporting\ReportRun
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Reporting\ReportRun
      */
     public function retrieve($id, $params = null, $opts = null)
     {

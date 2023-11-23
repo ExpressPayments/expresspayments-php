@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Treasury;
+namespace ExpressPayments\Service\Treasury;
 
-class ReceivedCreditService extends \ExpressPlatby\Service\AbstractService
+class ReceivedCreditService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of ReceivedCredits.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Treasury\ReceivedCredit>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Treasury\ReceivedCredit>
      */
     public function all($params = null, $opts = null)
     {
@@ -27,11 +27,11 @@ class ReceivedCreditService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\ReceivedCredit
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\ReceivedCredit
      */
     public function retrieve($id, $params = null, $opts = null)
     {

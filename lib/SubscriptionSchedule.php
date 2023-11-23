@@ -2,31 +2,31 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/billing/subscriptions/subscription-schedules">Subscription schedules</a>
+ * Related guide: <a href="https://docs.epayments.network/billing/subscriptions/subscription-schedules">Subscription schedules</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|string|\ExpressPlatby\ExpressPlatbyObject $application ID of the Connect Application that created the schedule.
+ * @property null|string|\ExpressPayments\ExpressPaymentsObject $application ID of the Connect Application that created the schedule.
  * @property null|int $canceled_at Time at which the subscription schedule was canceled. Measured in seconds since the Unix epoch.
  * @property null|int $completed_at Time at which the subscription schedule was completed. Measured in seconds since the Unix epoch.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $current_phase Object representing the start and end dates for the current phase of the subscription schedule, if it is <code>active</code>.
- * @property string|\ExpressPlatby\Customer $customer ID of the customer who owns the subscription schedule.
- * @property \ExpressPlatby\ExpressPlatbyObject $default_settings
+ * @property null|\ExpressPayments\ExpressPaymentsObject $current_phase Object representing the start and end dates for the current phase of the subscription schedule, if it is <code>active</code>.
+ * @property string|\ExpressPayments\Customer $customer ID of the customer who owns the subscription schedule.
+ * @property \ExpressPayments\ExpressPaymentsObject $default_settings
  * @property string $end_behavior Behavior of the subscription schedule and underlying subscription when it ends. Possible values are <code>release</code> or <code>cancel</code> with the default being <code>release</code>. <code>release</code> will end the subscription schedule and keep the underlying subscription running.<code>cancel</code> will end the subscription schedule and cancel the underlying subscription.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property \ExpressPlatby\ExpressPlatbyObject[] $phases Configuration for the subscription schedule's phases.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \ExpressPayments\ExpressPaymentsObject[] $phases Configuration for the subscription schedule's phases.
  * @property null|int $released_at Time at which the subscription schedule was released. Measured in seconds since the Unix epoch.
  * @property null|string $released_subscription ID of the subscription once managed by the subscription schedule (if it is released).
- * @property string $status The present status of the subscription schedule. Possible values are <code>not_started</code>, <code>active</code>, <code>completed</code>, <code>released</code>, and <code>canceled</code>. You can read more about the different states in our <a href="https://expressplatby.cz/docs/billing/subscriptions/subscription-schedules">behavior guide</a>.
- * @property null|string|\ExpressPlatby\Subscription $subscription ID of the subscription managed by the subscription schedule.
- * @property null|string|\ExpressPlatby\TestHelpers\TestClock $test_clock ID of the test clock this subscription schedule belongs to.
+ * @property string $status The present status of the subscription schedule. Possible values are <code>not_started</code>, <code>active</code>, <code>completed</code>, <code>released</code>, and <code>canceled</code>. You can read more about the different states in our <a href="https://docs.epayments.network/billing/subscriptions/subscription-schedules">behavior guide</a>.
+ * @property null|string|\ExpressPayments\Subscription $subscription ID of the subscription managed by the subscription schedule.
+ * @property null|string|\ExpressPayments\TestHelpers\TestClock $test_clock ID of the test clock this subscription schedule belongs to.
  */
 class SubscriptionSchedule extends ApiResource
 {
@@ -52,8 +52,8 @@ class SubscriptionSchedule extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\SubscriptionSchedule the canceled subscription schedule
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SubscriptionSchedule the canceled subscription schedule
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancel($params = null, $opts = null)
@@ -69,8 +69,8 @@ class SubscriptionSchedule extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\SubscriptionSchedule the released subscription schedule
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SubscriptionSchedule the released subscription schedule
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function release($params = null, $opts = null)

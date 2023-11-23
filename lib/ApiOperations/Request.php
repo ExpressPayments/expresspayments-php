@@ -1,28 +1,28 @@
 <?php
 
-namespace ExpressPlatby\ApiOperations;
+namespace ExpressPayments\ApiOperations;
 
 /**
  * Trait for resources that need to make API requests.
  *
- * This trait should only be applied to classes that derive from ExpressPlatbyObject.
+ * This trait should only be applied to classes that derive from ExpressPaymentsObject.
  */
 trait Request
 {
     /**
      * @param null|array|mixed $params The list of parameters to validate
      *
-     * @throws \ExpressPlatby\Exception\InvalidArgumentException if $params exists and is not an array
+     * @throws \ExpressPayments\Exception\InvalidArgumentException if $params exists and is not an array
      */
     protected static function _validateParams($params = null)
     {
         if ($params && !\is_array($params)) {
-            $message = 'You must pass an array as the first argument to ExpressPlatby API '
+            $message = 'You must pass an array as the first argument to ExpressPayments\' API '
                . 'method calls.  (HINT: an example call to create a charge '
-               . "would be: \"ExpressPlatby\\Charge::create(['amount' => 100, "
+                . "would be: \"ExpressPayments\\Charge::create(['amount' => 100, "
                . "'currency' => 'usd', 'source' => 'tok_1234'])\")";
 
-            throw new \ExpressPlatby\Exception\InvalidArgumentException($message);
+            throw new \ExpressPayments\Exception\InvalidArgumentException($message);
         }
     }
 
@@ -32,9 +32,9 @@ trait Request
      * @param array $params list of parameters for the request
      * @param null|array|string $options
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
-     *
      * @return array tuple containing (the JSON response, $options)
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
+     *
      */
     protected function _request($method, $url, $params = [], $options = null)
     {
@@ -52,7 +52,7 @@ trait Request
      * @param array $params list of parameters for the request
      * @param null|array|string $options
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      */
     protected function _requestStream($method, $url, $readBodyChunk, $params = [], $options = null)
     {
@@ -66,15 +66,15 @@ trait Request
      * @param array $params list of parameters for the request
      * @param null|array|string $options
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
-     *
      * @return array tuple containing (the JSON response, $options)
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
+     *
      */
     protected static function _staticRequest($method, $url, $params, $options)
     {
-        $opts = \ExpressPlatby\Util\RequestOptions::parse($options);
+        $opts = \ExpressPayments\Util\RequestOptions::parse($options);
         $baseUrl = isset($opts->apiBase) ? $opts->apiBase : static::baseUrl();
-        $requestor = new \ExpressPlatby\ApiRequestor($opts->apiKey, $baseUrl);
+        $requestor = new \ExpressPayments\ApiRequester($opts->apiKey, $baseUrl);
         list($response, $opts->apiKey) = $requestor->request($method, $url, $params, $opts->headers);
         $opts->discardNonPersistentHeaders();
 
@@ -88,13 +88,13 @@ trait Request
      * @param array $params list of parameters for the request
      * @param null|array|string $options
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      */
     protected static function _staticStreamingRequest($method, $url, $readBodyChunk, $params, $options)
     {
-        $opts = \ExpressPlatby\Util\RequestOptions::parse($options);
+        $opts = \ExpressPayments\Util\RequestOptions::parse($options);
         $baseUrl = isset($opts->apiBase) ? $opts->apiBase : static::baseUrl();
-        $requestor = new \ExpressPlatby\ApiRequestor($opts->apiKey, $baseUrl);
+        $requestor = new \ExpressPayments\ApiRequester($opts->apiKey, $baseUrl);
         $requestor->requestStream($method, $url, $readBodyChunk, $params, $opts->headers);
     }
 }

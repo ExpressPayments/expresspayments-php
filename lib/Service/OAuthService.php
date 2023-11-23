@@ -1,18 +1,18 @@
 <?php
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class OAuthService extends \ExpressPlatby\Service\AbstractService
+class OAuthService extends \ExpressPayments\Service\AbstractService
 {
     /**
-     * Sends a request to ExpressPlatby's Connect API.
+     * Sends a request to ExpressPayments' Connect API.
      *
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\ExpressPlatby\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\ExpressPayments\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \ExpressPlatby\ExpressPlatbyObject the object returned by ExpressPlatby's Connect API
+     * @return \ExpressPayments\ExpressPaymentsObject the object returned by ExpressPayments' Connect API
      */
     protected function requestConnect($method, $path, $params, $opts)
     {
@@ -23,12 +23,12 @@ class OAuthService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Generates a URL to ExpressPlatby's OAuth form.
+     * Generates a URL to ExpressPayments' OAuth form.
      *
      * @param null|array $params
      * @param null|array $opts
      *
-     * @return string the URL to ExpressPlatby's OAuth form
+     * @return string the URL to ExpressPayments' OAuth form
      */
     public function authorizeUrl($params = null, $opts = null)
     {
@@ -41,7 +41,7 @@ class OAuthService extends \ExpressPlatby\Service\AbstractService
         if (!\array_key_exists('response_type', $params)) {
             $params['response_type'] = 'code';
         }
-        $query = \ExpressPlatby\Util\Util::encodeParameters($params);
+        $query = \ExpressPayments\Util\Util::encodeParameters($params);
 
         return $base . '/oauth/authorize?' . $query;
     }
@@ -53,8 +53,8 @@ class OAuthService extends \ExpressPlatby\Service\AbstractService
      * @param null|array $params
      * @param null|array $opts
      *
-     * @return \ExpressPlatby\ExpressPlatbyObject object containing the response from the API
-     *@throws \ExpressPlatby\Exception\OAuth\OAuthErrorException if the request fails
+     * @return \ExpressPayments\ExpressPaymentsObject object containing the response from the API
+     * @throws \ExpressPayments\Exception\OAuth\OAuthErrorException if the request fails
      *
      */
     public function token($params = null, $opts = null)
@@ -71,8 +71,8 @@ class OAuthService extends \ExpressPlatby\Service\AbstractService
      * @param null|array $params
      * @param null|array $opts
      *
-     * @return \ExpressPlatby\ExpressPlatbyObject object containing the response from the API
-     *@throws \ExpressPlatby\Exception\OAuth\OAuthErrorException if the request fails
+     * @return \ExpressPayments\ExpressPaymentsObject object containing the response from the API
+     * @throws \ExpressPayments\Exception\OAuth\OAuthErrorException if the request fails
      *
      */
     public function deauthorize($params = null, $opts = null)
@@ -92,15 +92,15 @@ class OAuthService extends \ExpressPlatby\Service\AbstractService
         }
         if (null === $clientId) {
             $msg = 'No client_id provided. (HINT: set your client_id using '
-              . '`new \ExpressPlatby\ExpressPlatbyClient([clientId => <CLIENT-ID>
+                . '`new \ExpressPayments\ExpressPaymentsClient([clientId => <CLIENT-ID>
                 ])`)".  You can find your client_ids '
-              . 'in your ExpressPlatby dashboard at '
-              . 'https://dashboard.expressplatby.cz/account/applications/settings, '
+                . 'in your ExpressPayments dashboard at '
+                . 'https://dashboard.epayments.network/account/applications/settings, '
               . 'after registering your account as a platform. See '
-              . 'https://expressplatby.cz/docs/connect/standard-accounts for details, '
-              . 'or email support@expressplatby.cz if you have any questions.';
+                . 'https://docs.epayments.network/connect/standard-accounts for details, '
+                . 'or email support@epayments.network if you have any questions.';
 
-            throw new \ExpressPlatby\Exception\AuthenticationException($msg);
+            throw new \ExpressPayments\Exception\AuthenticationException($msg);
         }
 
         return $clientId;
@@ -116,10 +116,10 @@ class OAuthService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * @param array|\ExpressPlatby\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\ExpressPayments\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \ExpressPlatby\Util\RequestOptions
-     *@throws \ExpressPlatby\Exception\InvalidArgumentException
+     * @return \ExpressPayments\Util\RequestOptions
+     * @throws \ExpressPayments\Exception\InvalidArgumentException
      *
      */
     private function _parseOpts($opts)
@@ -127,17 +127,17 @@ class OAuthService extends \ExpressPlatby\Service\AbstractService
         if (\is_array($opts)) {
             if (\array_key_exists('connect_base', $opts)) {
                 // Throw an exception for the convenience of anybody migrating to
-                // \ExpressPlatby\Service\OAuthService from \ExpressPlatby\OAuth, where `connect_base`
+                // \ExpressPayments\Service\OAuthService from \ExpressPayments\OAuth, where `connect_base`
                 // was the name of the parameter that behaves as `api_base` does here.
-                throw new \ExpressPlatby\Exception\InvalidArgumentException('Use `api_base`, not `connect_base`');
+                throw new \ExpressPayments\Exception\InvalidArgumentException('Use `api_base`, not `connect_base`');
             }
         }
 
-        return \ExpressPlatby\Util\RequestOptions::parse($opts);
+        return \ExpressPayments\Util\RequestOptions::parse($opts);
     }
 
     /**
-     * @param \ExpressPlatby\Util\RequestOptions $opts
+     * @param \ExpressPayments\Util\RequestOptions $opts
      *
      * @return string
      */

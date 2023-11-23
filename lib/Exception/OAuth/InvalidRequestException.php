@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception\OAuth;
+namespace ExpressPayments\Exception\OAuth;
 
 /**
  * InvalidRequestException is thrown when a code, refresh token, or grant

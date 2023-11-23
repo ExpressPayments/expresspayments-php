@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Issuing;
+namespace ExpressPayments\Service\Issuing;
 
-class CardholderService extends \ExpressPlatby\Service\AbstractService
+class CardholderService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of Issuing <code>Cardholder</code> objects. The objects are
@@ -12,11 +12,11 @@ class CardholderService extends \ExpressPlatby\Service\AbstractService
      * object appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Issuing\Cardholder>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Issuing\Cardholder>
      */
     public function all($params = null, $opts = null)
     {
@@ -27,11 +27,11 @@ class CardholderService extends \ExpressPlatby\Service\AbstractService
      * Creates a new Issuing <code>Cardholder</code> object that can be issued cards.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Cardholder
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Cardholder
      */
     public function create($params = null, $opts = null)
     {
@@ -43,11 +43,11 @@ class CardholderService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Cardholder
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Cardholder
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -61,11 +61,11 @@ class CardholderService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Issuing\Cardholder
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Issuing\Cardholder
      */
     public function update($id, $params = null, $opts = null)
     {

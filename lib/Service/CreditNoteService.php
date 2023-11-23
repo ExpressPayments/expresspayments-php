@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class CreditNoteService extends \ExpressPlatby\Service\AbstractService
+class CreditNoteService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of credit notes.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\CreditNote>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\CreditNote>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -28,10 +28,10 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\CreditNoteLineItem>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\CreditNoteLineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allLines($parentId, $params = null, $opts = null)
@@ -50,11 +50,11 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      * an existing refund (using <code>refund</code>).</li> <li>Customer balance
      * credit: credit the customer’s balance (using <code>credit_amount</code>) which
      * will be automatically applied to their next invoice when it’s finalized.</li>
-     * <li>Outside ExpressPlatby credit: record the amount that is or will be credited
-     * outside ExpressPlatby (using <code>out_of_band_amount</code>).</li> </ul>
+     * <li>Outside ExpressPayments credit: record the amount that is or will be credited
+     * outside ExpressPayments (using <code>out_of_band_amount</code>).</li> </ul>
      *
      * For post-payment credit notes the sum of the refund, credit and outside
-     * ExpressPlatby amounts must equal the credit note total.
+     * ExpressPayments amounts must equal the credit note total.
      *
      * You may issue multiple credit notes for an invoice. Each credit note will
      * increment the invoice’s <code>pre_payment_credit_notes_amount</code> or
@@ -62,10 +62,10 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      * <code>status</code> at the time of credit note creation.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CreditNote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CreditNote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -77,10 +77,10 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      * Get a preview of a credit note without creating it.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CreditNote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CreditNote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function preview($params = null, $opts = null)
@@ -94,10 +94,10 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      * the full (paginated) list of line items.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\CreditNoteLineItem>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\CreditNoteLineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function previewLines($params = null, $opts = null)
@@ -110,10 +110,10 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CreditNote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CreditNote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -126,10 +126,10 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CreditNote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CreditNote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
@@ -143,10 +143,10 @@ class CreditNoteService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\CreditNote
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\CreditNote
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function voidCreditNote($id, $params = null, $opts = null)

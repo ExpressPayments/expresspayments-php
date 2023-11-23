@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception\OAuth;
+namespace ExpressPayments\Exception\OAuth;
 
 /**
  * UnknownApiErrorException is thrown when the client library receives an

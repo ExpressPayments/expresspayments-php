@@ -2,40 +2,40 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * This is an object representing a ExpressPlatby account. You can retrieve it to see
+ * This is an object representing an ExpressPayments account. You can retrieve it to see
  * properties on the account like its current requirements or if the account is
  * enabled to make live charges or receive payouts.
  *
  * For Custom accounts, the properties below are always returned. For other accounts, some properties are returned until that
- * account has started to go through Connect Onboarding. Once you create an <a href="https://expressplatby.cz/docs/api/account_links">Account Link</a>
+ * account has started to go through Connect Onboarding. Once you create an <a href="https://docs.epayments.network/api/account_links">Account Link</a>
  * for a Standard or Express account, some parameters are no longer returned. These are marked as <strong>Custom Only</strong> or <strong>Custom and Express</strong>
- * below. Learn about the differences <a href="https://expressplatby.cz/docs/connect/accounts">between accounts</a>.
+ * below. Learn about the differences <a href="https://docs.epayments.network/connect/accounts">between accounts</a>.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $business_profile Business information about the account.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $business_profile Business information about the account.
  * @property null|string $business_type The business type.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $capabilities
+ * @property null|\ExpressPayments\ExpressPaymentsObject $capabilities
  * @property null|bool $charges_enabled Whether the account can create live charges.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $company
- * @property null|\ExpressPlatby\ExpressPlatbyObject $controller
+ * @property null|\ExpressPayments\ExpressPaymentsObject $company
+ * @property null|\ExpressPayments\ExpressPaymentsObject $controller
  * @property null|string $country The account's country.
  * @property null|int $created Time at which the account was connected. Measured in seconds since the Unix epoch.
- * @property null|string $default_currency Three-letter ISO currency code representing the default currency for the account. This must be a currency that <a href="https://expressplatby.cz/docs/payouts">ExpressPlatby supports in the account's country</a>.
+ * @property null|string $default_currency Three-letter ISO currency code representing the default currency for the account. This must be a currency that <a href="https://docs.epayments.network/payouts">ExpressPayments supports in the account's country</a>.
  * @property null|bool $details_submitted Whether account details have been submitted. Standard accounts cannot receive payouts before this is true.
- * @property null|string $email An email address associated with the account. It's not used for authentication and ExpressPlatby doesn't market to this field without explicit approval from the platform.
- * @property null|\ExpressPlatby\Collection<\ExpressPlatby\BankAccount|\ExpressPlatby\Card> $external_accounts External accounts (bank accounts and debit cards) currently attached to this account
- * @property null|\ExpressPlatby\ExpressPlatbyObject $future_requirements
- * @property null|\ExpressPlatby\Person $individual <p>This is an object representing a person associated with a ExpressPlatby account.</p><p>A platform cannot access a Standard or Express account's persons after the account starts onboarding, such as after generating an account link for the account. See the <a href="https://expressplatby.cz/docs/connect/standard-accounts">Standard onboarding</a> or <a href="https://expressplatby.cz/docs/connect/express-accounts">Express onboarding documentation</a> for information about platform prefilling and account onboarding steps.</p><p>Related guide: <a href="https://expressplatby.cz/docs/connect/handling-api-verification#person-information">Handling identity verification with the API</a></p>
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
- * @property null|bool $payouts_enabled Whether ExpressPlatby can send payouts to this account.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $requirements
- * @property null|\ExpressPlatby\ExpressPlatbyObject $settings Options for customizing how the account functions within ExpressPlatby.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $tos_acceptance
- * @property null|string $type The ExpressPlatby account type. Can be <code>standard</code>, <code>express</code>, or <code>custom</code>.
+ * @property null|string $email An email address associated with the account. It's not used for authentication and ExpressPayments doesn't market to this field without explicit approval from the platform.
+ * @property null|\ExpressPayments\Collection<\ExpressPayments\BankAccount|\ExpressPayments\Card> $external_accounts External accounts (bank accounts and debit cards) currently attached to this account
+ * @property null|\ExpressPayments\ExpressPaymentsObject $future_requirements
+ * @property null|\ExpressPayments\Person $individual <p>This is an object representing a person associated with an ExpressPayments account.</p><p>A platform cannot access a Standard or Express account's persons after the account starts onboarding, such as after generating an account link for the account. See the <a href="https://docs.epayments.network/connect/standard-accounts">Standard onboarding</a> or <a href="https://docs.epayments.network/connect/express-accounts">Express onboarding documentation</a> for information about platform prefilling and account onboarding steps.</p><p>Related guide: <a href="https://docs.epayments.network/connect/handling-api-verification#person-information">Handling identity verification with the API</a></p>
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|bool $payouts_enabled Whether ExpressPayments can send payouts to this account.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $requirements
+ * @property null|\ExpressPayments\ExpressPaymentsObject $settings Options for customizing how the account functions within ExpressPayments.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $tos_acceptance
+ * @property null|string $type The ExpressPayments account type. Can be <code>standard</code>, <code>express</code>, or <code>custom</code>.
  */
 class Account extends ApiResource
 {
@@ -87,8 +87,8 @@ class Account extends ApiResource
      *     options array containing an `id` key
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Account
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieve($id = null, $opts = null)
@@ -138,7 +138,7 @@ class Account extends ApiResource
 
         $updateArr = [];
         foreach ($additionalOwners as $i => $v) {
-            $update = ($v instanceof ExpressPlatbyObject) ? $v->serializeParameters() : $v;
+            $update = ($v instanceof ExpressPaymentsObject) ? $v->serializeParameters() : $v;
 
             if ([] !== $update) {
                 if (!$originalValue
@@ -156,15 +156,15 @@ class Account extends ApiResource
      * @param null|array $clientId
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\ExpressPlatbyObject object containing the response from the API
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\ExpressPaymentsObject object containing the response from the API
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function deauthorize($clientId = null, $opts = null)
     {
         $params = [
             'client_id' => $clientId,
-            'expressplatby_user_id' => $this->id,
+            'ep_user_id' => $this->id,
         ];
 
         return OAuth::deauthorize($params, $opts);
@@ -174,8 +174,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Account the rejected account
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account the rejected account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function reject($params = null, $opts = null)
@@ -194,8 +194,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Capability> the list of capabilities
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Capability> the list of capabilities
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allCapabilities($id, $params = null, $opts = null)
@@ -209,8 +209,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Capability
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Capability
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieveCapability($id, $capabilityId, $params = null, $opts = null)
@@ -224,8 +224,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Capability
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Capability
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function updateCapability($id, $capabilityId, $params = null, $opts = null)
@@ -239,8 +239,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\BankAccount|\ExpressPlatby\Card> the list of external accounts (BankAccount or Card)
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\BankAccount|\ExpressPayments\Card> the list of external accounts (BankAccount or Card)
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allExternalAccounts($id, $params = null, $opts = null)
@@ -253,8 +253,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function createExternalAccount($id, $params = null, $opts = null)
@@ -268,8 +268,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function deleteExternalAccount($id, $externalAccountId, $params = null, $opts = null)
@@ -283,8 +283,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrieveExternalAccount($id, $externalAccountId, $params = null, $opts = null)
@@ -298,8 +298,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function updateExternalAccount($id, $externalAccountId, $params = null, $opts = null)
@@ -313,8 +313,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\LoginLink
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\LoginLink
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function createLoginLink($id, $params = null, $opts = null)
@@ -328,8 +328,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Person> the list of persons
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Person> the list of persons
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allPersons($id, $params = null, $opts = null)
@@ -342,8 +342,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Person
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function createPerson($id, $params = null, $opts = null)
@@ -357,8 +357,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Person
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function deletePerson($id, $personId, $params = null, $opts = null)
@@ -372,8 +372,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Person
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function retrievePerson($id, $personId, $params = null, $opts = null)
@@ -387,8 +387,8 @@ class Account extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Person
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function updatePerson($id, $personId, $params = null, $opts = null)

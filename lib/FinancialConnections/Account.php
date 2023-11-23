@@ -2,35 +2,35 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\FinancialConnections;
+namespace ExpressPayments\FinancialConnections;
 
 /**
- * A Financial Connections Account represents an account that exists outside of ExpressPlatby, to which you have been granted some degree of access.
+ * A Financial Connections Account represents an account that exists outside ExpressPayments, to which you have been granted some degree of access.
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $account_holder The account holder that this account belongs to.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $balance The most recent information about the account's balance.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $balance_refresh The state of the most recent attempt to refresh the account balance.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $account_holder The account holder that this account belongs to.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $balance The most recent information about the account's balance.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $balance_refresh The state of the most recent attempt to refresh the account balance.
  * @property string $category The type of the account. Account category is further divided in <code>subcategory</code>.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property null|string $display_name A human-readable name that has been assigned to this account, either by the account holder or by the institution.
  * @property string $institution_name The name of the institution that holds this account.
  * @property null|string $last4 The last 4 digits of the account number. If present, this will be 4 numeric characters.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|string|\ExpressPlatby\FinancialConnections\AccountOwnership $ownership The most recent information about the account's owners.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $ownership_refresh The state of the most recent attempt to refresh the account owners.
+ * @property null|string|\ExpressPayments\FinancialConnections\AccountOwnership $ownership The most recent information about the account's owners.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $ownership_refresh The state of the most recent attempt to refresh the account owners.
  * @property null|string[] $permissions The list of permissions granted by this account.
  * @property string $status The status of the link to the account.
  * @property string $subcategory <p>If <code>category</code> is <code>cash</code>, one of:</p><p>- <code>checking</code> - <code>savings</code> - <code>other</code></p><p>If <code>category</code> is <code>credit</code>, one of:</p><p>- <code>mortgage</code> - <code>line_of_credit</code> - <code>credit_card</code> - <code>other</code></p><p>If <code>category</code> is <code>investment</code> or <code>other</code>, this will be <code>other</code>.</p>
- * @property string[] $supported_payment_method_types The <a href="https://expressplatby.cz/docs/api/payment_methods/object#payment_method_object-type">PaymentMethod type</a>(s) that can be created from this account.
+ * @property string[] $supported_payment_method_types The <a href="https://docs.epayments.network/api/payment_methods/object#payment_method_object-type">PaymentMethod type</a>(s) that can be created from this account.
  */
-class Account extends \ExpressPlatby\ApiResource
+class Account extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'financial_connections.account';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Retrieve;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Retrieve;
 
     const CATEGORY_CASH = 'cash';
     const CATEGORY_CREDIT = 'credit';
@@ -52,9 +52,9 @@ class Account extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FinancialConnections\Account the disconnected account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\FinancialConnections\Account the disconnected account
      */
     public function disconnect($params = null, $opts = null)
     {
@@ -70,15 +70,15 @@ class Account extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\FinancialConnections\AccountOwner> list of account owners
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\FinancialConnections\AccountOwner> list of account owners
      */
     public static function allOwners($id, $params = null, $opts = null)
     {
         $url = static::resourceUrl($id) . '/owners';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -88,9 +88,9 @@ class Account extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\FinancialConnections\Account the refreshed account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\FinancialConnections\Account the refreshed account
      */
     public function refreshAccount($params = null, $opts = null)
     {

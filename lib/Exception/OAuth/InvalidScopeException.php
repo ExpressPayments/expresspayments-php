@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Exception\OAuth;
+namespace ExpressPayments\Exception\OAuth;
 
 /**
  * InvalidScopeException is thrown when an invalid scope parameter is provided.

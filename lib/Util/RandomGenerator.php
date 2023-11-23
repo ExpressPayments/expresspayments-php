@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Util;
+namespace ExpressPayments\Util;
 
 /**
  * A basic random generator. This is in a separate class so we the generator

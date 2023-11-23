@@ -1,8 +1,8 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
-use ExpressPlatby\Util\CaseInsensitiveArray;
+use ExpressPayments\Util\CaseInsensitiveArray;
 
 /**
  * Class ApiResponse.

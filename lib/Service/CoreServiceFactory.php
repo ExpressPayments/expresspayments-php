@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
 /**
  * Service factory class for API resources in the root namespace.
@@ -69,7 +69,7 @@ namespace ExpressPlatby\Service;
  * @property WebhookEndpointService $webhookEndpoints
  * // Doc: The end of the section generated from our OpenAPI spec
  */
-class CoreServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class CoreServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

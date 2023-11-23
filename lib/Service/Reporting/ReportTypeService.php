@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Reporting;
+namespace ExpressPayments\Service\Reporting;
 
-class ReportTypeService extends \ExpressPlatby\Service\AbstractService
+class ReportTypeService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a full list of Report Types.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Reporting\ReportType>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Reporting\ReportType>
      */
     public function all($params = null, $opts = null)
     {
@@ -23,15 +23,15 @@ class ReportTypeService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Retrieves the details of a Report Type. (Certain report types require a <a
-     * href="https://expressplatby.cz/docs/keys#test-live-modes">live-mode API key</a>.).
+     * href="https://docs.epayments.network/keys#test-live-modes">live-mode API key</a>.).
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Reporting\ReportType
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Reporting\ReportType
      */
     public function retrieve($id, $params = null, $opts = null)
     {

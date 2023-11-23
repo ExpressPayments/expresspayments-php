@@ -1,17 +1,17 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Class ApiResource.
  *
  * */
-abstract class ApiResource extends ExpressPlatbyObject
+abstract class ApiResource extends ExpressPaymentsObject
 {
     use ApiOperations\Request;
 
     /**
-     * @return \ExpressPlatby\Util\Set A list of fields that can be their own type of
+     * @return \ExpressPayments\Util\Set A list of fields that can be their own type of
      * API resource (say a nested card under an account for example), and if
      * that resource is set, it should be transmitted to the API on a create or
      * update. Doing so is not the default behavior because API resources
@@ -53,7 +53,7 @@ abstract class ApiResource extends ExpressPlatbyObject
      */
     public function refresh()
     {
-        $requestor = new ApiRequestor($this->_opts->apiKey, static::baseUrl());
+        $requestor = new ApiRequester($this->_opts->apiKey, static::baseUrl());
         $url = $this->instanceUrl();
 
         list($response, $this->_opts->apiKey) = $requestor->request(
@@ -73,7 +73,7 @@ abstract class ApiResource extends ExpressPlatbyObject
      */
     public static function baseUrl()
     {
-        return ExpressPlatby::$apiBase;
+        return ExpressPayments::$apiBase;
     }
 
     /**

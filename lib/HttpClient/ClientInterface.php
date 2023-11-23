@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\HttpClient;
+namespace ExpressPayments\HttpClient;
 
 interface ClientInterface
 {
@@ -12,11 +12,11 @@ interface ClientInterface
      * @param bool $hasFile Whether or not $params references a file (via an @ prefix or
      *                         CURLFile)
      *
-     * @throws \ExpressPlatby\Exception\ApiConnectionException
-     * @throws \ExpressPlatby\Exception\UnexpectedValueException
-     *
      * @return array an array whose first element is raw request body, second
      *    element is HTTP status code and third array of HTTP headers
+     * @throws \ExpressPayments\Exception\UnexpectedValueException
+     *
+     * @throws \ExpressPayments\Exception\ApiConnectionException
      */
     public function request($method, $absUrl, $headers, $params, $hasFile);
 }

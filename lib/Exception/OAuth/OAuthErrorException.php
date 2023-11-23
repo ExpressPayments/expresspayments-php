@@ -1,12 +1,12 @@
 <?php
 
-namespace ExpressPlatby\Exception\OAuth;
+namespace ExpressPayments\Exception\OAuth;
 
 /**
- * Implements properties and methods common to all (non-SPL) ExpressPlatby OAuth
+ * Implements properties and methods common to all (non-SPL) ExpressPayments OAuth
  * exceptions.
  */
-abstract class OAuthErrorException extends \ExpressPlatby\Exception\ApiErrorException
+abstract class OAuthErrorException extends \ExpressPayments\Exception\ApiErrorException
 {
     protected function constructErrorObject()
     {
@@ -14,6 +14,6 @@ abstract class OAuthErrorException extends \ExpressPlatby\Exception\ApiErrorExce
             return null;
         }
 
-        return \ExpressPlatby\OAuthErrorObject::constructFrom($this->jsonBody);
+        return \ExpressPayments\OAuthErrorObject::constructFrom($this->jsonBody);
     }
 }

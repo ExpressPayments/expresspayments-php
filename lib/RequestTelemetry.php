@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Class RequestTelemetry.

@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Tax;
+namespace ExpressPayments\Service\Tax;
 
-class SettingsService extends \ExpressPlatby\Service\AbstractService
+class SettingsService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Retrieves Tax <code>Settings</code> for a merchant.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Settings
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Settings
      */
     public function retrieve($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class SettingsService extends \ExpressPlatby\Service\AbstractService
      * parameters are editable but none can be removed once set.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Tax\Settings
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Tax\Settings
      */
     public function update($params = null, $opts = null)
     {

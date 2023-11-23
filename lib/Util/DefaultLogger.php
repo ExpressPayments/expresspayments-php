@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Util;
+namespace ExpressPayments\Util;
 
 /**
  * A very basic implementation of LoggerInterface that has just enough
@@ -17,7 +17,7 @@ class DefaultLogger implements LoggerInterface
     public function error($message, array $context = [])
     {
         if (\count($context) > 0) {
-            throw new \ExpressPlatby\Exception\BadMethodCallException('DefaultLogger does not currently implement context. Please implement if you need it.');
+            throw new \ExpressPayments\Exception\BadMethodCallException('DefaultLogger does not currently implement context. Please implement if you need it.');
         }
 
         if (null === $this->destination) {

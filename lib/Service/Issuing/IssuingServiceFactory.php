@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Issuing;
+namespace ExpressPayments\Service\Issuing;
 
 /**
  * Service factory class for API resources in the Issuing namespace.
@@ -14,7 +14,7 @@ namespace ExpressPlatby\Service\Issuing;
  * @property TokenService $tokens
  * @property TransactionService $transactions
  */
-class IssuingServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class IssuingServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

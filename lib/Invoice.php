@@ -2,124 +2,124 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Invoices are statements of amounts owed by a customer, and are either
  * generated one-off, or generated periodically from a subscription.
  *
- * They contain <a href="https://expressplatby.cz/docs/api#invoiceitems">invoice items</a>, and proration adjustments
+ * They contain <a href="https://docs.epayments.network/api#invoiceitems">invoice items</a>, and proration adjustments
  * that may be caused by subscription upgrades/downgrades (if necessary).
  *
  * If your invoice is configured to be billed through automatic charges,
- * ExpressPlatby automatically finalizes your invoice and attempts payment. Note
+ * ExpressPayments automatically finalizes your invoice and attempts payment. Note
  * that finalizing the invoice,
- * <a href="https://expressplatby.cz/docs/invoicing/integration/automatic-advancement-collection">when automatic</a>, does
- * not happen immediately as the invoice is created. ExpressPlatby waits
+ * <a href="https://docs.epayments.network/invoicing/integration/automatic-advancement-collection">when automatic</a>, does
+ * not happen immediately as the invoice is created. ExpressPayments waits
  * until one hour after the last webhook was successfully sent (or the last
  * webhook timed out after failing). If you (and the platforms you may have
- * connected to) have no webhooks configured, ExpressPlatby waits one hour after
+ * connected to) have no webhooks configured, ExpressPayments waits one hour after
  * creation to finalize the invoice.
  *
  * If your invoice is configured to be billed by sending an email, then based on your
- * <a href="https://dashboard.expressplatby.cz/account/billing/automatic">email settings</a>,
- * ExpressPlatby will email the invoice to your customer and await payment. These
+ * <a href="https://dashboard.epayments.network/account/billing/automatic">email settings</a>,
+ * ExpressPayments will email the invoice to your customer and await payment. These
  * emails can contain a link to a hosted page to pay the invoice.
  *
- * ExpressPlatby applies any customer credit on the account before determining the
+ * ExpressPayments applies any customer credit on the account before determining the
  * amount due for the invoice (i.e., the amount that will be actually
- * charged). If the amount due for the invoice is less than ExpressPlatby's <a href="/docs/currencies#minimum-and-maximum-charge-amounts">minimum allowed charge
+ * charged). If the amount due for the invoice is less than ExpressPayments' <a href="/docs/currencies#minimum-and-maximum-charge-amounts">minimum allowed charge
  * per currency</a>, the
  * invoice is automatically marked paid, and we add the amount due to the
  * customer's credit balance which is applied to the next invoice.
  *
  * More details on the customer's credit balance are
- * <a href="https://expressplatby.cz/docs/billing/customer/balance">here</a>.
+ * <a href="https://docs.epayments.network/billing/customer/balance">here</a>.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/billing/invoices/sending">Send invoices to customers</a>
+ * Related guide: <a href="https://docs.epayments.network/billing/invoices/sending">Send invoices to customers</a>
  *
- * @property null|string $id Unique identifier for the object. This property is always present unless the invoice is an upcoming invoice. See <a href="https://expressplatby.cz/docs/api/invoices/upcoming">Retrieve an upcoming invoice</a> for more details.
+ * @property null|string $id Unique identifier for the object. This property is always present unless the invoice is an upcoming invoice. See <a href="https://docs.epayments.network/api/invoices/upcoming">Retrieve an upcoming invoice</a> for more details.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property null|string $account_country The country of the business associated with this invoice, most often the business creating the invoice.
  * @property null|string $account_name The public name of the business associated with this invoice, most often the business creating the invoice.
- * @property null|(string|\ExpressPlatby\TaxId)[] $account_tax_ids The account tax IDs associated with the invoice. Only editable when the invoice is a draft.
+ * @property null|(string|\ExpressPayments\TaxId)[] $account_tax_ids The account tax IDs associated with the invoice. Only editable when the invoice is a draft.
  * @property int $amount_due Final amount due at this time for this invoice. If the invoice's total is smaller than the minimum charge amount, for example, or if there is account credit that can be applied to the invoice, the <code>amount_due</code> may be 0. If there is a positive <code>starting_balance</code> for the invoice (the customer owes money), the <code>amount_due</code> will also take that into account. The charge that gets generated for the invoice will be for the amount specified in <code>amount_due</code>.
  * @property int $amount_paid The amount, in cents (or local equivalent), that was paid.
  * @property int $amount_remaining The difference between amount_due and amount_paid, in cents (or local equivalent).
  * @property int $amount_shipping This is the sum of all the shipping amounts.
- * @property null|string|\ExpressPlatby\ExpressPlatbyObject $application ID of the Connect Application that created the invoice.
- * @property null|int $application_fee_amount The fee in cents (or local equivalent) that will be applied to the invoice and transferred to the application owner's ExpressPlatby account when the invoice is paid.
+ * @property null|string|\ExpressPayments\ExpressPaymentsObject $application ID of the Connect Application that created the invoice.
+ * @property null|int $application_fee_amount The fee in cents (or local equivalent) that will be applied to the invoice and transferred to the application owner's ExpressPayments account when the invoice is paid.
  * @property int $attempt_count Number of payment attempts made for this invoice, from the perspective of the payment retry schedule. Any payment attempt counts as the first attempt, and subsequently only automatic retries increment the attempt count. In other words, manual payment attempts after the first attempt do not affect the retry schedule.
  * @property bool $attempted Whether an attempt has been made to pay the invoice. An invoice is not attempted until 1 hour after the <code>invoice.created</code> webhook, for example, so you might not want to display that invoice as unpaid to your users.
- * @property null|bool $auto_advance Controls whether ExpressPlatby performs <a href="https://expressplatby.cz/docs/invoicing/integration/automatic-advancement-collection">automatic collection</a> of the invoice. If <code>false</code>, the invoice's state doesn't automatically advance without an explicit action.
- * @property \ExpressPlatby\ExpressPlatbyObject $automatic_tax
+ * @property null|bool $auto_advance Controls whether ExpressPayments performs <a href="https://docs.epayments.network/invoicing/integration/automatic-advancement-collection">automatic collection</a> of the invoice. If <code>false</code>, the invoice's state doesn't automatically advance without an explicit action.
+ * @property \ExpressPayments\ExpressPaymentsObject $automatic_tax
  * @property null|string $billing_reason <p>Indicates the reason why the invoice was created.</p><p>* <code>manual</code>: Unrelated to a subscription, for example, created via the invoice editor. * <code>subscription</code>: No longer in use. Applies to subscriptions from before May 2018 where no distinction was made between updates, cycles, and thresholds. * <code>subscription_create</code>: A new subscription was created. * <code>subscription_cycle</code>: A subscription advanced into a new period. * <code>subscription_threshold</code>: A subscription reached a billing threshold. * <code>subscription_update</code>: A subscription was updated. * <code>upcoming</code>: Reserved for simulated invoices, per the upcoming invoice endpoint.</p>
- * @property null|string|\ExpressPlatby\Charge $charge ID of the latest charge generated for this invoice, if any.
- * @property string $collection_method Either <code>charge_automatically</code>, or <code>send_invoice</code>. When charging automatically, ExpressPlatby will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, ExpressPlatby will email this invoice to the customer with payment instructions.
+ * @property null|string|\ExpressPayments\Charge $charge ID of the latest charge generated for this invoice, if any.
+ * @property string $collection_method Either <code>charge_automatically</code>, or <code>send_invoice</code>. When charging automatically, ExpressPayments will attempt to pay this invoice using the default source attached to the customer. When sending an invoice, ExpressPayments will email this invoice to the customer with payment instructions.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://expressplatby.cz/docs/currencies">supported currency</a>.
- * @property null|\ExpressPlatby\ExpressPlatbyObject[] $custom_fields Custom fields displayed on the invoice.
- * @property null|string|\ExpressPlatby\Customer $customer The ID of the customer who will be billed.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $customer_address The customer's address. Until the invoice is finalized, this field will equal <code>customer.address</code>. Once the invoice is finalized, this field will no longer be updated.
+ * @property string $currency Three-letter <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO currency code</a>, in lowercase. Must be a <a href="https://docs.epayments.network/currencies">supported currency</a>.
+ * @property null|\ExpressPayments\ExpressPaymentsObject[] $custom_fields Custom fields displayed on the invoice.
+ * @property null|string|\ExpressPayments\Customer $customer The ID of the customer who will be billed.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $customer_address The customer's address. Until the invoice is finalized, this field will equal <code>customer.address</code>. Once the invoice is finalized, this field will no longer be updated.
  * @property null|string $customer_email The customer's email. Until the invoice is finalized, this field will equal <code>customer.email</code>. Once the invoice is finalized, this field will no longer be updated.
  * @property null|string $customer_name The customer's name. Until the invoice is finalized, this field will equal <code>customer.name</code>. Once the invoice is finalized, this field will no longer be updated.
  * @property null|string $customer_phone The customer's phone number. Until the invoice is finalized, this field will equal <code>customer.phone</code>. Once the invoice is finalized, this field will no longer be updated.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $customer_shipping The customer's shipping information. Until the invoice is finalized, this field will equal <code>customer.shipping</code>. Once the invoice is finalized, this field will no longer be updated.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $customer_shipping The customer's shipping information. Until the invoice is finalized, this field will equal <code>customer.shipping</code>. Once the invoice is finalized, this field will no longer be updated.
  * @property null|string $customer_tax_exempt The customer's tax exempt status. Until the invoice is finalized, this field will equal <code>customer.tax_exempt</code>. Once the invoice is finalized, this field will no longer be updated.
- * @property null|\ExpressPlatby\ExpressPlatbyObject[] $customer_tax_ids The customer's tax IDs. Until the invoice is finalized, this field will contain the same tax IDs as <code>customer.tax_ids</code>. Once the invoice is finalized, this field will no longer be updated.
- * @property null|string|\ExpressPlatby\PaymentMethod $default_payment_method ID of the default payment method for the invoice. It must belong to the customer associated with the invoice. If not set, defaults to the subscription's default payment method, if any, or to the default payment method in the customer's invoice settings.
- * @property null|string|\ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source $default_source ID of the default payment source for the invoice. It must belong to the customer associated with the invoice and be in a chargeable state. If not set, defaults to the subscription's default source, if any, or to the customer's default source.
- * @property \ExpressPlatby\TaxRate[] $default_tax_rates The tax rates applied to this invoice, if any.
+ * @property null|\ExpressPayments\ExpressPaymentsObject[] $customer_tax_ids The customer's tax IDs. Until the invoice is finalized, this field will contain the same tax IDs as <code>customer.tax_ids</code>. Once the invoice is finalized, this field will no longer be updated.
+ * @property null|string|\ExpressPayments\PaymentMethod $default_payment_method ID of the default payment method for the invoice. It must belong to the customer associated with the invoice. If not set, defaults to the subscription's default payment method, if any, or to the default payment method in the customer's invoice settings.
+ * @property null|string|\ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source $default_source ID of the default payment source for the invoice. It must belong to the customer associated with the invoice and be in a chargeable state. If not set, defaults to the subscription's default source, if any, or to the customer's default source.
+ * @property \ExpressPayments\TaxRate[] $default_tax_rates The tax rates applied to this invoice, if any.
  * @property null|string $description An arbitrary string attached to the object. Often useful for displaying to users. Referenced as 'memo' in the Dashboard.
- * @property null|\ExpressPlatby\Discount $discount Describes the current discount applied to this invoice, if there is one. Not populated if there are multiple discounts.
- * @property null|(string|\ExpressPlatby\Discount)[] $discounts The discounts applied to the invoice. Line item discounts are applied before invoice discounts. Use <code>expand[]=discounts</code> to expand each discount.
+ * @property null|\ExpressPayments\Discount $discount Describes the current discount applied to this invoice, if there is one. Not populated if there are multiple discounts.
+ * @property null|(string|\ExpressPayments\Discount)[] $discounts The discounts applied to the invoice. Line item discounts are applied before invoice discounts. Use <code>expand[]=discounts</code> to expand each discount.
  * @property null|int $due_date The date on which payment for this invoice is due. This value will be <code>null</code> for invoices where <code>collection_method=charge_automatically</code>.
  * @property null|int $effective_at The date when this invoice is in effect. Same as <code>finalized_at</code> unless overwritten. When defined, this value replaces the system-generated 'Date of issue' printed on the invoice PDF and receipt.
  * @property null|int $ending_balance Ending customer balance after the invoice is finalized. Invoices are finalized approximately an hour after successful webhook delivery or when payment collection is attempted for the invoice. If the invoice has not been finalized yet, this will be null.
  * @property null|string $footer Footer displayed on the invoice.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $from_invoice Details of the invoice that was cloned. See the <a href="https://expressplatby.cz/docs/invoicing/invoice-revisions">revision documentation</a> for more details.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $from_invoice Details of the invoice that was cloned. See the <a href="https://docs.epayments.network/invoicing/invoice-revisions">revision documentation</a> for more details.
  * @property null|string $hosted_invoice_url The URL for the hosted invoice page, which allows customers to view and pay an invoice. If the invoice has not been finalized yet, this will be null.
  * @property null|string $invoice_pdf The link to download the PDF for the invoice. If the invoice has not been finalized yet, this will be null.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $last_finalization_error The error encountered during the previous attempt to finalize the invoice. This field is cleared when the invoice is successfully finalized.
- * @property null|string|\ExpressPlatby\Invoice $latest_revision The ID of the most recent non-draft revision of this invoice
- * @property \ExpressPlatby\Collection<\ExpressPlatby\InvoiceLineItem> $lines The individual line items that make up the invoice. <code>lines</code> is sorted as follows: (1) pending invoice items (including prorations) in reverse chronological order, (2) subscription items in reverse chronological order, and (3) invoice items added after invoice creation in chronological order.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $last_finalization_error The error encountered during the previous attempt to finalize the invoice. This field is cleared when the invoice is successfully finalized.
+ * @property null|string|\ExpressPayments\Invoice $latest_revision The ID of the most recent non-draft revision of this invoice
+ * @property \ExpressPayments\Collection<\ExpressPayments\InvoiceLineItem> $lines The individual line items that make up the invoice. <code>lines</code> is sorted as follows: (1) pending invoice items (including prorations) in reverse chronological order, (2) subscription items in reverse chronological order, and (3) invoice items added after invoice creation in chronological order.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|int $next_payment_attempt The time at which payment will next be attempted. This value will be <code>null</code> for invoices where <code>collection_method=send_invoice</code>.
  * @property null|string $number A unique, identifying string that appears on emails sent to the customer for this invoice. This starts with the customer's unique invoice_prefix if it is specified.
- * @property null|string|\ExpressPlatby\Account $on_behalf_of The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the <a href="https://expressplatby.cz/docs/billing/invoices/connect">Invoices with Connect</a> documentation for details.
+ * @property null|string|\ExpressPayments\Account $on_behalf_of The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the <a href="https://docs.epayments.network/billing/invoices/connect">Invoices with Connect</a> documentation for details.
  * @property bool $paid Whether payment was successfully collected for this invoice. An invoice can be paid (most commonly) with a charge or with credit from the customer's account balance.
- * @property bool $paid_out_of_band Returns true if the invoice was manually marked paid, returns false if the invoice hasn't been paid yet or was paid on ExpressPlatby.
- * @property null|string|\ExpressPlatby\PaymentIntent $payment_intent The PaymentIntent associated with this invoice. The PaymentIntent is generated when the invoice is finalized, and can then be used to pay the invoice. Note that voiding an invoice will cancel the PaymentIntent.
- * @property \ExpressPlatby\ExpressPlatbyObject $payment_settings
+ * @property bool $paid_out_of_band Returns true if the invoice was manually marked paid, returns false if the invoice hasn't been paid yet or was paid on ExpressPayments.
+ * @property null|string|\ExpressPayments\PaymentIntent $payment_intent The PaymentIntent associated with this invoice. The PaymentIntent is generated when the invoice is finalized, and can then be used to pay the invoice. Note that voiding an invoice will cancel the PaymentIntent.
+ * @property \ExpressPayments\ExpressPaymentsObject $payment_settings
  * @property int $period_end End of the usage period during which invoice items were added to this invoice.
  * @property int $period_start Start of the usage period during which invoice items were added to this invoice.
  * @property int $post_payment_credit_notes_amount Total amount of all post-payment credit notes issued for this invoice.
  * @property int $pre_payment_credit_notes_amount Total amount of all pre-payment credit notes issued for this invoice.
- * @property null|string|\ExpressPlatby\Quote $quote The quote this invoice was generated from.
+ * @property null|string|\ExpressPayments\Quote $quote The quote this invoice was generated from.
  * @property null|string $receipt_number This is the transaction number that appears on email receipts sent for this invoice.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $rendering The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $rendering_options This is a legacy field that will be removed soon. For details about <code>rendering_options</code>, refer to <code>rendering</code> instead. Options for invoice PDF rendering.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $shipping_cost The details of the cost of shipping, including the ShippingRate applied on the invoice.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $shipping_details Shipping details for the invoice. The Invoice PDF will use the <code>shipping_details</code> value if it is set, otherwise the PDF will render the shipping address from the customer.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $rendering The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $rendering_options This is a legacy field that will be removed soon. For details about <code>rendering_options</code>, refer to <code>rendering</code> instead. Options for invoice PDF rendering.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $shipping_cost The details of the cost of shipping, including the ShippingRate applied on the invoice.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $shipping_details Shipping details for the invoice. The Invoice PDF will use the <code>shipping_details</code> value if it is set, otherwise the PDF will render the shipping address from the customer.
  * @property int $starting_balance Starting customer balance before the invoice is finalized. If the invoice has not been finalized yet, this will be the current customer balance. For revision invoices, this also includes any customer balance that was applied to the original invoice.
  * @property null|string $statement_descriptor Extra information about an invoice for the customer's credit card statement.
- * @property null|string $status The status of the invoice, one of <code>draft</code>, <code>open</code>, <code>paid</code>, <code>uncollectible</code>, or <code>void</code>. <a href="https://expressplatby.cz/docs/billing/invoices/workflow#workflow-overview">Learn more</a>
- * @property \ExpressPlatby\ExpressPlatbyObject $status_transitions
- * @property null|string|\ExpressPlatby\Subscription $subscription The subscription that this invoice was prepared for, if any.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $subscription_details Details about the subscription that created this invoice.
+ * @property null|string $status The status of the invoice, one of <code>draft</code>, <code>open</code>, <code>paid</code>, <code>uncollectible</code>, or <code>void</code>. <a href="https://docs.epayments.network/billing/invoices/workflow#workflow-overview">Learn more</a>
+ * @property \ExpressPayments\ExpressPaymentsObject $status_transitions
+ * @property null|string|\ExpressPayments\Subscription $subscription The subscription that this invoice was prepared for, if any.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $subscription_details Details about the subscription that created this invoice.
  * @property null|int $subscription_proration_date Only set for upcoming invoices that preview prorations. The time used to calculate prorations.
  * @property int $subtotal Total of all subscriptions, invoice items, and prorations on the invoice before any invoice level discount or exclusive tax is applied. Item discounts are already incorporated
  * @property null|int $subtotal_excluding_tax The integer amount in cents (or local equivalent) representing the subtotal of the invoice before any invoice level discount or tax is applied. Item discounts are already incorporated
  * @property null|int $tax The amount of tax on this invoice. This is the sum of all the tax amounts on this invoice.
- * @property null|string|\ExpressPlatby\TestHelpers\TestClock $test_clock ID of the test clock this invoice belongs to.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $threshold_reason
+ * @property null|string|\ExpressPayments\TestHelpers\TestClock $test_clock ID of the test clock this invoice belongs to.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $threshold_reason
  * @property int $total Total after discounts and taxes.
- * @property null|\ExpressPlatby\ExpressPlatbyObject[] $total_discount_amounts The aggregate amounts calculated per discount across all line items.
+ * @property null|\ExpressPayments\ExpressPaymentsObject[] $total_discount_amounts The aggregate amounts calculated per discount across all line items.
  * @property null|int $total_excluding_tax The integer amount in cents (or local equivalent) representing the total amount of the invoice including all discounts but excluding all tax.
- * @property \ExpressPlatby\ExpressPlatbyObject[] $total_tax_amounts The aggregate amounts calculated per tax rate for all line items.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $transfer_data The account (if any) the payment will be attributed to for tax reporting, and where funds from the payment will be transferred to for the invoice.
- * @property null|int $webhooks_delivered_at Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have <a href="https://expressplatby.cz/docs/billing/webhooks#understand">been exhausted</a>. This field tracks the time when webhooks for this invoice were successfully delivered. If the invoice had no webhooks to deliver, this will be set while the invoice is being created.
+ * @property \ExpressPayments\ExpressPaymentsObject[] $total_tax_amounts The aggregate amounts calculated per tax rate for all line items.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $transfer_data The account (if any) the payment will be attributed to for tax reporting, and where funds from the payment will be transferred to for the invoice.
+ * @property null|int $webhooks_delivered_at Invoices are automatically paid or sent 1 hour after webhooks are delivered, or until all webhook delivery attempts have <a href="https://docs.epayments.network/billing/webhooks#understand">been exhausted</a>. This field tracks the time when webhooks for this invoice were successfully delivered. If the invoice had no webhooks to deliver, this will be set while the invoice is being created.
  */
 class Invoice extends ApiResource
 {
@@ -163,8 +163,8 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Invoice the finalized invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice the finalized invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function finalizeInvoice($params = null, $opts = null)
@@ -180,8 +180,8 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Invoice the uncollectible invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice the uncollectible invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function markUncollectible($params = null, $opts = null)
@@ -197,8 +197,8 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Invoice the paid invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice the paid invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function pay($params = null, $opts = null)
@@ -214,8 +214,8 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Invoice the sent invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice the sent invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function sendInvoice($params = null, $opts = null)
@@ -231,15 +231,15 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Invoice the upcoming invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice the upcoming invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function upcoming($params = null, $opts = null)
     {
         $url = static::classUrl() . '/upcoming';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -249,15 +249,15 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\InvoiceLineItem> list of invoice line items
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\InvoiceLineItem> list of invoice line items
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function upcomingLines($params = null, $opts = null)
     {
         $url = static::classUrl() . '/upcoming/lines';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -267,8 +267,8 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Invoice the voided invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice the voided invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function voidInvoice($params = null, $opts = null)
@@ -284,8 +284,8 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\Invoice> the invoice search results
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\Invoice> the invoice search results
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function search($params = null, $opts = null)
@@ -302,8 +302,8 @@ class Invoice extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\InvoiceLineItem> the list of invoice line items
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\InvoiceLineItem> the list of invoice line items
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function allLines($id, $params = null, $opts = null)

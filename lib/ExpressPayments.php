@@ -1,29 +1,29 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * Class ExpressPlatby.
+ * Class ExpressPayments.
  */
-class ExpressPlatby
+class ExpressPayments
 {
-    /** @var string The ExpressPlatby API key to be used for requests. */
+    /** @var string The ExpressPayments API key to be used for requests. */
     public static $apiKey;
 
-    /** @var string The ExpressPlatby client_id to be used for Connect requests. */
+    /** @var string The ExpressPayments client_id to be used for Connect requests. */
     public static $clientId;
 
-    /** @var string The base URL for the ExpressPlatby API. */
-    public static $apiBase = 'https://api.expressplatby.cz';
+    /** @var string The base URL for the ExpressPayments API. */
+    public static $apiBase = 'https://api.epayments.network';
 
     /** @var string The base URL for the OAuth API. */
-    public static $connectBase = 'https://connect.expressplatby.cz';
+    public static $connectBase = 'https://connect.epayments.network';
 
-    /** @var string The base URL for the ExpressPlatby API uploads endpoint. */
-    public static $apiUploadBase = 'https://files.expressplatby.cz';
+    /** @var string The base URL for the ExpressPayments API uploads endpoint. */
+    public static $apiUploadBase = 'https://files.epayments.network';
 
-    /** @var string The version of the ExpressPlatby API to use for requests. */
-    public static $apiVersion = \ExpressPlatby\Util\ApiVersion::CURRENT;
+    /** @var string The version of the ExpressPayments API to use for requests. */
+    public static $apiVersion = \ExpressPayments\Util\ApiVersion::CURRENT;
 
     /** @var null|string The account ID for connected accounts requests. */
     public static $accountId = null;
@@ -52,7 +52,7 @@ class ExpressPlatby
     /** @var float Maximum delay between retries, in seconds */
     private static $maxNetworkRetryDelay = 2.0;
 
-    /** @var float Maximum delay between retries, in seconds, that will be respected from the ExpressPlatby API */
+    /** @var float Maximum delay between retries, in seconds, that will be respected from the ExpressPayments API */
     private static $maxRetryAfter = 60.0;
 
     /** @var float Initial delay between retries, in seconds */
@@ -175,7 +175,7 @@ class ExpressPlatby
     }
 
     /**
-     * @return null|string The ExpressPlatby account ID for connected account
+     * @return null|string The ExpressPayments account ID for connected account
      *   requests
      */
     public static function getAccountId()
@@ -184,7 +184,7 @@ class ExpressPlatby
     }
 
     /**
-     * @param null|string $accountId the ExpressPlatby account ID to set for connected
+     * @param null|string $accountId the ExpressPayments account ID to set for connected
      *   account requests
      */
     public static function setAccountId($accountId)
@@ -240,7 +240,7 @@ class ExpressPlatby
     }
 
     /**
-     * @return float Maximum delay between retries, in seconds, that will be respected from the ExpressPlatby API
+     * @return float Maximum delay between retries, in seconds, that will be respected from the ExpressPayments API
      */
     public static function getMaxRetryAfter()
     {
@@ -266,8 +266,8 @@ class ExpressPlatby
     /**
      * @param bool $enableTelemetry Enables client telemetry.
      *
-     * Client telemetry enables timing and request metrics to be sent back to ExpressPlatby as an HTTP Header
-     * with the current request. This enables ExpressPlatby to do latency and metrics analysis without adding extra
+     * Client telemetry enables timing and request metrics to be sent back to ExpressPayments as an HTTP Header
+     * with the current request. This enables ExpressPayments to do latency and metrics analysis without adding extra
      * overhead (such as extra network calls) on the client.
      */
     public static function setEnableTelemetry($enableTelemetry)

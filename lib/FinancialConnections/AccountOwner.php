@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\FinancialConnections;
+namespace ExpressPayments\FinancialConnections;
 
 /**
  * Describes an owner of an account.
@@ -16,7 +16,7 @@ namespace ExpressPlatby\FinancialConnections;
  * @property null|string $raw_address The raw physical address of the owner.
  * @property null|int $refreshed_at The timestamp of the refresh that updated this owner.
  */
-class AccountOwner extends \ExpressPlatby\ApiResource
+class AccountOwner extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'financial_connections.account_owner';
 }

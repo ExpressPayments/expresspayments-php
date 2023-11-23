@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class BalanceTransactionService extends \ExpressPlatby\Service\AbstractService
+class BalanceTransactionService extends \ExpressPayments\Service\AbstractService
 {
     /**
-     * Returns a list of transactions that have contributed to the ExpressPlatby account
+     * Returns a list of transactions that have contributed to the ExpressPayments account
      * balance (e.g., charges, transfers, and so forth). The transactions are returned
      * in sorted order, with the most recent transactions appearing first.
      *
@@ -15,10 +15,10 @@ class BalanceTransactionService extends \ExpressPlatby\Service\AbstractService
      * path <code>/v1/balance/history</code>.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\BalanceTransaction>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\BalanceTransaction>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -34,10 +34,10 @@ class BalanceTransactionService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\BalanceTransaction
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BalanceTransaction
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)

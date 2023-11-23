@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class ApplicationFeeService extends \ExpressPlatby\Service\AbstractService
+class ApplicationFeeService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of application fees you’ve previously collected. The application
      * fees are returned in sorted order, with the most recent fees appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\ApplicationFee>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\ApplicationFee>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -31,10 +31,10 @@ class ApplicationFeeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\ApplicationFeeRefund>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\ApplicationFeeRefund>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allRefunds($parentId, $params = null, $opts = null)
@@ -44,7 +44,7 @@ class ApplicationFeeService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Refunds an application fee that has previously been collected but not yet
-     * refunded. Funds will be refunded to the ExpressPlatby account from which the fee was
+     * refunded. Funds will be refunded to the ExpressPayments account from which the fee was
      * originally collected.
      *
      * You can optionally refund only part of an application fee. You can do so
@@ -56,10 +56,10 @@ class ApplicationFeeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\ApplicationFeeRefund
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\ApplicationFeeRefund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createRefund($parentId, $params = null, $opts = null)
@@ -73,10 +73,10 @@ class ApplicationFeeService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\ApplicationFee
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\ApplicationFee
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -92,10 +92,10 @@ class ApplicationFeeService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\ApplicationFeeRefund
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\ApplicationFeeRefund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveRefund($parentId, $id, $params = null, $opts = null)
@@ -112,10 +112,10 @@ class ApplicationFeeService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\ApplicationFeeRefund
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\ApplicationFeeRefund
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updateRefund($parentId, $id, $params = null, $opts = null)

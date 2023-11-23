@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Sigma;
+namespace ExpressPayments\Service\Sigma;
 
-class ScheduledQueryRunService extends \ExpressPlatby\Service\AbstractService
+class ScheduledQueryRunService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of scheduled query runs.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Sigma\ScheduledQueryRun>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Sigma\ScheduledQueryRun>
      */
     public function all($params = null, $opts = null)
     {
@@ -26,11 +26,11 @@ class ScheduledQueryRunService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Sigma\ScheduledQueryRun
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Sigma\ScheduledQueryRun
      */
     public function retrieve($id, $params = null, $opts = null)
     {

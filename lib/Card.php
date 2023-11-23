@@ -2,18 +2,18 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * You can store multiple cards on a customer in order to charge the customer
  * later. You can also store multiple debit cards on a recipient in order to
  * transfer to those cards later.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/sources/cards">Card payments with Sources</a>
+ * Related guide: <a href="https://docs.epayments.network/sources/cards">Card payments with Sources</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
- * @property null|string|\ExpressPlatby\Account $account The account this card belongs to. This attribute will not be in the card object if the card belongs to a customer or recipient instead.
+ * @property null|string|\ExpressPayments\Account $account The account this card belongs to. This attribute will not be in the card object if the card belongs to a customer or recipient instead.
  * @property null|string $address_city City/District/Suburb/Town/Village.
  * @property null|string $address_country Billing address country, if provided when creating card.
  * @property null|string $address_line1 Address line 1 (Street address/PO Box/Company name).
@@ -25,9 +25,9 @@ namespace ExpressPlatby;
  * @property null|string[] $available_payout_methods A set of available payout methods for this card. Only values from this set should be passed as the <code>method</code> when creating a payout.
  * @property string $brand Card brand. Can be <code>American Express</code>, <code>Diners Club</code>, <code>Discover</code>, <code>Eftpos Australia</code>, <code>JCB</code>, <code>MasterCard</code>, <code>UnionPay</code>, <code>Visa</code>, or <code>Unknown</code>.
  * @property null|string $country Two-letter ISO code representing the country of the card. You could use this attribute to get a sense of the international breakdown of cards you've collected.
- * @property null|string $currency Three-letter <a href="https://expressplatby.cz/docs/payouts">ISO code for currency</a>. Only applicable on accounts (not customers or recipients). The card can be used as a transfer destination for funds in this currency.
- * @property null|string|\ExpressPlatby\Customer $customer The customer that this card belongs to. This attribute will not be in the card object if the card belongs to an account or recipient instead.
- * @property null|string $cvc_check If a CVC was provided, results of the check: <code>pass</code>, <code>fail</code>, <code>unavailable</code>, or <code>unchecked</code>. A result of unchecked indicates that CVC was provided but hasn't been checked yet. Checks are typically performed when attaching a card to a Customer object, or when creating a charge. For more details, see <a href="https://support.expressplatby.cz/questions/check-if-a-card-is-valid-without-a-charge">Check if a card is valid without a charge</a>.
+ * @property null|string $currency Three-letter <a href="https://docs.epayments.network/payouts">ISO code for currency</a>. Only applicable on accounts (not customers or recipients). The card can be used as a transfer destination for funds in this currency.
+ * @property null|string|\ExpressPayments\Customer $customer The customer that this card belongs to. This attribute will not be in the card object if the card belongs to an account or recipient instead.
+ * @property null|string $cvc_check If a CVC was provided, results of the check: <code>pass</code>, <code>fail</code>, <code>unavailable</code>, or <code>unchecked</code>. A result of unchecked indicates that CVC was provided but hasn't been checked yet. Checks are typically performed when attaching a card to a Customer object, or when creating a charge. For more details, see <a href="https://support.epayments.network/questions/check-if-a-card-is-valid-without-a-charge">Check if a card is valid without a charge</a>.
  * @property null|bool $default_for_currency Whether this card is the default external account for its currency.
  * @property null|string $dynamic_last4 (For tokenized numbers only.) The last four digits of the device account number.
  * @property int $exp_month Two-digit number representing the card's expiration month.
@@ -35,9 +35,9 @@ namespace ExpressPlatby;
  * @property null|string $fingerprint <p>Uniquely identifies this particular card number. You can use this attribute to check whether two customers who’ve signed up with you are using the same card number, for example. For payment methods that tokenize card information (Apple Pay, Google Pay), the tokenized number might be provided instead of the underlying card number.</p><p><em>As of May 1, 2021, card fingerprint in India for Connect changed to allow two fingerprints for the same card---one for India and one for the rest of the world.</em></p>
  * @property string $funding Card funding type. Can be <code>credit</code>, <code>debit</code>, <code>prepaid</code>, or <code>unknown</code>.
  * @property string $last4 The last four digits of the card.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|string $name Cardholder name.
- * @property null|string $status For external accounts that are cards, possible values are <code>new</code> and <code>errored</code>. If a payout fails, the status is set to <code>errored</code> and <a href="https://expressplatby.cz/docs/payouts#payout-schedule">scheduled payouts</a> are stopped until account details are updated.
+ * @property null|string $status For external accounts that are cards, possible values are <code>new</code> and <code>errored</code>. If a payout fails, the status is set to <code>errored</code> and <a href="https://docs.epayments.network/payouts#payout-schedule">scheduled payouts</a> are stopped until account details are updated.
  * @property null|string $tokenization_method If the card number is tokenized, this is the method that was used. Can be <code>android_pay</code> (includes Google Pay), <code>apple_pay</code>, <code>masterpass</code>, <code>visa_checkout</code>, or null.
  */
 class Card extends ApiResource
@@ -50,7 +50,7 @@ class Card extends ApiResource
     /**
      * Possible string representations of the CVC check status.
      *
-     * @see https://expressplatby.cz/docs/api/cards/object#card_object-cvc_check
+     * @see https://docs.epayments.network/api/cards/object#card_object-cvc_check
      */
     const CVC_CHECK_FAIL = 'fail';
     const CVC_CHECK_PASS = 'pass';
@@ -60,7 +60,7 @@ class Card extends ApiResource
     /**
      * Possible string representations of the funding of the card.
      *
-     * @see https://expressplatby.cz/docs/api/cards/object#card_object-funding
+     * @see https://docs.epayments.network/api/cards/object#card_object-funding
      */
     const FUNDING_CREDIT = 'credit';
     const FUNDING_DEBIT = 'debit';
@@ -70,7 +70,7 @@ class Card extends ApiResource
     /**
      * Possible string representations of the tokenization method when using Apple Pay or Google Pay.
      *
-     * @see https://expressplatby.cz/docs/api/cards/object#card_object-tokenization_method
+     * @see https://docs.epayments.network/api/cards/object#card_object-tokenization_method
      */
     const TOKENIZATION_METHOD_APPLE_PAY = 'apple_pay';
     const TOKENIZATION_METHOD_GOOGLE_PAY = 'google_pay';
@@ -105,7 +105,7 @@ class Card extends ApiResource
      * @param array|string $_id
      * @param null|array|string $_opts
      *
-     * @throws \ExpressPlatby\Exception\BadMethodCallException
+     * @throws \ExpressPayments\Exception\BadMethodCallException
      */
     public static function retrieve($_id, $_opts = null)
     {
@@ -122,7 +122,7 @@ class Card extends ApiResource
      * @param null|array $_params
      * @param null|array|string $_options
      *
-     * @throws \ExpressPlatby\Exception\BadMethodCallException
+     * @throws \ExpressPayments\Exception\BadMethodCallException
      */
     public static function update($_id, $_params = null, $_options = null)
     {

@@ -2,12 +2,12 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Radar;
+namespace ExpressPayments\Radar;
 
 /**
  * Value lists allow you to group values together which can then be referenced in rules.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/radar/lists#managing-list-items">Default ExpressPlatby lists</a>
+ * Related guide: <a href="https://docs.epayments.network/radar/lists#managing-list-items">Default ExpressPayments lists</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -15,20 +15,20 @@ namespace ExpressPlatby\Radar;
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property string $created_by The name or email address of the user who created this value list.
  * @property string $item_type The type of items in the value list. One of <code>card_fingerprint</code>, <code>us_bank_account_fingerprint</code>, <code>sepa_debit_fingerprint</code>, <code>card_bin</code>, <code>email</code>, <code>ip_address</code>, <code>country</code>, <code>string</code>, <code>case_sensitive_string</code>, or <code>customer_id</code>.
- * @property \ExpressPlatby\Collection<\ExpressPlatby\Radar\ValueListItem> $list_items List of items contained within this value list.
+ * @property \ExpressPayments\Collection<\ExpressPayments\Radar\ValueListItem> $list_items List of items contained within this value list.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property string $name The name of the value list.
  */
-class ValueList extends \ExpressPlatby\ApiResource
+class ValueList extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'radar.value_list';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Create;
-    use \ExpressPlatby\ApiOperations\Delete;
-    use \ExpressPlatby\ApiOperations\Retrieve;
-    use \ExpressPlatby\ApiOperations\Update;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Create;
+    use \ExpressPayments\ApiOperations\Delete;
+    use \ExpressPayments\ApiOperations\Retrieve;
+    use \ExpressPayments\ApiOperations\Update;
 
     const ITEM_TYPE_CARD_BIN = 'card_bin';
     const ITEM_TYPE_CARD_FINGERPRINT = 'card_fingerprint';

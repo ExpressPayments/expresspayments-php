@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\TestHelpers;
+namespace ExpressPayments\TestHelpers;
 
 /**
  * A test clock enables deterministic control over objects in testmode. With a test clock, you can create
@@ -18,14 +18,14 @@ namespace ExpressPlatby\TestHelpers;
  * @property null|string $name The custom name supplied at creation.
  * @property string $status The status of the Test Clock.
  */
-class TestClock extends \ExpressPlatby\ApiResource
+class TestClock extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'test_helpers.test_clock';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Create;
-    use \ExpressPlatby\ApiOperations\Delete;
-    use \ExpressPlatby\ApiOperations\Retrieve;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Create;
+    use \ExpressPayments\ApiOperations\Delete;
+    use \ExpressPayments\ApiOperations\Retrieve;
 
     const STATUS_ADVANCING = 'advancing';
     const STATUS_INTERNAL_FAILURE = 'internal_failure';
@@ -35,8 +35,8 @@ class TestClock extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\TestHelpers\TestClock the advanced test clock
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TestHelpers\TestClock the advanced test clock
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function advance($params = null, $opts = null)

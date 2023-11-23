@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Issuing;
+namespace ExpressPayments\Service\TestHelpers\Issuing;
 
 /**
  * Service factory class for API resources in the Issuing namespace.
@@ -11,7 +11,7 @@ namespace ExpressPlatby\Service\TestHelpers\Issuing;
  * @property CardService $cards
  * @property TransactionService $transactions
  */
-class IssuingServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class IssuingServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

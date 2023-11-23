@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby\Util;
+namespace ExpressPayments\Util;
 
 class RequestOptions
 {
@@ -8,8 +8,8 @@ class RequestOptions
      * @var array<string> a list of headers that should be persisted across requests
      */
     public static $HEADERS_TO_PERSIST = [
-        'ExpressPlatby-Account',
-        'ExpressPlatby-Version',
+        'EP-Account',
+        'EP-Version',
     ];
 
     /** @var array<string, string> */
@@ -87,7 +87,7 @@ class RequestOptions
      * @param bool $strict when true, forbid string form and arbitrary keys in array form
      *
      * @return RequestOptions
-     *@throws \ExpressPlatby\Exception\InvalidArgumentException
+     * @throws \ExpressPayments\Exception\InvalidArgumentException
      *
      */
     public static function parse($options, $strict = false)
@@ -105,7 +105,7 @@ class RequestOptions
                 $message = 'Do not pass a string for request options. If you want to set the '
                     . 'API key, pass an array like ["api_key" => <apiKey>] instead.';
 
-                throw new \ExpressPlatby\Exception\InvalidArgumentException($message);
+                throw new \ExpressPayments\Exception\InvalidArgumentException($message);
             }
 
             return new RequestOptions($options, [], null);
@@ -124,13 +124,13 @@ class RequestOptions
                 $headers['Idempotency-Key'] = $options['idempotency_key'];
                 unset($options['idempotency_key']);
             }
-            if (\array_key_exists('expressplatby_account', $options)) {
-                $headers['ExpressPlatby-Account'] = $options['expressplatby_account'];
-                unset($options['expressplatby_account']);
+            if (\array_key_exists('ep_account', $options)) {
+                $headers['EP-Account'] = $options['ep_account'];
+                unset($options['ep_account']);
             }
-            if (\array_key_exists('expressplatby_version', $options)) {
-                $headers['ExpressPlatby-Version'] = $options['expressplatby_version'];
-                unset($options['expressplatby_version']);
+            if (\array_key_exists('ep_version', $options)) {
+                $headers['EP-Version'] = $options['ep_version'];
+                unset($options['ep_version']);
             }
             if (\array_key_exists('api_base', $options)) {
                 $base = $options['api_base'];
@@ -140,18 +140,18 @@ class RequestOptions
             if ($strict && !empty($options)) {
                 $message = 'Got unexpected keys in options array: ' . \implode(', ', \array_keys($options));
 
-                throw new \ExpressPlatby\Exception\InvalidArgumentException($message);
+                throw new \ExpressPayments\Exception\InvalidArgumentException($message);
             }
 
             return new RequestOptions($key, $headers, $base);
         }
 
-        $message = 'The second argument to ExpressPlatby API method calls is an '
+        $message = 'The second argument to ExpressPayments API method calls is an '
            . 'optional per-request apiKey, which must be a string, or '
            . 'per-request options, which must be an array. (HINT: you can set '
-           . 'a global apiKey by "ExpressPlatby::setApiKey(<apiKey>)")';
+            . 'a global apiKey by "ExpressPayments::setApiKey(<apiKey>)")';
 
-        throw new \ExpressPlatby\Exception\InvalidArgumentException($message);
+        throw new \ExpressPayments\Exception\InvalidArgumentException($message);
     }
 
     /** @return string */

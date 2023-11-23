@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\BillingPortal;
+namespace ExpressPayments\Service\BillingPortal;
 
-class SessionService extends \ExpressPlatby\Service\AbstractService
+class SessionService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Creates a session of the customer portal.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BillingPortal\Session
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\BillingPortal\Session
      */
     public function create($params = null, $opts = null)
     {

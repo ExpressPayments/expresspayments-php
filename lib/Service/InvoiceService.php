@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class InvoiceService extends \ExpressPlatby\Service\AbstractService
+class InvoiceService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * You can list all invoices, or list the invoices for a specific customer. The
@@ -12,10 +12,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      * invoices appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Invoice>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Invoice>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -31,10 +31,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\InvoiceLineItem>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\InvoiceLineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allLines($parentId, $params = null, $opts = null)
@@ -49,10 +49,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      * the invoice to your customers.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -68,10 +68,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function delete($id, $params = null, $opts = null)
@@ -80,16 +80,16 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * ExpressPlatby automatically finalizes drafts before sending and attempting payment on
+     * ExpressPayments automatically finalizes drafts before sending and attempting payment on
      * invoices. However, if you’d like to finalize a draft invoice manually, you can
      * do so using this method.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function finalizeInvoice($id, $params = null, $opts = null)
@@ -103,10 +103,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function markUncollectible($id, $params = null, $opts = null)
@@ -115,18 +115,18 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * ExpressPlatby automatically creates and then attempts to collect payment on invoices
+     * ExpressPayments automatically creates and then attempts to collect payment on invoices
      * for customers on subscriptions according to your <a
-     * href="https://dashboard.expressplatby.cz/account/billing/automatic">subscriptions
+     * href="https://dashboard.epayments.network/account/billing/automatic">subscriptions
      * settings</a>. However, if you’d like to attempt payment on an invoice out of the
      * normal collection schedule or for some other reason, you can do so.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function pay($id, $params = null, $opts = null)
@@ -139,10 +139,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -151,7 +151,7 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Search for invoices you’ve previously created using ExpressPlatby’s <a
+     * Search for invoices you’ve previously created using ExpressPayments’ <a
      * href="/docs/search#search-query-language">Search Query Language</a>. Don’t use
      * search in read-after-write flows where strict consistency is necessary. Under
      * normal operating conditions, data is searchable in less than a minute.
@@ -159,10 +159,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      * during outages. Search functionality is not available to merchants in India.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\SearchResult<\ExpressPlatby\Invoice>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\SearchResult<\ExpressPayments\Invoice>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function search($params = null, $opts = null)
@@ -171,8 +171,8 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * ExpressPlatby will automatically send invoices to customers according to your <a
-     * href="https://dashboard.expressplatby.cz/account/billing/automatic">subscriptions
+     * ExpressPayments will automatically send invoices to customers according to your <a
+     * href="https://dashboard.epayments.network/account/billing/automatic">subscriptions
      * settings</a>. However, if you’d like to manually send an invoice to your
      * customer out of the normal schedule, you can do so. When sending invoices that
      * have already been paid, there will be no reference to the payment in the email.
@@ -182,10 +182,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function sendInvoice($id, $params = null, $opts = null)
@@ -217,10 +217,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      * the <code>subscription_proration_date</code> on the upcoming invoice resource.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function upcoming($params = null, $opts = null)
@@ -235,10 +235,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      * line items.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\InvoiceLineItem>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\InvoiceLineItem>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function upcomingLines($params = null, $opts = null)
@@ -249,19 +249,19 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
     /**
      * Draft invoices are fully editable. Once an invoice is <a
      * href="/docs/billing/invoices/workflow#finalized">finalized</a>, monetary values,
-     * as well as <code>collection_method</code>, become uneditable.
+     * as well as <code>collection_method</code>, become un-editable.
      *
-     * If you would like to stop the ExpressPlatby Billing engine from automatically
+     * If you would like to stop the ExpressPayments Billing engine from automatically
      * finalizing, reattempting payments on, sending reminders for, or <a
      * href="/docs/billing/invoices/reconciliation">automatically reconciling</a>
      * invoices, pass <code>auto_advance=false</code>.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
@@ -277,10 +277,10 @@ class InvoiceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Invoice
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Invoice
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function voidInvoice($id, $params = null, $opts = null)

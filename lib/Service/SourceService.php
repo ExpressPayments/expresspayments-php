@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class SourceService extends \ExpressPlatby\Service\AbstractService
+class SourceService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * List source transactions for a given source.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\SourceTransaction>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\SourceTransaction>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allSourceTransactions($id, $params = null, $opts = null)
@@ -26,10 +26,10 @@ class SourceService extends \ExpressPlatby\Service\AbstractService
      * Creates a new source object.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -43,10 +43,10 @@ class SourceService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account|\ExpressPlatby\BankAccount|\ExpressPlatby\Card|\ExpressPlatby\Source
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account|\ExpressPayments\BankAccount|\ExpressPayments\Card|\ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function detach($parentId, $id, $params = null, $opts = null)
@@ -56,15 +56,15 @@ class SourceService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Retrieves an existing source object. Supply the unique source ID from a source
-     * creation request and ExpressPlatby will return the corresponding up-to-date source
+     * creation request and ExpressPayments will return the corresponding up-to-date source
      * object information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -83,10 +83,10 @@ class SourceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
@@ -99,10 +99,10 @@ class SourceService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Source
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Source
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function verify($id, $params = null, $opts = null)

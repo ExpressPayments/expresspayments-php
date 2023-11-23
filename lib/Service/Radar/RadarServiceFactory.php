@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Radar;
+namespace ExpressPayments\Service\Radar;
 
 /**
  * Service factory class for API resources in the Radar namespace.
@@ -11,7 +11,7 @@ namespace ExpressPlatby\Service\Radar;
  * @property ValueListItemService $valueListItems
  * @property ValueListService $valueLists
  */
-class RadarServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class RadarServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

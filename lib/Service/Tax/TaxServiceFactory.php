@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Tax;
+namespace ExpressPayments\Service\Tax;
 
 /**
  * Service factory class for API resources in the Tax namespace.
@@ -12,7 +12,7 @@ namespace ExpressPlatby\Service\Tax;
  * @property SettingsService $settings
  * @property TransactionService $transactions
  */
-class TaxServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class TaxServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

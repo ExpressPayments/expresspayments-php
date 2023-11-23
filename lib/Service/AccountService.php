@@ -2,19 +2,19 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class AccountService extends \ExpressPlatby\Service\AbstractService
+class AccountService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of accounts connected to your platform via <a
      * href="/docs/connect">Connect</a>. If you’re not a platform, the list is empty.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Account>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Account>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -29,10 +29,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Capability>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Capability>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allCapabilities($parentId, $params = null, $opts = null)
@@ -45,10 +45,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\BankAccount|\ExpressPlatby\Card>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\BankAccount|\ExpressPayments\Card>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allExternalAccounts($parentId, $params = null, $opts = null)
@@ -63,10 +63,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Person>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Person>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allPersons($parentId, $params = null, $opts = null)
@@ -75,9 +75,9 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * With <a href="/docs/connect">Connect</a>, you can create ExpressPlatby accounts for
+     * With <a href="/docs/connect">Connect</a>, you can create ExpressPayments accounts for
      * your users. To do this, you’ll first need to <a
-     * href="https://dashboard.expressplatby.cz/account/applications/settings">register your
+     * href="https://dashboard.epayments.network/account/applications/settings">register your
      * platform</a>.
      *
      * If you’ve already collected information for your connected accounts, you <a
@@ -87,10 +87,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * account.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -103,10 +103,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createExternalAccount($parentId, $params = null, $opts = null)
@@ -115,7 +115,7 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Creates a single-use login link for an Express account to access their ExpressPlatby
+     * Creates a single-use login link for an Express account to access their ExpressPayments
      * dashboard.
      *
      * <strong>You may only create login links for <a
@@ -124,10 +124,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\LoginLink
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\LoginLink
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createLoginLink($parentId, $params = null, $opts = null)
@@ -140,10 +140,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Person
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createPerson($parentId, $params = null, $opts = null)
@@ -160,15 +160,15 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * zero.
      *
      * If you want to delete your own account, use the <a
-     * href="https://dashboard.expressplatby.cz/settings/account">account information tab in
+     * href="https://dashboard.epayments.network/settings/account">account information tab in
      * your account settings</a> instead.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function delete($id, $params = null, $opts = null)
@@ -182,10 +182,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function deleteExternalAccount($parentId, $id, $params = null, $opts = null)
@@ -203,10 +203,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Person
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function deletePerson($parentId, $id, $params = null, $opts = null)
@@ -222,10 +222,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function reject($id, $params = null, $opts = null)
@@ -239,10 +239,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Capability
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Capability
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveCapability($parentId, $id, $params = null, $opts = null)
@@ -256,10 +256,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveExternalAccount($parentId, $id, $params = null, $opts = null)
@@ -273,10 +273,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Person
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrievePerson($parentId, $id, $params = null, $opts = null)
@@ -296,16 +296,16 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * <strong>Custom Only</strong> or <strong>Custom and Express</strong> below.
      *
      * To update your own account, use the <a
-     * href="https://dashboard.expressplatby.cz/settings/account">Dashboard</a>. Refer to our
+     * href="https://dashboard.epayments.network/settings/account">Dashboard</a>. Refer to our
      * <a href="/docs/connect/updating-accounts">Connect</a> documentation to learn
      * more about updating accounts.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
@@ -320,10 +320,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Capability
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Capability
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updateCapability($parentId, $id, $params = null, $opts = null)
@@ -343,10 +343,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\BankAccount|\ExpressPlatby\Card
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BankAccount|\ExpressPayments\Card
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updateExternalAccount($parentId, $id, $params = null, $opts = null)
@@ -360,10 +360,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Person
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Person
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updatePerson($parentId, $id, $params = null, $opts = null)
@@ -376,10 +376,10 @@ class AccountService extends \ExpressPlatby\Service\AbstractService
      *
      * @param null|string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Account
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Account
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id = null, $params = null, $opts = null)

@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\BillingPortal;
+namespace ExpressPayments\Service\BillingPortal;
 
-class ConfigurationService extends \ExpressPlatby\Service\AbstractService
+class ConfigurationService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of configurations that describe the functionality of the customer
      * portal.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\BillingPortal\Configuration>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\BillingPortal\Configuration>
      */
     public function all($params = null, $opts = null)
     {
@@ -27,11 +27,11 @@ class ConfigurationService extends \ExpressPlatby\Service\AbstractService
      * PortalSession.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BillingPortal\Configuration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\BillingPortal\Configuration
      */
     public function create($params = null, $opts = null)
     {
@@ -44,11 +44,11 @@ class ConfigurationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BillingPortal\Configuration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\BillingPortal\Configuration
      */
     public function retrieve($id, $params = null, $opts = null)
     {
@@ -60,11 +60,11 @@ class ConfigurationService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\BillingPortal\Configuration
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\BillingPortal\Configuration
      */
     public function update($id, $params = null, $opts = null)
     {

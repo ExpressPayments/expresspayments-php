@@ -2,10 +2,10 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * To share the contents of a <code>File</code> object with non-ExpressPlatby users, you can
+ * To share the contents of a <code>File</code> object with non-ExpressPayments users, you can
  * create a <code>FileLink</code>. <code>FileLink</code>s contain a URL that you can use to
  * retrieve the contents of the file without authentication.
  *
@@ -14,9 +14,9 @@ namespace ExpressPlatby;
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property bool $expired Returns if the link is already expired.
  * @property null|int $expires_at Time that the link expires.
- * @property string|\ExpressPlatby\File $file The file object this link points to.
+ * @property string|\ExpressPayments\File $file The file object this link points to.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
- * @property \ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property \ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|string $url The publicly accessible URL to download the file.
  */
 class FileLink extends ApiResource

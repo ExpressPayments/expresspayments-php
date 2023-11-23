@@ -2,24 +2,24 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * This object represents files hosted on ExpressPlatby's servers. You can upload
- * files with the <a href="https://expressplatby.cz/docs/api#create_file">create file</a> request
- * (for example, when uploading dispute evidence). ExpressPlatby also
- * creates files independetly (for example, the results of a <a href="#scheduled_queries">Sigma scheduled
+ * This object represents files hosted on ExpressPayments' servers. You can upload
+ * files with the <a href="https://docs.epayments.network/api#create_file">create file</a> request
+ * (for example, when uploading dispute evidence). ExpressPayments also
+ * creates files independently (for example, the results of a <a href="#scheduled_queries">Sigma scheduled
  * query</a>).
  *
- * Related guide: <a href="https://expressplatby.cz/docs/file-upload">File upload guide</a>
+ * Related guide: <a href="https://docs.epayments.network/file-upload">File upload guide</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
  * @property null|int $expires_at The file expires and isn't available at this time in epoch seconds.
  * @property null|string $filename The suitable name for saving the file to a filesystem.
- * @property null|\ExpressPlatby\Collection<\ExpressPlatby\FileLink> $links A list of <a href="https://expressplatby.cz/docs/api#file_links">file links</a> that point at this file.
- * @property string $purpose The <a href="https://expressplatby.cz/docs/file-upload#uploading-a-file">purpose</a> of the uploaded file.
+ * @property null|\ExpressPayments\Collection<\ExpressPayments\FileLink> $links A list of <a href="https://docs.epayments.network/api#file_links">file links</a> that point at this file.
+ * @property string $purpose The <a href="https://docs.epayments.network/file-upload#uploading-a-file">purpose</a> of the uploaded file.
  * @property int $size The size of the file object in bytes.
  * @property null|string $title A suitable title for the document.
  * @property null|string $type The returned file type (for example, <code>csv</code>, <code>pdf</code>, <code>jpg</code>, or <code>png</code>).
@@ -49,7 +49,7 @@ class File extends ApiResource
     const PURPOSE_TERMINAL_READER_SPLASHSCREEN = 'terminal_reader_splashscreen';
 
     // This resource can have two different object names. In latter API
-    // versions, only `file` is used, but since expressplatby-php may be used with
+    // versions, only `file` is used, but since expresspayments-php may be used with
     // any API version, we need to support deserializing the older
     // `file_upload` object into the same class.
     const OBJECT_NAME_ALT = 'file_upload';
@@ -62,19 +62,19 @@ class File extends ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @return \ExpressPlatby\File the created file
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\File the created file
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public static function create($params = null, $opts = null)
     {
-        $opts = \ExpressPlatby\Util\RequestOptions::parse($opts);
+        $opts = \ExpressPayments\Util\RequestOptions::parse($opts);
         if (null === $opts->apiBase) {
-            $opts->apiBase = ExpressPlatby::$apiUploadBase;
+            $opts->apiBase = ExpressPayments::$apiUploadBase;
         }
         // Manually flatten params, otherwise curl's multipart encoder will
         // choke on nested arrays.
-        $flatParams = \array_column(\ExpressPlatby\Util\Util::flattenParams($params), 1, 0);
+        $flatParams = \array_column(\ExpressPayments\Util\Util::flattenParams($params), 1, 0);
 
         return static::_create($flatParams, $opts);
     }

@@ -2,14 +2,14 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\Sigma;
+namespace ExpressPayments\Service\Sigma;
 
 /**
  * Service factory class for API resources in the Sigma namespace.
  *
  * @property ScheduledQueryRunService $scheduledQueryRuns
  */
-class SigmaServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class SigmaServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

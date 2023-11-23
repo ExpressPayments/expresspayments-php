@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Treasury;
+namespace ExpressPayments\Service\TestHelpers\Treasury;
 
-class OutboundTransferService extends \ExpressPlatby\Service\AbstractService
+class OutboundTransferService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Transitions a test mode created OutboundTransfer to the <code>failed</code>
@@ -13,11 +13,11 @@ class OutboundTransferService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundTransfer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundTransfer
      */
     public function fail($id, $params = null, $opts = null)
     {
@@ -31,11 +31,11 @@ class OutboundTransferService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundTransfer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundTransfer
      */
     public function post($id, $params = null, $opts = null)
     {
@@ -49,11 +49,11 @@ class OutboundTransferService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Treasury\OutboundTransfer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Treasury\OutboundTransfer
      */
     public function returnOutboundTransfer($id, $params = null, $opts = null)
     {

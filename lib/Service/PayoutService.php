@@ -2,20 +2,20 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class PayoutService extends \ExpressPlatby\Service\AbstractService
+class PayoutService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of existing payouts sent to third-party bank accounts or payouts
-     * that ExpressPlatby sent to you. The payouts return in sorted order, with the most
+     * that ExpressPayments sent to you. The payouts return in sorted order, with the most
      * recently created payouts appearing first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Payout>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Payout>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -25,15 +25,15 @@ class PayoutService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * You can cancel a previously created payout if it hasn’t been paid out yet.
-     * ExpressPlatby refunds the funds to your available balance. You can’t cancel automatic
-     * ExpressPlatby payouts.
+     * ExpressPayments refunds the funds to your available balance. You can’t cancel automatic
+     * ExpressPayments payouts.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Payout
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Payout
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function cancel($id, $params = null, $opts = null)
@@ -43,22 +43,22 @@ class PayoutService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * To send funds to your own bank account, create a new payout object. Your <a
-     * href="#balance">ExpressPlatby balance</a> must cover the payout amount. If it doesn’t,
+     * href="#balance">ExpressPayments balance</a> must cover the payout amount. If it doesn’t,
      * you receive an “Insufficient Funds” error.
      *
      * If your API key is in test mode, money won’t actually be sent, though every
      * other action occurs as if you’re in live mode.
      *
-     * If you create a manual payout on a ExpressPlatby account that uses multiple payment
+     * If you create a manual payout on an ExpressPayments account that uses multiple payment
      * source types, you need to specify the source type balance that the payout draws
      * from. The <a href="#balance_object">balance object</a> details available and
      * pending amounts by source type.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Payout
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Payout
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -68,15 +68,15 @@ class PayoutService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Retrieves the details of an existing payout. Supply the unique payout ID from
-     * either a payout creation request or the payout list. ExpressPlatby returns the
+     * either a payout creation request or the payout list. ExpressPayments returns the
      * corresponding payout information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Payout
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Payout
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -96,10 +96,10 @@ class PayoutService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Payout
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Payout
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function reverse($id, $params = null, $opts = null)
@@ -114,10 +114,10 @@ class PayoutService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Payout
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Payout
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)

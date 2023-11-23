@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class TransferService extends \ExpressPlatby\Service\AbstractService
+class TransferService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of existing transfers sent to connected accounts. The transfers
@@ -12,10 +12,10 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
      * first.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\Transfer>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\Transfer>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -32,10 +32,10 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\TransferReversal>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\TransferReversal>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function allReversals($parentId, $params = null, $opts = null)
@@ -44,15 +44,15 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * To send funds from your ExpressPlatby account to a connected account, you create a new
-     * transfer object. Your <a href="#balance">ExpressPlatby balance</a> must be able to
+     * To send funds from your ExpressPayments account to a connected account, you create a new
+     * transfer object. Your <a href="#balance">ExpressPayments balance</a> must be able to
      * cover the transfer amount, or you’ll receive an “Insufficient Funds” error.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Transfer
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Transfer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -72,10 +72,10 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $parentId
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\TransferReversal
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TransferReversal
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function createReversal($parentId, $params = null, $opts = null)
@@ -85,15 +85,15 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Retrieves the details of an existing transfer. Supply the unique transfer ID
-     * from either a transfer creation request or the transfer list, and ExpressPlatby will
+     * from either a transfer creation request or the transfer list, and ExpressPayments will
      * return the corresponding transfer information.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Transfer
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Transfer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -109,10 +109,10 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\TransferReversal
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TransferReversal
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieveReversal($parentId, $id, $params = null, $opts = null)
@@ -128,10 +128,10 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Transfer
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Transfer
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
@@ -148,10 +148,10 @@ class TransferService extends \ExpressPlatby\Service\AbstractService
      * @param string $parentId
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\TransferReversal
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\TransferReversal
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function updateReversal($parentId, $id, $params = null, $opts = null)

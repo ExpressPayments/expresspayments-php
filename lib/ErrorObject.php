@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Class ErrorObject.
@@ -30,17 +30,17 @@ namespace ExpressPlatby;
  *    dashboard.
  * @property SetupIntent $setup_intent The SetupIntent object for errors
  *    returned on a request involving a SetupIntent.
- * @property ExpressPlatbyObject $source The source object for errors returned on a
+ * @property ExpressPaymentsObject $source The source object for errors returned on a
  *    request involving a source.
  * @property string $type The type of error returned. One of `api_error`,
  *   `card_error`, `idempotency_error`, or `invalid_request_error`.
  */
-class ErrorObject extends ExpressPlatbyObject
+class ErrorObject extends ExpressPaymentsObject
 {
     /**
      * Possible string representations of an error's code.
      *
-     * @see https://expressplatby.cz/docs/error-codes
+     * @see https://docs.epayments.network/error-codes
      */
     // The beginning of the section generated from our OpenAPI spec
     const CODE_ACCOUNT_CLOSED = 'account_closed';
@@ -187,7 +187,7 @@ class ErrorObject extends ExpressPlatbyObject
     const CODE_SKU_INACTIVE = 'sku_inactive';
     const CODE_STATE_UNSUPPORTED = 'state_unsupported';
     const CODE_STATUS_TRANSITION_INVALID = 'status_transition_invalid';
-    const CODE_EXPRESSPLATBY_TAX_INACTIVE = 'expressplatby_tax_inactive';
+    const CODE_EP_TAX_INACTIVE = 'ep_tax_inactive';
     const CODE_TAX_ID_INVALID = 'tax_id_invalid';
     const CODE_TAXES_CALCULATION_FAILED = 'taxes_calculation_failed';
     const CODE_TERMINAL_LOCATION_COUNTRY_UNSUPPORTED = 'terminal_location_country_unsupported';

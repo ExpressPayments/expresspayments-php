@@ -2,7 +2,7 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service\TestHelpers\Treasury;
+namespace ExpressPayments\Service\TestHelpers\Treasury;
 
 /**
  * Service factory class for API resources in the Treasury namespace.
@@ -13,7 +13,7 @@ namespace ExpressPlatby\Service\TestHelpers\Treasury;
  * @property ReceivedCreditService $receivedCredits
  * @property ReceivedDebitService $receivedDebits
  */
-class TreasuryServiceFactory extends \ExpressPlatby\Service\AbstractServiceFactory
+class TreasuryServiceFactory extends \ExpressPayments\Service\AbstractServiceFactory
 {
     /**
      * @var array<string, string>

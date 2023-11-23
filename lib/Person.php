@@ -2,31 +2,31 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
- * This is an object representing a person associated with a ExpressPlatby account.
+ * This is an object representing a person associated with an ExpressPayments account.
  *
  * A platform cannot access a Standard or Express account's persons after the account starts onboarding, such as after generating an account link for the account.
- * See the <a href="https://expressplatby.cz/docs/connect/standard-accounts">Standard onboarding</a> or <a href="https://expressplatby.cz/docs/connect/express-accounts">Express onboarding documentation</a> for information about platform prefilling and account onboarding steps.
+ * See the <a href="https://docs.epayments.network/connect/standard-accounts">Standard onboarding</a> or <a href="https://docs.epayments.network/connect/express-accounts">Express onboarding documentation</a> for information about platform prefilling and account onboarding steps.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/connect/handling-api-verification#person-information">Handling identity verification with the API</a>
+ * Related guide: <a href="https://docs.epayments.network/connect/handling-api-verification#person-information">Handling identity verification with the API</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property null|string $account The account the person is associated with.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $additional_tos_acceptances
- * @property null|\ExpressPlatby\ExpressPlatbyObject $address
- * @property null|\ExpressPlatby\ExpressPlatbyObject $address_kana The Kana variation of the person's address (Japan only).
- * @property null|\ExpressPlatby\ExpressPlatbyObject $address_kanji The Kanji variation of the person's address (Japan only).
+ * @property null|\ExpressPayments\ExpressPaymentsObject $additional_tos_acceptances
+ * @property null|\ExpressPayments\ExpressPaymentsObject $address
+ * @property null|\ExpressPayments\ExpressPaymentsObject $address_kana The Kana variation of the person's address (Japan only).
+ * @property null|\ExpressPayments\ExpressPaymentsObject $address_kanji The Kanji variation of the person's address (Japan only).
  * @property int $created Time at which the object was created. Measured in seconds since the Unix epoch.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $dob
+ * @property null|\ExpressPayments\ExpressPaymentsObject $dob
  * @property null|string $email The person's email address.
  * @property null|string $first_name The person's first name.
  * @property null|string $first_name_kana The Kana variation of the person's first name (Japan only).
  * @property null|string $first_name_kanji The Kanji variation of the person's first name (Japan only).
  * @property null|string[] $full_name_aliases A list of alternate names or aliases that the person is known by.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $future_requirements Information about the <a href="https://expressplatby.cz/docs/connect/custom-accounts/future-requirements">upcoming new requirements for this person</a>, including what information needs to be collected, and by when.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $future_requirements Information about the <a href="https://docs.epayments.network/connect/custom-accounts/future-requirements">upcoming new requirements for this person</a>, including what information needs to be collected, and by when.
  * @property null|string $gender The person's gender (International regulations require either &quot;male&quot; or &quot;female&quot;).
  * @property null|bool $id_number_provided Whether the person's <code>id_number</code> was provided. True if either the full ID number was provided or if only the required part of the ID number was provided (ex. last four of an individual's SSN for the US indicated by <code>ssn_last_4_provided</code>).
  * @property null|bool $id_number_secondary_provided Whether the person's <code>id_number_secondary</code> was provided.
@@ -34,15 +34,15 @@ namespace ExpressPlatby;
  * @property null|string $last_name_kana The Kana variation of the person's last name (Japan only).
  * @property null|string $last_name_kanji The Kanji variation of the person's last name (Japan only).
  * @property null|string $maiden_name The person's maiden name.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $metadata Set of <a href="https://expressplatby.cz/docs/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $metadata Set of <a href="https://docs.epayments.network/api/metadata">key-value pairs</a> that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
  * @property null|string $nationality The country where the person is a national.
  * @property null|string $phone The person's phone number.
  * @property null|string $political_exposure Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
- * @property null|\ExpressPlatby\ExpressPlatbyObject $registered_address
- * @property null|\ExpressPlatby\ExpressPlatbyObject $relationship
- * @property null|\ExpressPlatby\ExpressPlatbyObject $requirements Information about the requirements for this person, including what information needs to be collected, and by when.
+ * @property null|\ExpressPayments\ExpressPaymentsObject $registered_address
+ * @property null|\ExpressPayments\ExpressPaymentsObject $relationship
+ * @property null|\ExpressPayments\ExpressPaymentsObject $requirements Information about the requirements for this person, including what information needs to be collected, and by when.
  * @property null|bool $ssn_last_4_provided Whether the last four digits of the person's Social Security number have been provided (U.S. only).
- * @property null|\ExpressPlatby\ExpressPlatbyObject $verification
+ * @property null|\ExpressPayments\ExpressPaymentsObject $verification
  */
 class Person extends ApiResource
 {
@@ -62,7 +62,7 @@ class Person extends ApiResource
     const VERIFICATION_STATUS_VERIFIED = 'verified';
 
     /**
-     * @return string the API URL for this ExpressPlatby account reversal
+     * @return string the API URL for this ExpressPayments account reversal
      */
     public function instanceUrl()
     {
@@ -89,7 +89,7 @@ class Person extends ApiResource
      * @param array|string $_id
      * @param null|array|string $_opts
      *
-     * @throws \ExpressPlatby\Exception\BadMethodCallException
+     * @throws \ExpressPayments\Exception\BadMethodCallException
      */
     public static function retrieve($_id, $_opts = null)
     {
@@ -105,7 +105,7 @@ class Person extends ApiResource
      * @param null|array $_params
      * @param null|array|string $_options
      *
-     * @throws \ExpressPlatby\Exception\BadMethodCallException
+     * @throws \ExpressPayments\Exception\BadMethodCallException
      */
     public static function update($_id, $_params = null, $_options = null)
     {

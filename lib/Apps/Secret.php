@@ -2,10 +2,10 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Apps;
+namespace ExpressPayments\Apps;
 
 /**
- * Secret Store is an API that allows ExpressPlatby Apps developers to securely persist secrets for use by UI Extensions and app backends.
+ * Secret Store is an API that allows ExpressPayments Apps developers to securely persist secrets for use by UI Extensions and app backends.
  *
  * The primary resource in Secret Store is a <code>secret</code>. Other apps can't view secrets created by an app. Additionally, secrets are scoped to provide further permission control.
  *
@@ -13,7 +13,7 @@ namespace ExpressPlatby\Apps;
  *
  * A <code>user</code> scoped secret is accessible by the app backend and one specific Dashboard user. Use the <code>user</code> scope for per-user secrets like per-user OAuth tokens, where different users might have different permissions.
  *
- * Related guide: <a href="https://expressplatby.cz/docs/expressplatby-apps/store-auth-data-custom-objects">Store data between page reloads</a>
+ * Related guide: <a href="https://docs.epayments.network/ep-apps/store-auth-data-custom-objects">Store data between page reloads</a>
  *
  * @property string $id Unique identifier for the object.
  * @property string $object String representing the object's type. Objects of the same type share the same value.
@@ -23,28 +23,28 @@ namespace ExpressPlatby\Apps;
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
  * @property string $name A name for the secret that's unique within the scope.
  * @property null|string $payload The plaintext secret value to be stored.
- * @property \ExpressPlatby\ExpressPlatbyObject $scope
+ * @property \ExpressPayments\ExpressPaymentsObject $scope
  */
-class Secret extends \ExpressPlatby\ApiResource
+class Secret extends \ExpressPayments\ApiResource
 {
     const OBJECT_NAME = 'apps.secret';
 
-    use \ExpressPlatby\ApiOperations\All;
-    use \ExpressPlatby\ApiOperations\Create;
+    use \ExpressPayments\ApiOperations\All;
+    use \ExpressPayments\ApiOperations\Create;
 
     /**
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Apps\Secret the deleted secret
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Apps\Secret the deleted secret
      */
     public static function deleteWhere($params = null, $opts = null)
     {
         $url = static::classUrl() . '/delete';
         list($response, $opts) = static::_staticRequest('post', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
@@ -54,15 +54,15 @@ class Secret extends \ExpressPlatby\ApiResource
      * @param null|array $params
      * @param null|array|string $opts
      *
-     * @throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Apps\Secret the finded secret
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
-     * @return \ExpressPlatby\Apps\Secret the finded secret
      */
     public static function find($params = null, $opts = null)
     {
         $url = static::classUrl() . '/find';
         list($response, $opts) = static::_staticRequest('get', $url, $params, $opts);
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;

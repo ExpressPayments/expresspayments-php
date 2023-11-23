@@ -1,9 +1,9 @@
 <?php
 
-namespace ExpressPlatby\Exception;
+namespace ExpressPayments\Exception;
 
 /**
- * Implements properties and methods common to all (non-SPL) ExpressPlatby exceptions.
+ * Implements properties and methods common to all (non-SPL) ExpressPayments exceptions.
  */
 abstract class ApiErrorException extends \Exception implements ExceptionInterface
 {
@@ -13,7 +13,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     protected $httpStatus;
     protected $jsonBody;
     protected $requestId;
-    protected $expressPlatbyCode;
+    protected $expressPaymentsCode;
 
     /**
      * Creates a new API error exception.
@@ -22,8 +22,8 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
      * @param null|int $httpStatus the HTTP status code
      * @param null|string $httpBody the HTTP body as a string
      * @param null|array $jsonBody the JSON deserialized body
-     * @param null|array|\ExpressPlatby\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
-     * @param null|string $expressPlatbyCode the ExpressPlatby error code
+     * @param null|array|\ExpressPayments\Util\CaseInsensitiveArray $httpHeaders the HTTP headers array
+     * @param null|string $expressPaymentsCode the ExpressPayments error code
      *
      * @return static
      */
@@ -33,14 +33,14 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
         $httpBody = null,
         $jsonBody = null,
         $httpHeaders = null,
-        $expressPlatbyCode = null
+        $expressPaymentsCode = null
     ) {
         $instance = new static($message);
         $instance->setHttpStatus($httpStatus);
         $instance->setHttpBody($httpBody);
         $instance->setJsonBody($jsonBody);
         $instance->setHttpHeaders($httpHeaders);
-        $instance->setExpressPlatbyCode($expressPlatbyCode);
+        $instance->setExpressPaymentsCode($expressPaymentsCode);
 
         $instance->setRequestId(null);
         if ($httpHeaders && isset($httpHeaders['Request-Id'])) {
@@ -53,9 +53,9 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Gets the ExpressPlatby error object.
+     * Gets the ExpressPayments error object.
      *
-     * @return null|\ExpressPlatby\ErrorObject
+     * @return null|\ExpressPayments\ErrorObject
      */
     public function getError()
     {
@@ -63,9 +63,9 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Sets the ExpressPlatby error object.
+     * Sets the ExpressPayments error object.
      *
-     * @param null|\ExpressPlatby\ErrorObject $error
+     * @param null|\ExpressPayments\ErrorObject $error
      */
     public function setError($error)
     {
@@ -95,7 +95,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Gets the HTTP headers array.
      *
-     * @return null|array|\ExpressPlatby\Util\CaseInsensitiveArray
+     * @return null|array|\ExpressPayments\Util\CaseInsensitiveArray
      */
     public function getHttpHeaders()
     {
@@ -105,7 +105,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     /**
      * Sets the HTTP headers array.
      *
-     * @param null|array|\ExpressPlatby\Util\CaseInsensitiveArray $httpHeaders
+     * @param null|array|\ExpressPayments\Util\CaseInsensitiveArray $httpHeaders
      */
     public function setHttpHeaders($httpHeaders)
     {
@@ -153,7 +153,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Gets the ExpressPlatby request ID.
+     * Gets the ExpressPayments request ID.
      *
      * @return null|string
      */
@@ -163,7 +163,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Sets the ExpressPlatby request ID.
+     * Sets the ExpressPayments request ID.
      *
      * @param null|string $requestId
      */
@@ -173,26 +173,26 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
     }
 
     /**
-     * Gets the ExpressPlatby error code.
+     * Gets the ExpressPayments error code.
      *
-     * Cf. the `CODE_*` constants on {@see \ExpressPlatby\ErrorObject} for possible
+     * Cf. the `CODE_*` constants on {@see \ExpressPayments\ErrorObject} for possible
      * values.
      *
      * @return null|string
      */
-    public function getExpressPlatbyCode()
+    public function getExpressPaymentsCode()
     {
-        return $this->expressPlatbyCode;
+        return $this->expressPaymentsCode;
     }
 
     /**
-     * Sets the ExpressPlatby error code.
+     * Sets the ExpressPayments error code.
      *
-     * @param null|string $expressPlatbyCode
+     * @param null|string $expressPaymentsCode
      */
-    public function setExpressPlatbyCode($expressPlatbyCode)
+    public function setExpressPaymentsCode($expressPaymentsCode)
     {
-        $this->expressPlatbyCode = $expressPlatbyCode;
+        $this->expressPaymentsCode = $expressPaymentsCode;
     }
 
     /**
@@ -206,7 +206,7 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
         $statusStr = (null === $this->getHttpStatus()) ? '' : "(Status {$this->getHttpStatus()}) ";
         $idStr = (null === $this->getRequestId()) ? '' : "(Request {$this->getRequestId()}) ";
 
-        return "Error sending request to ExpressPlatby: {$statusStr}{$idStr}{$this->getMessage()}\n{$parentStr}";
+        return "Error sending request to ExpressPayments: {$statusStr}{$idStr}{$this->getMessage()}\n{$parentStr}";
     }
 
     protected function constructErrorObject()
@@ -215,6 +215,6 @@ abstract class ApiErrorException extends \Exception implements ExceptionInterfac
             return null;
         }
 
-        return \ExpressPlatby\ErrorObject::constructFrom($this->jsonBody['error']);
+        return \ExpressPayments\ErrorObject::constructFrom($this->jsonBody['error']);
     }
 }

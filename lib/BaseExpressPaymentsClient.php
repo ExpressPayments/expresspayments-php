@@ -1,24 +1,24 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
-class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPlatbyStreamingClientInterface
+class BaseExpressPaymentsClient implements ExpressPaymentsClientInterface, ExpressPaymentsStreamingClientInterface
 {
-    /** @var string default base URL for ExpressPlatby's API */
-    const DEFAULT_API_BASE = 'https://api.expressplatby.cz';
+    /** @var string default base URL for ExpressPayments' API */
+    const DEFAULT_API_BASE = 'https://api.epayments.network';
 
-    /** @var string default base URL for ExpressPlatby's OAuth API */
-    const DEFAULT_CONNECT_BASE = 'https://connect.expressplatby.cz';
+    /** @var string default base URL for ExpressPayments' OAuth API */
+    const DEFAULT_CONNECT_BASE = 'https://connect.epayments.network';
 
-    /** @var string default base URL for ExpressPlatby's Files API */
-    const DEFAULT_FILES_BASE = 'https://files.expressplatby.cz';
+    /** @var string default base URL for ExpressPayments' Files API */
+    const DEFAULT_FILES_BASE = 'https://files.epayments.network';
 
     /** @var array<string, null|string> */
     const DEFAULT_CONFIG = [
         'api_key' => null,
         'client_id' => null,
-        'expressplatby_account' => null,
-        'expressplatby_version' => \ExpressPlatby\Util\ApiVersion::CURRENT,
+        'ep_account' => null,
+        'ep_version' => \ExpressPayments\Util\ApiVersion::CURRENT,
         'api_base' => self::DEFAULT_API_BASE,
         'connect_base' => self::DEFAULT_CONNECT_BASE,
         'files_base' => self::DEFAULT_FILES_BASE,
@@ -27,26 +27,26 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     /** @var array<string, mixed> */
     private $config;
 
-    /** @var \ExpressPlatby\Util\RequestOptions */
+    /** @var \ExpressPayments\Util\RequestOptions */
     private $defaultOpts;
 
     /**
-     * Initializes a new instance of the {@link BaseExpressPlatbyClient} class.
+     * Initializes a new instance of the {@link BaseExpressPaymentsClient} class.
      *
      * The constructor takes a single argument. The argument can be a string, in which case it
      * should be the API key. It can also be an array with various configuration settings.
      *
      * Configuration settings include the following options:
      *
-     * - api_key (null|string): the ExpressPlatby API key, to be used in regular API requests.
-     * - client_id (null|string): the ExpressPlatby client ID, to be used in OAuth requests.
-     * - expressplatby_account (null|string): a ExpressPlatby account ID. If set, all requests sent by the client
-     *   will automatically use the {@code ExpressPlatby-Account} header with that account ID.
-     * - expressplatby_version (null|string): a ExpressPlatby API verion. If set, all requests sent by the client
-     *   will include the {@code ExpressPlatby-Version} header with that API version.
+     * - api_key (null|string): the ExpressPayments API key, to be used in regular API requests.
+     * - client_id (null|string): the ExpressPayments client ID, to be used in OAuth requests.
+     * - ep_account (null|string): an ExpressPayments account ID. If set, all requests sent by the client
+     *   will automatically use the {@code EP-Account} header with that account ID.
+     * - ep_version (null|string): an ExpressPayments API version. If set, all requests sent by the client
+     *   will include the {@code EP-Version} header with that API version.
      *
      * The following configuration settings are also available, though setting these should rarely be necessary
-     * (only useful if you want to send requests to a mock server like expressplatby-mock):
+     * (only useful if you want to send requests to a mock server like expresspayments-mock):
      *
      * - api_base (string): the base URL for regular API requests. Defaults to
      *   {@link DEFAULT_API_BASE}.
@@ -63,7 +63,7 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
         if (\is_string($config)) {
             $config = ['api_key' => $config];
         } elseif (!\is_array($config)) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('$config must be a string or an array');
+            throw new \ExpressPayments\Exception\InvalidArgumentException('$config must be a string or an array');
         }
 
         $config = \array_merge(self::DEFAULT_CONFIG, $config);
@@ -71,9 +71,9 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
 
         $this->config = $config;
 
-        $this->defaultOpts = \ExpressPlatby\Util\RequestOptions::parse([
-            'expressplatby_account' => $config['expressplatby_account'],
-            'expressplatby_version' => $config['expressplatby_version'],
+        $this->defaultOpts = \ExpressPayments\Util\RequestOptions::parse([
+            'ep_account' => $config['ep_account'],
+            'ep_version' => $config['ep_version'],
         ]);
     }
 
@@ -98,9 +98,9 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     }
 
     /**
-     * Gets the base URL for ExpressPlatby's API.
+     * Gets the base URL for ExpressPayments' API.
      *
-     * @return string the base URL for ExpressPlatby's API
+     * @return string the base URL for ExpressPayments' API
      */
     public function getApiBase()
     {
@@ -108,9 +108,9 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     }
 
     /**
-     * Gets the base URL for ExpressPlatby's OAuth API.
+     * Gets the base URL for ExpressPayments' OAuth API.
      *
-     * @return string the base URL for ExpressPlatby's OAuth API
+     * @return string the base URL for ExpressPayments' OAuth API
      */
     public function getConnectBase()
     {
@@ -118,9 +118,9 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     }
 
     /**
-     * Gets the base URL for ExpressPlatby's Files API.
+     * Gets the base URL for ExpressPayments' Files API.
      *
-     * @return string the base URL for ExpressPlatby's Files API
+     * @return string the base URL for ExpressPayments' Files API
      */
     public function getFilesBase()
     {
@@ -128,65 +128,65 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     }
 
     /**
-     * Sends a request to ExpressPlatby's API.
+     * Sends a request to ExpressPayments' API.
      *
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\ExpressPlatby\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\ExpressPayments\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \ExpressPlatby\ExpressPlatbyObject the object returned by ExpressPlatby's API
+     * @return \ExpressPayments\ExpressPaymentsObject the object returned by ExpressPayments' API
      */
     public function request($method, $path, $params, $opts)
     {
         $opts = $this->defaultOpts->merge($opts, true);
         $baseUrl = $opts->apiBase ?: $this->getApiBase();
-        $requestor = new \ExpressPlatby\ApiRequestor($this->apiKeyForRequest($opts), $baseUrl);
+        $requestor = new \ExpressPayments\ApiRequester($this->apiKeyForRequest($opts), $baseUrl);
         list($response, $opts->apiKey) = $requestor->request($method, $path, $params, $opts->headers);
         $opts->discardNonPersistentHeaders();
-        $obj = \ExpressPlatby\Util\Util::convertToExpressPlatbyObject($response->json, $opts);
+        $obj = \ExpressPayments\Util\Util::convertToExpressPaymentsObject($response->json, $opts);
         $obj->setLastResponse($response);
 
         return $obj;
     }
 
     /**
-     * Sends a request to ExpressPlatby's API, passing chunks of the streamed response
+     * Sends a request to ExpressPayments' API, passing chunks of the streamed response
      * into a user-provided $readBodyChunkCallable callback.
      *
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param callable $readBodyChunkCallable a function that will be called
      * @param array $params the parameters of the request
-     * @param array|\ExpressPlatby\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\ExpressPayments\Util\RequestOptions $opts the special modifiers of the request
      * with chunks of bytes from the body if the request is successful
      */
     public function requestStream($method, $path, $readBodyChunkCallable, $params, $opts)
     {
         $opts = $this->defaultOpts->merge($opts, true);
         $baseUrl = $opts->apiBase ?: $this->getApiBase();
-        $requestor = new \ExpressPlatby\ApiRequestor($this->apiKeyForRequest($opts), $baseUrl);
+        $requestor = new \ExpressPayments\ApiRequester($this->apiKeyForRequest($opts), $baseUrl);
         list($response, $opts->apiKey) = $requestor->requestStream($method, $path, $readBodyChunkCallable, $params, $opts->headers);
     }
 
     /**
-     * Sends a request to ExpressPlatby's API.
+     * Sends a request to ExpressPayments' API.
      *
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\ExpressPlatby\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\ExpressPayments\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \ExpressPlatby\Collection of ApiResources
+     * @return \ExpressPayments\Collection of ApiResources
      */
     public function requestCollection($method, $path, $params, $opts)
     {
         $obj = $this->request($method, $path, $params, $opts);
-        if (!($obj instanceof \ExpressPlatby\Collection)) {
+        if (!($obj instanceof \ExpressPayments\Collection)) {
             $received_class = \get_class($obj);
-            $msg = "Expected to receive `ExpressPlatby\\Collection` object from ExpressPlatby API. Instead received `{$received_class}`.";
+            $msg = "Expected to receive `ExpressPayments\\Collection` object from ExpressPayments API. Instead received `{$received_class}`.";
 
-            throw new \ExpressPlatby\Exception\UnexpectedValueException($msg);
+            throw new \ExpressPayments\Exception\UnexpectedValueException($msg);
         }
         $obj->setFilters($params);
 
@@ -194,23 +194,23 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     }
 
     /**
-     * Sends a request to ExpressPlatby's API.
+     * Sends a request to ExpressPayments' API.
      *
      * @param 'delete'|'get'|'post' $method the HTTP method
      * @param string $path the path of the request
      * @param array $params the parameters of the request
-     * @param array|\ExpressPlatby\Util\RequestOptions $opts the special modifiers of the request
+     * @param array|\ExpressPayments\Util\RequestOptions $opts the special modifiers of the request
      *
-     * @return \ExpressPlatby\SearchResult of ApiResources
+     * @return \ExpressPayments\SearchResult of ApiResources
      */
     public function requestSearchResult($method, $path, $params, $opts)
     {
         $obj = $this->request($method, $path, $params, $opts);
-        if (!($obj instanceof \ExpressPlatby\SearchResult)) {
+        if (!($obj instanceof \ExpressPayments\SearchResult)) {
             $received_class = \get_class($obj);
-            $msg = "Expected to receive `ExpressPlatby\\SearchResult` object from ExpressPlatby API. Instead received `{$received_class}`.";
+            $msg = "Expected to receive `ExpressPayments\\SearchResult` object from ExpressPayments API. Instead received `{$received_class}`.";
 
-            throw new \ExpressPlatby\Exception\UnexpectedValueException($msg);
+            throw new \ExpressPayments\Exception\UnexpectedValueException($msg);
         }
         $obj->setFilters($params);
 
@@ -218,10 +218,10 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     }
 
     /**
-     * @param \ExpressPlatby\Util\RequestOptions $opts
+     * @param \ExpressPayments\Util\RequestOptions $opts
      *
      * @return string
-     * @throws \ExpressPlatby\Exception\AuthenticationException
+     * @throws \ExpressPayments\Exception\AuthenticationException
      *
      */
     private function apiKeyForRequest($opts)
@@ -230,10 +230,10 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
 
         if (null === $apiKey) {
             $msg = 'No API key provided. Set your API key when constructing the '
-                . 'ExpressPlatbyClient instance, or provide it on a per-request basis '
+                . 'ExpressPaymentsClient instance, or provide it on a per-request basis '
                 . 'using the `api_key` key in the $opts argument.';
 
-            throw new \ExpressPlatby\Exception\AuthenticationException($msg);
+            throw new \ExpressPayments\Exception\AuthenticationException($msg);
         }
 
         return $apiKey;
@@ -242,55 +242,55 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
     /**
      * @param array<string, mixed> $config
      *
-     * @throws \ExpressPlatby\Exception\InvalidArgumentException
+     * @throws \ExpressPayments\Exception\InvalidArgumentException
      */
     private function validateConfig($config)
     {
         // api_key
         if (null !== $config['api_key'] && !\is_string($config['api_key'])) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('api_key must be null or a string');
+            throw new \ExpressPayments\Exception\InvalidArgumentException('api_key must be null or a string');
         }
 
         if (null !== $config['api_key'] && ('' === $config['api_key'])) {
             $msg = 'api_key cannot be the empty string';
 
-            throw new \ExpressPlatby\Exception\InvalidArgumentException($msg);
+            throw new \ExpressPayments\Exception\InvalidArgumentException($msg);
         }
 
         if (null !== $config['api_key'] && (\preg_match('/\s/', $config['api_key']))) {
             $msg = 'api_key cannot contain whitespace';
 
-            throw new \ExpressPlatby\Exception\InvalidArgumentException($msg);
+            throw new \ExpressPayments\Exception\InvalidArgumentException($msg);
         }
 
         // client_id
         if (null !== $config['client_id'] && !\is_string($config['client_id'])) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('client_id must be null or a string');
+            throw new \ExpressPayments\Exception\InvalidArgumentException('client_id must be null or a string');
         }
 
-        // expressplatby_account
-        if (null !== $config['expressplatby_account'] && !\is_string($config['expressplatby_account'])) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('expressplatby_account must be null or a string');
+        // ep_account
+        if (null !== $config['ep_account'] && !\is_string($config['ep_account'])) {
+            throw new \ExpressPayments\Exception\InvalidArgumentException('ep_account must be null or a string');
         }
 
-        // expressplatby_version
-        if (null !== $config['expressplatby_version'] && !\is_string($config['expressplatby_version'])) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('expressplatby_version must be null or a string');
+        // ep_version
+        if (null !== $config['ep_version'] && !\is_string($config['ep_version'])) {
+            throw new \ExpressPayments\Exception\InvalidArgumentException('ep_version must be null or a string');
         }
 
         // api_base
         if (!\is_string($config['api_base'])) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('api_base must be a string');
+            throw new \ExpressPayments\Exception\InvalidArgumentException('api_base must be a string');
         }
 
         // connect_base
         if (!\is_string($config['connect_base'])) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('connect_base must be a string');
+            throw new \ExpressPayments\Exception\InvalidArgumentException('connect_base must be a string');
         }
 
         // files_base
         if (!\is_string($config['files_base'])) {
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('files_base must be a string');
+            throw new \ExpressPayments\Exception\InvalidArgumentException('files_base must be a string');
         }
 
         // check absence of extra keys
@@ -299,7 +299,7 @@ class BaseExpressPlatbyClient implements ExpressPlatbyClientInterface, ExpressPl
             // Wrap in single quote to more easily catch trailing spaces errors
             $invalidKeys = "'" . \implode("', '", $extraConfigKeys) . "'";
 
-            throw new \ExpressPlatby\Exception\InvalidArgumentException('Found unknown key(s) in configuration array: ' . $invalidKeys);
+            throw new \ExpressPayments\Exception\InvalidArgumentException('Found unknown key(s) in configuration array: ' . $invalidKeys);
         }
     }
 }

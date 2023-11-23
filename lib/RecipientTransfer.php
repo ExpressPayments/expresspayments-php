@@ -1,6 +1,6 @@
 <?php
 
-namespace ExpressPlatby;
+namespace ExpressPayments;
 
 /**
  * Class RecipientTransfer.
@@ -20,10 +20,10 @@ namespace ExpressPlatby;
  * @property string $failure_code
  * @property string $failure_message
  * @property bool $livemode
- * @property \ExpressPlatby\ExpressPlatbyObject $metadata
+ * @property \ExpressPayments\ExpressPaymentsObject $metadata
  * @property string $method
  * @property string $recipient
- * @property \ExpressPlatby\Collection $reversals
+ * @property \ExpressPayments\Collection $reversals
  * @property bool $reversed
  * @property string $source_type
  * @property string $statement_descriptor

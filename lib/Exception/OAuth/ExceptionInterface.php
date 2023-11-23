@@ -1,10 +1,10 @@
 <?php
 
-namespace ExpressPlatby\Exception\OAuth;
+namespace ExpressPayments\Exception\OAuth;
 
 /**
- * The base interface for all ExpressPlatby OAuth exceptions.
+ * The base interface for all ExpressPayments OAuth exceptions.
  */
-interface ExceptionInterface extends \ExpressPlatby\Exception\ExceptionInterface
+interface ExceptionInterface extends \ExpressPayments\Exception\ExceptionInterface
 {
 }

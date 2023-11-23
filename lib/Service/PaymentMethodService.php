@@ -2,9 +2,9 @@
 
 // File generated from our OpenAPI spec
 
-namespace ExpressPlatby\Service;
+namespace ExpressPayments\Service;
 
-class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
+class PaymentMethodService extends \ExpressPayments\Service\AbstractService
 {
     /**
      * Returns a list of PaymentMethods for Treasury flows. If you want to list the
@@ -13,10 +13,10 @@ class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
      * PaymentMethods</a> API instead.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\Collection<\ExpressPlatby\PaymentMethod>
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\Collection<\ExpressPayments\PaymentMethod>
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function all($params = null, $opts = null)
@@ -46,10 +46,10 @@ class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethod
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function attach($id, $params = null, $opts = null)
@@ -59,8 +59,8 @@ class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
 
     /**
      * Creates a PaymentMethod object. Read the <a
-     * href="/docs/expressplatby-js/reference#expressplatby-create-payment-method">ExpressPlatby.js
-     * reference</a> to learn how to create PaymentMethods via ExpressPlatby.js.
+     * href="/docs/expresspayments-js/reference#expresspayments-create-payment-method">ExpressPayments.js
+     * reference</a> to learn how to create PaymentMethods vian ExpressPayments.js.
      *
      * Instead of creating a PaymentMethod directly, we recommend using the <a
      * href="/docs/payments/accept-a-payment">PaymentIntents</a> API to accept a
@@ -69,10 +69,10 @@ class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
      * method details ahead of a future payment.
      *
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethod
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function create($params = null, $opts = null)
@@ -86,10 +86,10 @@ class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethod
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function detach($id, $params = null, $opts = null)
@@ -98,17 +98,17 @@ class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
     }
 
     /**
-     * Retrieves a PaymentMethod object attached to the ExpressPlatbyAccount. To retrieve a
+     * Retrieves a PaymentMethod object attached to the ExpressPaymentsAccount. To retrieve a
      * payment method attached to a Customer, you should use <a
      * href="/docs/api/payment_methods/customer">Retrieve a Customer’s
      * PaymentMethods</a>.
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethod
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function retrieve($id, $params = null, $opts = null)
@@ -122,10 +122,10 @@ class PaymentMethodService extends \ExpressPlatby\Service\AbstractService
      *
      * @param string $id
      * @param null|array $params
-     * @param null|array|\ExpressPlatby\Util\RequestOptions $opts
+     * @param null|array|\ExpressPayments\Util\RequestOptions $opts
      *
-     * @return \ExpressPlatby\PaymentMethod
-     *@throws \ExpressPlatby\Exception\ApiErrorException if the request fails
+     * @return \ExpressPayments\PaymentMethod
+     * @throws \ExpressPayments\Exception\ApiErrorException if the request fails
      *
      */
     public function update($id, $params = null, $opts = null)
