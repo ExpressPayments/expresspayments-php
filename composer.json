@@ -1,18 +1,20 @@
 {
-  "name": "expressplatby/expressplatby-php",
-  "description": "ExpressPlatby PHP Library",
+  "name": "expresspayments/expresspayments-php",
+  "description": "ExpressPayments PHP Library",
   "keywords": [
+    "epayments",
+    "expresspayments",
     "expressplatby",
     "payment processing",
     "api"
   ],
-  "version": "1.0.0",
-  "homepage": "https://expressplatby.cz/",
+  "version": "1.1.0",
+  "homepage": "https://epayments.network/",
   "license": "MIT",
   "authors": [
     {
-      "name": "ExpressPlatby and contributors",
-      "homepage": "https://github.com/expressplatby/expressplatby-php/contributors"
+      "name": "ExpressPayments and contributors",
+      "homepage": "https://github.com/expresspayments/expresspayments-php/contributors"
     }
   ],
   "require": {
@@ -28,14 +30,14 @@
   },
   "autoload": {
     "psr-4": {
-      "ExpressPlatby\\": "lib/"
+      "ExpressPayments\\": "lib/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ExpressPlatby\\": [
+      "ExpressPayments\\": [
         "tests/",
-        "tests/ExpressPlatby/"
+        "tests/ExpressPayments/"
       ]
     }
   }
