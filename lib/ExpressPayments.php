@@ -58,7 +58,7 @@ class ExpressPayments
     /** @var float Initial delay between retries, in seconds */
     private static $initialNetworkRetryDelay = 0.5;
 
-    const VERSION = '13.3.0';
+    const VERSION = '1.1.1';
 
     /**
      * @return string the API key used for requests
