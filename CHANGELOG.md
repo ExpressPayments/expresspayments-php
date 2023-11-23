@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.2 - 2023-11-23
+* Issue with previous release
+
 ## 1.1.1 - 2023-11-23
 * Fix bug (incorrect version used when sending requests to the EP API)
 
