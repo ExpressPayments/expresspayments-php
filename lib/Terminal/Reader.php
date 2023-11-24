@@ -13,7 +13,7 @@ namespace ExpressPayments\Terminal;
  * @property string $object String representing the object's type. Objects of the same type share the same value.
  * @property null|\ExpressPayments\ExpressPaymentsObject $action The most recent action performed by the reader.
  * @property null|string $device_sw_version The current software version of the reader.
- * @property string $device_type Type of reader, one of <code>bbpos_wisepad3</code>, <code>stripe_m2</code>, <code>bbpos_chipper2x</code>, <code>bbpos_wisepos_e</code>, <code>verifone_P400</code>, or <code>simulated_wisepos_e</code>.
+ * @property string $device_type Type of reader, one of <code>bbpos_wisepad3</code>, <code>expresspayments_m2</code>, <code>bbpos_chipper2x</code>, <code>bbpos_wisepos_e</code>, <code>verifone_P400</code>, or <code>simulated_wisepos_e</code>.
  * @property null|string $ip_address The local IP address of the reader.
  * @property string $label Custom label given to the reader for easier identification.
  * @property bool $livemode Has the value <code>true</code> if the object exists in live mode or the value <code>false</code> if the object exists in test mode.
@@ -36,7 +36,7 @@ class Reader extends \ExpressPayments\ApiResource
     const DEVICE_TYPE_BBPOS_WISEPAD3 = 'bbpos_wisepad3';
     const DEVICE_TYPE_BBPOS_WISEPOS_E = 'bbpos_wisepos_e';
     const DEVICE_TYPE_SIMULATED_WISEPOS_E = 'simulated_wisepos_e';
-    const DEVICE_TYPE_STRIPE_M2 = 'stripe_m2';
+    const DEVICE_TYPE_EXPRESSPAYMENTS_M2 = 'expresspayments_m2';
     const DEVICE_TYPE_VERIFONE_P400 = 'verifone_P400';
 
     /**
