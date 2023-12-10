@@ -1,7 +1,7 @@
 # ExpressPayments PHP bindings
 
-[![Build Status](https://github.com/expresspayments/expresspayments-php/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/expresspayments/expresspayments-php/actions?query=branch%3Amaster)
-[![Latest Stable Version](https://poser.pugx.org/expresspayments/expresspayments-php/v/stable.svg)](https://packagist.org/packages/expresspayments/expresspayments-php)
+[//]: # ([![Build Status]&#40;https://github.com/expresspayments/expresspayments-php/actions/workflows/ci.yml/badge.svg?branch=master&#41;]&#40;https://github.com/expresspayments/expresspayments-php/actions?query=branch%3Amaster&#41;)
+[![Latest Version](https://poser.pugx.org/expresspayments/expresspayments-php/version)](https://packagist.org/packages/expresspayments/expresspayments-php)
 [![Total Downloads](https://poser.pugx.org/expresspayments/expresspayments-php/downloads.svg)](https://packagist.org/packages/expresspayments/expresspayments-php)
 [![License](https://poser.pugx.org/expresspayments/expresspayments-php/license.svg)](https://packagist.org/packages/expresspayments/expresspayments-php)
 [![Code Coverage](https://coveralls.io/repos/expresspayments/expresspayments-php/badge.svg?branch=master)](https://coveralls.io/r/expresspayments/expresspayments-php?branch=master)
